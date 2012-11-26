@@ -1,6 +1,25 @@
 !!!5
 %html
 	%head
-		%title= @page_title
+		%title= "Russell Matsuo | " + @page_title
+		= stylesheet_link_tag "application", :debug => false
 	%body
+		%nav#global_header
+			#global_noise
+			%ul
+				%li
+					%a#logo{:href => "#"} 
+						%span.hidden
+							Home
+				%li
+					%a.first{:href => "#"} Product Design
+				%li
+					%a{:href => "#"} Mobile
+				%li
+					%a{:href => "#"} Interactive
+				%li
+					%a{:href => "#"} More
+
+
+		.container
 		=yield
