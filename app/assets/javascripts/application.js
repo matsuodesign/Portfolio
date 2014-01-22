@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require parallax.js
 //= require flowtype.js
+//= require_tree .
 
 (function($) {
  var hero_track = $("#hero-track"),
