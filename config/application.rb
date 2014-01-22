@@ -62,6 +62,6 @@ module Portfolio
     config.assets.initialize_on_precompile = false
 
     config.sass.preferred_syntax = :sass
-    
+    config.assets.precompile += ['application.js', 'application.css']
   end
 end
