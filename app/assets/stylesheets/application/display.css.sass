@@ -1,0 +1,284 @@
+html
+ color: $standard-color
+ background: #F5FAFC
+ width: 100%
+ height: 100%
+body
+ position: relative
+ overflow-x: hidden
+ font-size: 18px
+ line-height: 26px
+
+h1,h2,h3,h4,h5,h6,p
+ font-family: inherit
+ font-size: inherit
+
+#content-crop
+ overflow: hidden
+ height: 276px
+ position: relative
+ width: 100%
+ padding-top: 4px
+ // padding-bottom: $half-gutter / 2
+ margin-top: $global-header-height
+ z-index: 300
+ border-bottom: 1px #E6EFF2 solid
+ @include box-style
+ @media screen and (max-width: $break-small)
+  height: auto
+  padding-top: 0
+  padding-bottom: 0
+
+#content-hero
+ height: 600px
+ overflow: auto
+ width: 100%
+ z-index: 300
+ margin-bottom: $gutter
+ @media screen and (max-width: $break-small)
+  height: auto
+  margin-bottom: 0
+
+#hero-track
+ padding-left: 3px
+ margin-right: $half-gutter
+ @media screen and (max-width: $break-small)
+  width: 100% !important
+  padding-left: 0
+
+.hero-element
+ margin-right: 3px
+ float: left
+ height: 273px
+ cursor: pointer
+ position: relative
+ &:after
+  content: ' '
+  display: block
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0 
+  border: 1px solid rgba(37, 43, 65, .05)
+ ul
+  @media screen and (max-width: $break-small)
+   border: $standard-frame*2 white solid
+   margin-top: 45px !important
+   margin-bottom: 20px
+   box-shadow: 0px 1px 5px rgba(37, 43, 65, 0.3) 
+ @media screen and (max-width: $break-small)
+  clear: both
+  width: 100% !important
+  margin: 0 !important
+
+.hero-crop
+ width: 100%
+ height: 100%
+ overflow: hidden
+
+#hero-right
+ position: absolute
+ display: none
+ right: 0
+ top: 4px
+ height: 273px
+ width: 50px
+ overflow: hidden
+ z-index: $top-level
+ background: white image-url('sprite/right_arrow.png') center center no-repeat
+ background-size: 15px 26px
+ box-shadow: -2px 0px 2px rgba(0, 162, 172, .13)
+ border-left: 1px white solid
+ cursor: pointer
+ &:hover
+  background: white image-url('sprite/right_arrow_active.png') center center no-repeat
+  background-size: 15px 26px
+ @media screen and (max-width: $break-mid)
+  width: 35px
+ @media screen and (max-width: $break-small)
+  display: none !important
+
+#hero-left
+ display: none
+ position: absolute
+ left: 0
+ top: 4px
+ height: 273px
+ width: 50px
+ overflow: hidden
+ z-index: $top-level
+ background: white image-url('sprite/left_arrow.png') center center no-repeat
+ background-size: 15px 26px
+ box-shadow: 2px 0px 2px rgba(0, 162, 172, .13)
+ border-right: 1px white solid
+ cursor: pointer
+ &:hover
+  background: white image-url('sprite/left_arrow_active.png') center center no-repeat
+  background-size: 15px 26px
+ @media screen and (max-width: $break-mid)
+  width: 35px
+ @media screen and (max-width: $break-small)
+  display: none !important
+
+#information
+ background: white
+ height: 0
+ overflow: auto
+ position: absolute
+ z-index: $top-level
+ display: none
+ padding-bottom: $gutter
+ box-shadow: 0px 1px 3px rgba(0, 162, 172, .13), 0px -4px 3px rgba(121, 247, 255, .5), 0px 5px 20px 5px rgba(0, 162, 172, .13)
+ border-radius: 0 0 5px 5px
+ border-bottom: 1px darken(#E6EFF2, 4%) solid
+ border-left: 1px darken(#E6EFF2, 4%) solid
+ border-right: 1px darken(#E6EFF2, 4%) solid
+ // border-top: 1px lighten(#00BAC6, 35%) solid
+ @media screen and (max-width: $break-small)
+  display: none !important
+
+.mod-information
+ display: none
+ @media screen and (max-width: $break-small)
+  display: block
+  float: left
+  width: 60%
+  padding: 40px 0 0 0
+
+.mod-information .mod-title
+ height: 40px
+ line-height: 40px
+ font-size: 20px
+ font-weight: bold
+#information-description
+ font-size: 0.70em
+ line-height: 1.47em
+ margin-left: $gutter
+ margin-right: $gutter
+ position: relative
+ width: auto
+ margin-bottom: $half-gutter
+
+#information-title
+ font-size: 1.1em
+ margin-top: $half-gutter
+ font-weight: bold
+ color: $logo-green
+ margin-left: $gutter
+ span
+  color: lighten($standard-color, 35%)
+  font-weight: normal
+  display: inline-block
+
+#time
+ display: block
+ float: left
+ margin-top: 6px
+ margin-right: 3px
+ width: 12px
+ height: 12px
+ background: image-url("sprite/time.png") center center no-repeat
+ background-size: cover
+
+#information-tags, .mod-tags
+ margin-top: 0px
+ display: block
+ width: auto
+ position: relative
+ padding-left: $gutter
+ padding-right: $gutter
+ @media screen and (max-width: $break-small)
+  margin-top: $gutter
+  border-top: 1px #d5ecf3 dashed
+  padding: $half-gutter $gutter 0 $gutter
+ span
+  display: block
+  height: 2em
+  line-height: 2em
+  text-align: center
+  float: left
+  font-weight: bold
+  @media screen and (max-width: $break-small)
+   background: none
+   border-bottom: none
+   color: $logo-green
+   box-shadow: none
+   height: 25px
+   width: auto !important
+   display: inline-block
+   margin-right: 15px !important
+   font-size: 15px
+   margin-top: 0
+   margin-bottom: 0
+   padding: 0
+   &:before
+    content: "#"
+
+#information-skills
+ margin-top: 3px
+ font-size: .7em
+ margin-bottom: 0
+ margin-left: $gutter
+ color: darken(#0EDDE0, 7%)
+
+#resume
+ display: inline-block
+ margin-top: $half-gutter
+
+.mod-information
+ padding-bottom: $gutter 
+
+.mod-title 
+ position: absolute
+ top: - $standard-frame
+ left: - $standard-frame*2
+ background: #00b5bf /* Old browsers */
+ background: -moz-linear-gradient(top,  #00b5bf 0%, #00a2ac 100%) /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00b5bf), color-stop(100%,#00a2ac)) /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top,  #00b5bf 0%,#00a2ac 100%) /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top,  #00b5bf 0%,#00a2ac 100%) /* Opera 11.10+ */
+ background: -ms-linear-gradient(top,  #00b5bf 0%,#00a2ac 100%) /* IE10+ */
+ background: linear-gradient(to bottom,  #00b5bf 0%,#00a2ac 100%) /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b5bf', endColorstr='#00a2ac',GradientType=0 ) /* IE6-9 */
+ color: white
+ font-size: 15px
+ padding: 3px $gutter + $standard-frame * 2 3px $gutter + $standard-frame * 2
+ height: 25px
+ line-height: 25px
+ border-radius: 0 0 2px 0
+ @media screen and (max-width: $break-small)
+  width: 100%
+  padding: 0
+  height: 40px
+  line-height: 40px
+  margin: 0px
+  left: 0
+  font-size: 20px
+  text-indent: $gutter
+  border-radius: 0
+  box-shadow: 0px 3px 3px rgba(37, 43, 65, .1)
+
+
+.mod-description
+ padding: $gutter $gutter 0 $gutter
+
+.development-tag
+ @include tag-style(lighten($logo-green, 5%))
+ border-bottom: 4px #00B3BF solid
+
+.design-tag
+ @include tag-style(lighten(#45B856, 5%))
+ border-bottom: 4px #51B560 solid
+
+.research-tag
+ @include tag-style(#D8BA06)
+ border-bottom: 4px #D1B306 solid
+
+.production-tag
+ @include tag-style(lighten(#A15F98, 10%))
+ border-bottom: 4px #AB79A4 solid
+
+.marketing-tag
+ @include tag-style(#38A2C4)
+ border-bottom: 4px #3699BA solid

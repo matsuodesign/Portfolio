@@ -1,0 +1,39 @@
+#mod-fine-art
+ width: $desktop-width / 2 - $half-gutter - $standard-frame * 2
+ overflow: hidden
+ &:hover
+  .background
+   @include browser-prefix(filter, blur(3px))
+  .logo
+   background-size: 230px * 0.8 230px * 0.8
+   @include browser-prefix(transition, background-size 200ms ease-in-out)
+ ul
+  width: 120%
+  height: 120%
+  margin-left: -10%
+  margin-top: -10%
+ .background
+  position: relative
+  background: image-url("static/fine-art/background.jpg")
+  background-position-y: -60px
+  background-position-x: -80px
+  background-size: 100%
+  width: 100%
+  height: 100%
+ .logo
+  position: absolute
+  background: image-url("static/fine-art/fine-art-logo.png") center center no-repeat
+  background-size: 230px * 0.6 230px * 0.6
+  display: block
+  @include browser-prefix(transition, background-size 200ms ease-in-out)
+
+#fine-art-design
+ width: 29%
+ border-radius: 2px 0px 0px 2px
+ margin: 0 1% 0 0
+ padding: 0
+#fine-art-production
+ width: 70%
+ border-radius: 0px 2px 2px 0px
+ margin: 0
+ padding: 0

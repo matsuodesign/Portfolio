@@ -2,6 +2,7 @@ class ResumeController < ApplicationController
 	layout 'application'
 
   def index
-  	render(:index)
+   @page_title = "UX & Interaction Design"
+  	render 'composers/index'
   end
 end

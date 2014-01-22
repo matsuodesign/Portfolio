@@ -1,0 +1,50 @@
+#mod-intervention
+ width: $desktop-width / 2 - $half-gutter - $standard-frame * 2
+ overflow: hidden
+ &:hover
+  .background
+   @include browser-prefix(filter, blur(3px))
+   @media screen and (max-width: $break-small)
+    @include browser-prefix(filter, blur(0px))
+  .logo
+   background-size: 250px 50px
+   background-position: 140px 110px
+   @include browser-prefix(transition, all 200ms ease-in-out)
+   @media screen and (max-width: $break-small)
+    background-size: 250px * 0.8 50px * 0.8
+    background-position: 160px 110px
+ ul
+  width: 120%
+  height: 120%
+  margin-left: -10%
+  margin-top: -10%
+ .background
+  position: relative
+  background: image-url("static/intervention/background.jpg") top center
+  background-size: cover
+  width: 100%
+  height: 100%
+ .logo
+  position: absolute
+  background: image-url("static/intervention/intervention-logo.png") no-repeat
+  background-size: 250px * 0.8 50px * 0.8
+  background-position: 160px 110px
+  display: block
+  @include browser-prefix(transition, all 200ms ease-in-out)
+
+#intervention-design
+ width: 40%
+ border-radius: 2px 0px 0px 2px
+ margin: 0 1% 0 0
+ padding: 0
+#intervention-production
+ width: 38%
+ border-radius: 0px
+ margin: 0 1% 0 0
+ padding: 0
+
+#intervention-marketing
+ width: 20%
+ border-radius: 0px 2px 2px 0px
+ margin: 0
+ padding: 0

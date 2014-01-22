@@ -1,0 +1,126 @@
+#mod-work
+ padding-top: $gutter * 4
+ padding-bottom: $gutter * 4
+ position: relative
+ display: inline-block
+ @include box-style
+ background-image: url(data:image/svg+xmlbase64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyYWRpYWxHcmFkaWVudCBpZD0iZyI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRjVGQUZDIi8+PC9yYWRpYWxHcmFkaWVudD48cmVjdCB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGNUZBRkMiIC8+PHJlY3QgeD0iLTIxLjQ5MzclIiB5PSItMTM5LjkwNTclIiB3aWR0aD0iMTQyLjk4NzMlIiBoZWlnaHQ9IjI3OS44MTE0JSIgZmlsbD0idXJsKCNnKSIgLz48L3N2Zz4=)
+ background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 162, color-stop(15%, #ffffff), color-stop(100%, darken(#F5FAFC, 2%)))
+ background-image: -webkit-radial-gradient(center top, farthest-corner circle, #ffffff 15%, darken(#F5FAFC, 2%) 100%)
+ background-image: -moz-radial-gradient(center top, farthest-corner circle, #ffffff 15%, darken(#F5FAFC, 2%) 100%)
+ background-image: -ms-radial-gradient(center top, farthest-corner circle, #ffffff 15%, darken(#F5FAFC, 2%) 100%)
+ background-image: -o-radial-gradient(center top, farthest-corner circle, #ffffff 15%, darken(#F5FAFC, 2%) 100%)
+ background-image: radial-gradient(farthest-corner circle at center top, #ffffff 15%, darken(#F5FAFC, 2%) 100%)
+ box-shadow: inset 0px -3px 30px white, 0px 1px 2px 1px rgba(0, 162, 172, .10)
+ border-top: 2px white solid
+ @media screen and (max-width: $break-small)
+  padding-top: 40px
+ #work-downloads
+  position: absolute
+  right: 0
+  top: -2px
+  @media screen and (max-width: $break-small)
+   position: relative
+   width: 100%
+  a
+   background: white
+   box-shadow: 0px 1px 2px 1px rgba(0, 162, 172, .10)
+   border-top: 2px white solid
+   display: block
+   float: left
+   color: $logo-green
+   padding: 3px 20px 3px 20px
+   font-size: 13px
+   font-weight: bold
+   @media screen and (max-width: $break-small)
+    width: 33.333333%
+    height: 40px
+    line-height: 40px
+    padding: 0
+    text-align: center
+    margin-bottom: $gutter
+  #downloads-pdf
+   border-radius: 0px 0px 2px 0px
+  #downloads-word
+   border-radius: 0px
+  #downloads-linkedin
+   border-radius: 0px
+  #pdf_icon
+   width: 16px
+   height: 17px
+   background: image-url("sprite/pdf.png") top left no-repeat
+   background-size: cover
+   display: inline-block
+   vertical-align: -15%
+   margin: 0 7px 0 0
+
+  #word_icon
+   width: 16px
+   height: 17px
+   background: image-url("sprite/word.png") top left no-repeat
+   background-size: cover
+   display: inline-block
+   vertical-align: -15%
+   margin: 0 7px 0 0
+
+  #linkedin_icon
+   width: 16px
+   height: 17px
+   background: image-url("sprite/linked_in.png") top left no-repeat
+   background-size: cover
+   display: inline-block
+   vertical-align: -15%
+   margin: 0 7px 0 0
+
+
+ .work-experience
+  padding-bottom: $half-gutter
+  width: 80%
+  display: inline-block
+  margin-left: 10%
+  @media screen and (max-width: $break-mid)
+   margin-bottom: $gutter * 2
+   padding-bottom: $gutter * 2
+   border-bottom: 1px lighten(#38A2C4, 40%) dashed
+  &:last-child
+   @media screen and (max-width: $break-mid)
+    margin-bottom: 0
+    padding-bottom: 0
+    border-bottom: none
+  
+ .work-main, .work-skills
+  float: left
+
+ .work-main
+  clear: left
+  width: 61.8%
+  text-align: left
+  @media screen and (max-width: $break-mid)
+   width: 100%
+
+ .work-skills
+  width: 38.2%
+  padding-top: 26px
+  text-align: left
+  @media screen and (max-width: $break-mid)
+   width: 100%
+   padding-top: 10px
+
+ .work-title 
+  color: $logo-green
+  font-size: 18px
+  text-shadow: 0px 1px white
+
+ .work-description
+  padding: 0 $gutter $gutter 0
+  text-shadow: 0px 1px white
+
+  @media screen and (max-width: $break-mid)
+   padding: 0
+
+ .work-location, .work-date
+  font-weight: normal
+  font-size: 12px
+  font-style: italic
+  color: lighten($standard-color, 30%)
+  text-shadow: 0px 1px white

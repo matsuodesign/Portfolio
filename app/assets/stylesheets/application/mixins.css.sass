@@ -1,0 +1,48 @@
+@mixin standard-font
+ font-family: $font-family
+
+@mixin browser-prefix($attr, $value)
+ -webkit-#{$attr}: $value
+ -moz-#{$attr}: $value
+ -o-#{$attr}: $value
+ $attr: $value
+
+@mixin sprite-position($sprite-posx: 0, $sprite-posy: 0)
+ background-repeat: no-repeat
+ background-position: $sprite-posx $sprite-posy
+
+//HiDPI SUPPORT FOR SASS, WE'RE CONSIDERING THIS FUNCTIONAL OVER VISUAL SO WE CAN USE SPRITES IN DISPLAYLIB
+@mixin hidpi_url($path, $filetype, $repeat: no-repeat, $rwidth: auto, $rheight: auto, $sprite: false, $sprite-posx: 0, $sprite-posy: 0, $sprite-width: 0, $sprite-height: 0)
+ display: block
+ background-image: image-url('#{$path}.#{$filetype}')
+ background-repeat: $repeat
+ width: $rwidth
+ height: $rheight
+ @if $sprite
+  @include sprite-position($sprite-posx, $sprite-posy)
+ // HiDPI MEDIA QUERY
+ @media all and (-webkit-min-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (min--moz-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx)
+  background-image: image-url('#{$path}@2x.#{$filetype}')
+  background-repeat: $repeat
+  @if $sprite
+   @include sprite-position($sprite-posx, $sprite-posy)
+   background-size: ($sprite-width * 0.5) ($sprite-height * 0.5)
+  @else
+   background-size: $rwidth $rheight
+
+@mixin box-style
+ box-shadow: 0px 1px 2px 1px rgba(0, 162, 172, .10)
+ background: white
+
+@mixin tag-style($color)
+ color: white
+ font-size: .7em
+ line-height: 1.4em
+ text-shadow: none
+ background: $color
+ border-radius: 2px
+ margin: 3px 3px 3px 0px
+ display: inline-block
+ font-weight: bold
+ padding: 3px 5px 0px 5px
+ box-shadow: 0px 1px white
