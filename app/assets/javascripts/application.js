@@ -16,7 +16,7 @@
 //= require flowtype.js
 //= require_tree .
 
-(function($) {
+$(function () {
  var hero_track = $("#hero-track"),
   debounce_background, 
   debounce_hero_scroll,
@@ -340,4 +340,4 @@
     position_infobox(selected_hero);  
   }
  });
-})(jQuery);
+});
