@@ -4,9 +4,13 @@
  &:hover
   .background
    @include browser-prefix(filter, blur(3px))
+   @media screen and (max-width: $break-small)
+    @include browser-prefix(filter, blur(0))
   .logo
    background-size: 230px * 0.8 230px * 0.8
    @include browser-prefix(transition, background-size 200ms ease-in-out)
+   @media screen and (max-width: $break-small)
+    background-size: 230px * 0.6 230px * 0.6
  ul
   width: 120%
   height: 120%
