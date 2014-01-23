@@ -304,15 +304,17 @@ $(function () {
   if(responsive_mode == "mobile"){
    var scrollTop  = $(window).scrollTop(),
     elements = [];
+   $(".mod-title").css("position", "absolute");
+   $(".mod-title").css("top", "0");
+
    $(".mod-title").each(function(index) {
      var current = $(this);
      if((current.offset().top - scrollTop - header_height) <= 0){
       current.css("position", "fixed");
       current.css("top", header_height);   
      }else{
-      current.css("position", "absolute");
-      current.css("top", "0");  
-     };
+      return
+     }
    });
 
    console.log(elements);
