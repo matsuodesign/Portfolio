@@ -97,7 +97,6 @@ $(function () {
    if(!information_open){
      $("#main").fadeTo(300, 0.2).addClass("blur");;
      $("#information").css("display", "block");
-     $("#information").css("height", 0);
      $("#information").css("width", $(".hero-element").first().width());
      $("#information").css('height', 'auto')
      information_open = true;
@@ -110,7 +109,6 @@ $(function () {
  }, 
 
  close_infobox = function(){
-  $("#information").stop().animate({height: 0}, {duration: 200, queue: false});
   $("#information").fadeOut(100);
   $("#main").fadeTo(100, 1);
   $("#main").removeClass("blur");
