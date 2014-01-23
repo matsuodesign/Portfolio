@@ -16,6 +16,7 @@ $(function () {
 	logos = $(".logo"),
 	scroll_timer,
 	scroll_interval,
+	scrolling = false,
 	scroll_direction = "left";
 	content_hero = $("#content-hero"),
 	headers = $(".mod-title"),
@@ -146,8 +147,10 @@ $(function () {
 		hero_element_scene.css("width", "120%");
 		hero_element_scene.css("margin-left", "-10%");
 		hero_element_scene.css("margin-top", "-10%");
-		hero_right.css("height", hero_height - 3);
-		hero_left.css("height", hero_height - 3);
+		hero_right.css("height", 70);
+		hero_left.css("height", 70);		
+		hero_right.css("top", (hero_height / 2) - 30);
+		hero_left.css("top", (hero_height / 2) - 30);
 		size_carousel_track();
 	},
 
@@ -184,6 +187,7 @@ $(function () {
 	set_timers = function(){
 		scroll_timer = setTimeout(function() {
 			scroll_interval = setInterval(function() { 
+						scrolling = true;
 	    	if(scroll_direction == "left"){
 	    		content_hero.scrollLeft(content_hero.scrollLeft() + 1);
 	    	}else{
@@ -194,6 +198,7 @@ $(function () {
 		}, 2000);
 	},
 	clear_timers = function(){
+		scrolling = false;
 		clearTimeout(scroll_timer);
 		clearInterval(scroll_interval);
 	},
@@ -303,7 +308,10 @@ $(function () {
 			});
 
 			content_hero.scroll(function(){
-				position_infobox(selected_hero);
+				if(!scrolling){
+					position_infobox(selected_hero);
+				}
+	
 				clearTimeout(debounce_hero_scroll);
 				debounce_hero_scroll = setTimeout(function() {
 					deturmine_carousel_navigation();

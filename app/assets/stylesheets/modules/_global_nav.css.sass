@@ -17,7 +17,7 @@ nav#global_header
 		float: left
 	a
 		display: block
-		height: 75px
+		height: $global-header-height
 		padding: 5px 25px 0px 25px
 		text-shadow: 0px 1px white
 		font-weight: 400
@@ -32,14 +32,18 @@ nav#global_header
 	a#logo
 		display: block
 		background: image-url('svg/russell_matsuo.svg') no-repeat
-		background-size: 55px 59px
+		background-size: 31px 33px
 		border: none
 		box-shadow: none
-		text-indent: -9999px
+		text-indent: 35px
+		font-weight: bold
+		color: $logo-green
 		padding: 0
-		width: 55px
-		height: 59px
+		width: 161px
+		height: 33px
+		line-height: $global-header-height - $half-gutter
 		margin-right: $gutter
-		margin-top: $half-gutter
+		margin-top: 5px
+		margin-left: 10px
 		&:hover:before
 			border-bottom: 0
