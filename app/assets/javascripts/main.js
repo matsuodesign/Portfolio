@@ -22,11 +22,36 @@ $(function () {
 	headers = $(".mod-title"),
 	main_content = $("#main"),
 	header_height = $("#global_header").height(),
-	$lminspired = $('#lminspired-scene').parallax(),
-	$ask = $('#ask-scene').parallax(),
-	$lapsity = $('#lapsity-scene').parallax();
-	$intervention = $('#intervention-scene').parallax();
-	$fine_art = $('#fine-art-scene').parallax();
+	lminspired = $('#lminspired-scene').parallax({
+		scalarX: 4, 
+		scalarY: 4,
+		frictionX: .15,
+		frictionY: .15
+	}),
+	ask = $('#ask-scene').parallax({
+		scalarX: 4, 
+		scalarY: 4,
+		frictionX: .15,
+		frictionY: .15
+	}),
+	lapsity = $('#lapsity-scene').parallax({
+		scalarX: 4, 
+		scalarY: 4,
+		frictionX: .15,
+		frictionY: .15
+	});
+	intervention = $('#intervention-scene').parallax({
+		scalarX: 2, 
+		scalarY: 2,
+		frictionX: 0.2,
+		frictionY: 0.8
+	});
+	fine_art = $('#fine-art-scene').parallax({
+		scalarX: 2, 
+		scalarY: 2,
+		frictionX: 0.2,
+		frictionY: 0.8
+	});
 
 	var check_margins = function(){
 		var left_edge = information.position().left;
@@ -55,22 +80,22 @@ $(function () {
 
 	activate_parallax = function(){
 		if(responsive_mode != "mobile"){
-			$ask.parallax('enable');
-			$lminspired.parallax('enable');
-			$lapsity.parallax('enable');
-			$intervention.parallax('enable');
-			$fine_art.parallax('enable');
+			ask.parallax('enable');
+			lminspired.parallax('enable');
+			lapsity.parallax('enable');
+			intervention.parallax('enable');
+			fine_art.parallax('enable');
 			parallax_active = true;
 		}
 	},
 
 	disable_parallax = function(){
 		if(responsive_mode == "mobile"){
-			$ask.parallax('disable');
-			$lminspired.parallax('disable');
-			$lapsity.parallax('disable');
-			$intervention.parallax('disable');
-			$fine_art.parallax('disable');
+			ask.parallax('disable');
+			lminspired.parallax('disable');
+			lapsity.parallax('disable');
+			intervention.parallax('disable');
+			fine_art.parallax('disable');
 			parallax_active = false;
 		}
 	},
