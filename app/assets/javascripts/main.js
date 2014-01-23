@@ -16,6 +16,7 @@ $(function () {
 	logos = $(".logo"),
 	scroll_timer,
 	scroll_interval,
+	scroll_direction = "left";
 	content_hero = $("#content-hero"),
 	headers = $(".mod-title"),
 	main_content = $("#main"),
@@ -74,7 +75,7 @@ $(function () {
 	},
 
 	size_carousel_track = function(){
-		var track_width = hero_track.children().length * (hero_track.children().first().width() + 9);
+		var track_width = hero_track.children().length * (hero_track.children().first().width()+1);
 		hero_track.css("width", track_width + 10);
 	},
 
@@ -85,12 +86,14 @@ $(function () {
 		if(current_hero_scroll_position === 0){
 			hero_left.fadeOut();
 			hero_right.fadeIn();
+			scroll_direction = "left";
 		} else if (current_hero_scroll_position > 0 && current_hero_scroll_position < hero_track_scroll_max){
 			hero_left.fadeIn();   
 			hero_right.fadeIn();
 		} else if (current_hero_scroll_position >= hero_track_scroll_max){
 			hero_left.fadeIn();   
 			hero_right.fadeOut();
+			scroll_direction = "right";
 		}
 	},
 
@@ -181,9 +184,12 @@ $(function () {
 	set_timers = function(){
 		scroll_timer = setTimeout(function() {
 			scroll_interval = setInterval(function() { 
-	    	if(content_hero.scrollLeft() < $("#hero-track").width() - $(window).width() - 50){
+	    	if(scroll_direction == "left"){
 	    		content_hero.scrollLeft(content_hero.scrollLeft() + 1);
+	    	}else{
+	    		content_hero.scrollLeft(content_hero.scrollLeft() - 1);
 	    	}
+	    	
 	    }, 50);
 		}, 2000);
 	},
