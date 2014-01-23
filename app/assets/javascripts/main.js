@@ -131,23 +131,23 @@ $(function () {
 
 	open_infobox = function(){
 		if(!information_open){
-			main_content.fadeTo(300, 0.2).addClass("blur");;
-			information.css("display", "block");
-			information.css("width", hero_element.first().width());
-			information.css('height', 'auto')
-			information_open = true;
+			// main_content.fadeTo(300, 0.2).addClass("blur");;
+			// information.css("display", "block");
+			// information.css("height", 0);
+			// information.animate({height: 140}, 200)
+			// information_open = true;
 		}
 	},
 
 	position_infobox = function(selected_hero){
-		information.css("top", selected_hero.position().top + hero_track.children().first().height() + 10);
-		information.css("left", selected_hero.position().left);
+		// information.css("top", selected_hero.position().top + hero_track.children().first().height() + 10);
+		// information.css("left", selected_hero.position().left);
 	}, 
 
 	close_infobox = function(){
-		information.fadeOut(100);
-		main_content.fadeTo(100, 1).removeClass("blur");
-		information_open = false;
+		// information.fadeOut(100);
+		// main_content.fadeTo(100, 1).removeClass("blur");
+		// information_open = false;
 	}, 
 
 	deturmine_responsive = function(){
@@ -174,8 +174,8 @@ $(function () {
 		hero_element_scene.css("margin-top", "-10%");
 		hero_right.css("height", 70);
 		hero_left.css("height", 70);		
-		hero_right.css("top", (hero_height / 2) - 30);
-		hero_left.css("top", (hero_height / 2) - 30);
+		hero_right.css("top", (hero_height) - 60);
+		hero_left.css("top", (hero_height) - 60);
 		size_carousel_track();
 	},
 
@@ -263,13 +263,13 @@ $(function () {
 			default: break;
 		}
 
-		$('.work-description').flowtype({
+		$('.work-description, #information-description').flowtype({
 			minimum : 400,
 			maximum : 1200,
 			fontRatio : work_description_ratio
 		});
 
-		$('.work-title').flowtype({
+		$('.work-title, #information-title').flowtype({
 			minimum : 400,
 			maximum : 1200,
 			fontRatio : work_title_ratio

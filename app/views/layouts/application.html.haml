@@ -15,12 +15,17 @@
         #hero-track
           =yield :content_hero
     #information
-      %h1#information-title
-      %p#information-description
-      %h3#information-skills 
-        %span#time &nbsp;
-        Time Distribution
-      %p#information-tags
+      .mod-title
+        About the Project
+      #information-wrapper
+        #information-left
+          %h1#information-title
+          %p#information-description
+        #information-right
+          %h3#information-skills 
+            %span#time &nbsp;
+            Time Distribution
+          %p#information-tags
     #main
       =yield :content_main
       =javascript_include_tag 'application'

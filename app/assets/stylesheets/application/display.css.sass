@@ -80,7 +80,7 @@ h1,h2,h3,h4,h5,h6,p
 #hero-right
  position: absolute
  display: none
- right: 10px
+ right: 0
  top: 4px
  width: 50px
  overflow: hidden
@@ -102,7 +102,7 @@ h1,h2,h3,h4,h5,h6,p
 #hero-left
  display: none
  position: absolute
- left: 10px
+ left: 0
  top: 4px
  width: 50px
  overflow: hidden
@@ -122,22 +122,36 @@ h1,h2,h3,h4,h5,h6,p
   display: none !important
 
 #information
- background: white
- height: 0
+ background: $logo-green
  overflow: auto
- position: absolute
+ position: relative
  z-index: $top-level
- display: none
+ display: block
  min-height: 100px
+ width: 100%
  padding-bottom: $gutter
- box-shadow: 0px 1px 3px rgba(0, 162, 172, .13), 0px -4px 3px rgba(121, 247, 255, .5), 0px 5px 20px 5px rgba(0, 162, 172, .13)
- border-radius: 0 0 5px 5px
+ box-shadow: inset 0px 3px 30px rgba(0, 0, 0, .3)
  border-bottom: 1px darken(#E6EFF2, 4%) solid
  border-left: 1px darken(#E6EFF2, 4%) solid
  border-right: 1px darken(#E6EFF2, 4%) solid
  // border-top: 1px lighten(#00BAC6, 35%) solid
  @media screen and (max-width: $break-small)
   display: none !important
+
+
+#information-wrapper
+ width: 80%
+ margin-left: 10%
+ margin-top: $gutter
+
+
+#information-left
+ float: left
+ width: 61.8%
+
+#information-right
+ float: left
+ width: 38.2%
 
 .mod-information
  display: none
@@ -152,21 +166,19 @@ h1,h2,h3,h4,h5,h6,p
  line-height: 40px
  font-size: 20px
  font-weight: bold
+
 #information-description
  font-size: 0.70em
  line-height: 1.47em
- margin-left: $gutter
  margin-right: $gutter
  position: relative
- width: auto
+ color: white
  margin-bottom: $half-gutter
 
 #information-title
- font-size: 1.1em
  margin-top: $half-gutter
  font-weight: bold
- color: $logo-green
- margin-left: $gutter
+ color: white
  span
   color: lighten($standard-color, 35%)
   font-weight: normal
@@ -185,9 +197,8 @@ h1,h2,h3,h4,h5,h6,p
 #information-tags, .mod-tags
  margin-top: 0px
  display: block
- width: auto
+ width: 100%
  position: relative
- padding-left: $gutter
  padding-right: $gutter
  @media screen and (max-width: $break-small)
   margin-top: $gutter
@@ -216,12 +227,17 @@ h1,h2,h3,h4,h5,h6,p
    &:before
     content: "#"
 
+#information-tags span
+ height: 50px
+ line-height: 50px
+ box-shadow: none
+
 #information-skills
- margin-top: 3px
+ margin-top: 10px
  font-size: .7em
  margin-bottom: 0
- margin-left: $gutter
- color: darken(#0EDDE0, 7%)
+ position: relative
+ color: white
 
 #resume
  display: inline-block
