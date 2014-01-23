@@ -43,7 +43,7 @@ static/lminspired/lm-logo.png: static/lminspired/lm-logo-805b57d8f80c8056d7c6d22
 static/lminspired/lm-logo/index.png: static/lminspired/lm-logo-805b57d8f80c8056d7c6d22c629ceebb.png
 svg/russell_matsuo.svg: svg/russell_matsuo-7e520e6b7d85a1959be439f70ba842eb.svg
 svg/russell_matsuo/index.svg: svg/russell_matsuo-7e520e6b7d85a1959be439f70ba842eb.svg
-application.js: application-e37cf88d3d37a1c8f650f066ccf9dceb.js
-application/index.js: application-e37cf88d3d37a1c8f650f066ccf9dceb.js
+application.js: application-56e87d8001b5403fe47a9274502fd6f8.js
+application/index.js: application-56e87d8001b5403fe47a9274502fd6f8.js
 application.css: application-2a1e7ae5c5c19b564bbd8467ac54b19a.css
 application/index.css: application-2a1e7ae5c5c19b564bbd8467ac54b19a.css
