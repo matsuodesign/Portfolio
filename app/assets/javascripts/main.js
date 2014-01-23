@@ -140,6 +140,16 @@ $(function () {
   $("#hero-right").css("height", hero_height - 3);
   $("#hero-left").css("height", hero_height - 3);
   size_carousel_track();
+ },
+
+ reset_backgrounds = function(){
+  $(".background").css("-webkit-transform", "translate3d(0, 0, 0)");
+  $(".background").css("-moz-transform", "translate3d(0, 0, 0)");
+  $(".background").css("transform", "translate3d(0, 0, 0)");
+
+  $(".logo").css("-webkit-transform", "translate3d(0, 0, 0)");
+  $(".logo").css("-moz-transform", "translate3d(0, 0, 0)");
+  $(".logo").css("transform", "translate3d(0, 0, 0)");
  }, 
 
  check_mobile_init = function(){
@@ -299,6 +309,7 @@ $(function () {
       case "mobile":
         if(parallax_active){
          disable_parallax();
+         reset_backgrounds();
         }
         init_flowtype();
       break;
