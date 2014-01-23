@@ -14,6 +14,8 @@ $(function () {
 	hero_element_scene = $("ul", hero_element),
 	backgrounds = $(".background"),
 	logos = $(".logo"),
+	scroll_timer,
+	scroll_interval,
 	content_hero = $("#content-hero"),
 	headers = $(".mod-title"),
 	main_content = $("#main"),
@@ -176,6 +178,19 @@ $(function () {
 			set_hero_height();
 		}
 	}, 
+	set_timers = function(){
+		scroll_timer = setTimeout(function() {
+			scroll_interval = setInterval(function() { 
+	    	if(content_hero.scrollLeft() < $("#hero-track").width() - $(window).width() - 50){
+	    		content_hero.scrollLeft(content_hero.scrollLeft() + 1);
+	    	}
+	    }, 50);
+		}, 2000);
+	},
+	clear_timers = function(){
+		clearTimeout(scroll_timer);
+		clearInterval(scroll_interval);
+	},
 	check_current_header = function(){
 		var scrollTop  = $(window).scrollTop(),
 		elements = [];
@@ -265,10 +280,11 @@ $(function () {
 			activate_parallax();
 			disable_parallax();
 			init_flowtype();
+			set_timers();
 
 			hero_element.mouseenter(function(){
 				selected_hero = $(this);
-
+				clear_timers();
 				if(responsive_mode != "mobile"){
 					clearTimeout(debounce_background);
 					debounce_background = setTimeout(function() {
@@ -289,7 +305,8 @@ $(function () {
 			});
 
 			$("#content-crop").mouseleave(function(){
-				close_infobox();      
+				close_infobox();    
+				set_timers();  
 			});
 
 			hero_left.on({
