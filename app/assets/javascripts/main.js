@@ -7,6 +7,8 @@ $(function () {
   responsive_mode,
   parallax_active,
   information_open = false, 
+  headers = $(".mod-title"),
+  header_height = $("#global_header").height(),
   $lminspired = $('#lminspired-scene').parallax(),
   $ask = $('#ask-scene').parallax(),
   $lapsity = $('#lapsity-scene').parallax();
@@ -297,6 +299,25 @@ $(function () {
 
     }
  })
+
+ $(window).scroll(function(){
+  if(responsive_mode == "mobile"){
+   var scrollTop  = $(window).scrollTop(),
+    elements = [];
+   $(".mod-title").each(function(index) {
+     var current = $(this);
+     if((current.offset().top - scrollTop - header_height) <= 0){
+      current.css("position", "fixed");
+      current.css("top", header_height);   
+     }else{
+      current.css("position", "absolute");
+      current.css("top", "0");  
+     };
+   });
+
+   console.log(elements);
+  }
+ });
 
  $(window).resize(function(){
   // $("title").html($(window).width());
