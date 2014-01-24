@@ -18,11 +18,10 @@ h1,h2,h3,h4,h5,h6,p
  height: 276px
  position: relative
  width: 100%
- padding-top: 4px
+ padding-top: 0px
  margin-top: $global-header-height
  z-index: 300
- border-bottom: 1px #E6EFF2 solid
- @include box-style
+ background: $logo-green
  @media screen and (max-width: $break-small)
   height: auto
   padding-top: 0
@@ -40,13 +39,11 @@ h1,h2,h3,h4,h5,h6,p
   margin-bottom: 0
 
 #hero-track
- padding-left: 3px
  @media screen and (max-width: $break-small)
   width: 100% !important
   padding-left: 0
 
 .hero-element
- margin-right: 3px
  float: left
  height: 273px
  cursor: pointer
@@ -124,7 +121,7 @@ h1,h2,h3,h4,h5,h6,p
  display: block
  height: 140px
  width: 100%
- box-shadow: inset 0px 10px 30px rgba(0, 0, 0, .10)
+ box-shadow: inset 0px -30px 30px rgba(0, 0, 0, .10)
  border-bottom: 1px darken(#E6EFF2, 4%) solid
  @media screen and (max-width: $break-small)
   display: none !important
