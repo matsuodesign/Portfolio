@@ -5,7 +5,7 @@ nav#global_header
 	background: #F5FAFC
 	border-bottom: 1px darken(#E6EFF2, 3%) solid
 	position: fixed
-	text-align: center
+	text-align: left
 	z-index: $top-level + 20
 	box-shadow: 0px 1px 2px 1px rgba(0, 162, 172, .10), inset 0px 20px 30px 10px white
 	top: 0
@@ -17,11 +17,11 @@ nav#global_header
 		float: left
 	a
 		display: block
-		height: $global-header-height
+		height: 65px
 		padding: 5px 25px 0px 25px
 		text-shadow: 0px 1px white
 		font-weight: 400
-		line-height: 78px
+		line-height: 75px
 		color: #555
 		text-align: center
 		font-size: 18px
@@ -32,18 +32,73 @@ nav#global_header
 	a#logo
 		display: block
 		background: image-url('svg/russell_matsuo.svg') no-repeat
-		background-size: 31px 33px
+		background-size: 50px 50px
 		border: none
 		box-shadow: none
-		text-indent: 35px
+		text-indent: 60px
 		font-weight: bold
 		color: $logo-green
+		text-align: left
 		padding: 0
-		width: 161px
-		height: 33px
-		line-height: $global-header-height - $half-gutter
+		width: 380px
+		height: 50px
+		line-height: 60px
 		margin-right: $gutter
-		margin-top: 5px
-		margin-left: 10px
+		margin-top: 10px
+		margin-left: 15px
 		&:hover:before
 			border-bottom: 0
+	#work-downloads
+		position: absolute
+		right: 0
+		top: -2px
+		margin-right: 15px
+		@media screen and (max-width: $break-small)
+			position: relative
+			width: 100%
+		a
+			display: block
+			float: left
+			color: $logo-green
+			padding: 3px 20px 3px 20px
+			font-size: 16px
+			font-weight: bold
+		@media screen and (max-width: $break-small)
+			width: 33.333333%
+			height: 40px
+			line-height: 40px
+			padding: 0
+			text-align: center
+			margin-bottom: $gutter
+	#downloads-pdf
+		border-radius: 0px 0px 2px 0px
+	#downloads-word
+		border-radius: 0px
+	#downloads-linkedin
+		border-radius: 0px
+	#pdf_icon
+		width: 16px
+		height: 17px
+		background: image-url("sprite/pdf.png") top left no-repeat
+		background-size: cover
+		display: inline-block
+		vertical-align: -3%
+		margin: 0 7px 0 0
+
+	#word_icon
+		width: 16px
+		height: 17px
+		background: image-url("sprite/word.png") top left no-repeat
+		background-size: cover
+		display: inline-block
+		vertical-align: -3%
+		margin: 0 7px 0 0
+
+	#linkedin_icon
+		width: 16px
+		height: 17px
+		background: image-url("sprite/linked_in.png") top left no-repeat
+		background-size: cover
+		display: inline-block
+		vertical-align: -3%
+		margin: 0 7px 0 0

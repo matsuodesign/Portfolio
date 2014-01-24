@@ -22,36 +22,11 @@ $(function () {
 	headers = $(".mod-title"),
 	main_content = $("#main"),
 	header_height = $("#global_header").height(),
-	lminspired = $('#lminspired-scene').parallax({
-		scalarX: 4, 
-		scalarY: 4,
-		frictionX: .15,
-		frictionY: .15
-	}),
-	ask = $('#ask-scene').parallax({
-		scalarX: 4, 
-		scalarY: 4,
-		frictionX: .15,
-		frictionY: .15
-	}),
-	lapsity = $('#lapsity-scene').parallax({
-		scalarX: 4, 
-		scalarY: 4,
-		frictionX: .15,
-		frictionY: .15
-	});
-	intervention = $('#intervention-scene').parallax({
-		scalarX: 2, 
-		scalarY: 2,
-		frictionX: 0.2,
-		frictionY: 0.8
-	});
-	fine_art = $('#fine-art-scene').parallax({
-		scalarX: 2, 
-		scalarY: 2,
-		frictionX: 0.2,
-		frictionY: 0.8
-	});
+	lminspired = $('#lminspired-scene').parallax(),
+	ask = $('#ask-scene').parallax(),
+	lapsity = $('#lapsity-scene').parallax();
+	intervention = $('#intervention-scene').parallax();
+	fine_art = $('#fine-art-scene').parallax();
 
 	var check_margins = function(){
 		var left_edge = information.position().left;
@@ -129,27 +104,6 @@ $(function () {
 		$("#information-tags").html(selected_hero.find(".mod-information .mod-tags").html());
 	},
 
-	open_infobox = function(){
-		if(!information_open){
-			// main_content.fadeTo(300, 0.2).addClass("blur");;
-			// information.css("display", "block");
-			// information.css("height", 0);
-			// information.animate({height: 140}, 200)
-			// information_open = true;
-		}
-	},
-
-	position_infobox = function(selected_hero){
-		// information.css("top", selected_hero.position().top + hero_track.children().first().height() + 10);
-		// information.css("left", selected_hero.position().left);
-	}, 
-
-	close_infobox = function(){
-		// information.fadeOut(100);
-		// main_content.fadeTo(100, 1).removeClass("blur");
-		// information_open = false;
-	}, 
-
 	deturmine_responsive = function(){
 		var current_width = $(window).width();
 		if(current_width <= 575){
@@ -163,7 +117,7 @@ $(function () {
 
 	set_hero_height = function(){
 		var window_height = $(window).height(),
-		hero_height = window_height*0.42;
+		hero_height = window_height * 0.45;
 		hero_width = hero_height * (4/3);
 		$("#content-crop").css("height", hero_height);
 		hero_element.css("height", hero_height - 3);
@@ -172,10 +126,6 @@ $(function () {
 		hero_element_scene.css("width", "120%");
 		hero_element_scene.css("margin-left", "-10%");
 		hero_element_scene.css("margin-top", "-10%");
-		hero_right.css("height", 70);
-		hero_left.css("height", 70);		
-		hero_right.css("top", (hero_height) - 60);
-		hero_left.css("top", (hero_height) - 60);
 		size_carousel_track();
 	},
 
@@ -317,6 +267,7 @@ $(function () {
 			disable_parallax();
 			init_flowtype();
 			set_timers();
+			update_infobox($(".hero-element").first());
 
 			hero_element.mouseenter(function(){
 				selected_hero = $(this);
@@ -324,18 +275,13 @@ $(function () {
 				if(responsive_mode != "mobile"){
 					clearTimeout(debounce_background);
 					debounce_background = setTimeout(function() {
-						position_infobox(selected_hero);
 						update_infobox(selected_hero);
-						open_infobox();
 						check_margins();
 					}, 50);
 				}
 			});
 
 			content_hero.scroll(function(){
-				if(!scrolling){
-					position_infobox(selected_hero);
-				}
 	
 				clearTimeout(debounce_hero_scroll);
 				debounce_hero_scroll = setTimeout(function() {
@@ -344,26 +290,17 @@ $(function () {
 			});
 
 			$("#content-crop").mouseleave(function(){
-				close_infobox();    
 				set_timers();  
 			});
 
-			hero_left.on({
-				"mouseenter": function(){
-					close_infobox();
-				}, 
+			hero_left.on({ 
 				"click": function(){
-					close_infobox();
 					content_hero.animate({scrollLeft: (content_hero.scrollLeft() - $(window).width())}, 800)
 				}
 			});
 
 			hero_right.on({
-				"mouseenter": function(){
-					close_infobox();
-				},
 				"click": function(){
-					close_infobox();
 					content_hero.animate({scrollLeft: (content_hero.scrollLeft() + $(window).width())}, 800)
 				}
 			});
@@ -413,9 +350,5 @@ $(window).resize(function(){
 			default: break;
 		}
 	}, 50);
-
-	if(information_open){
-		position_infobox(selected_hero);  
-	}
 });
 });

@@ -29,7 +29,6 @@ h1,h2,h3,h4,h5,h6,p
   padding-bottom: 0
   margin-top: $global-header-height + 3
 
-
 #content-hero
  height: 600px
  overflow: auto
@@ -81,18 +80,15 @@ h1,h2,h3,h4,h5,h6,p
  position: absolute
  display: none
  right: 0
- top: 4px
+ top: 0px
  width: 50px
- overflow: hidden
+ height: 125px
  z-index: $top-level
- background: white image-url('sprite/right_arrow.png') center center no-repeat
+ background: image-url('sprite/right_arrow.png') center center no-repeat
  background-size: 15px 26px
- box-shadow: -2px 0px 2px rgba(0, 162, 172, .13)
- border-left: 1px white solid
- border-radius: 2px
  cursor: pointer
  &:hover
-  background: white image-url('sprite/right_arrow_active.png') center center no-repeat
+  background: image-url('sprite/right_arrow_active.png') center center no-repeat
   background-size: 15px 26px
  @media screen and (max-width: $break-mid)
   width: 35px
@@ -103,18 +99,17 @@ h1,h2,h3,h4,h5,h6,p
  display: none
  position: absolute
  left: 0
- top: 4px
+ top: 0
  width: 50px
+ height: 125px
  overflow: hidden
  z-index: $top-level
- background: white image-url('sprite/left_arrow.png') center center no-repeat
+ background: image-url('sprite/left_arrow.png') center center no-repeat
  background-size: 15px 26px
- box-shadow: 2px 0px 2px rgba(0, 162, 172, .13)
- border-right: 1px white solid
  cursor: pointer
  border-radius: 2px
  &:hover
-  background: white image-url('sprite/left_arrow_active.png') center center no-repeat
+  background: image-url('sprite/left_arrow_active.png') center center no-repeat
   background-size: 15px 26px
  @media screen and (max-width: $break-mid)
   width: 35px
@@ -127,27 +122,25 @@ h1,h2,h3,h4,h5,h6,p
  position: relative
  z-index: $top-level
  display: block
- min-height: 100px
+ height: 140px
  width: 100%
- padding-bottom: $gutter
- box-shadow: inset 0px 3px 30px rgba(0, 0, 0, .3)
+ box-shadow: inset 0px 10px 30px rgba(0, 0, 0, .10)
  border-bottom: 1px darken(#E6EFF2, 4%) solid
- border-left: 1px darken(#E6EFF2, 4%) solid
- border-right: 1px darken(#E6EFF2, 4%) solid
- // border-top: 1px lighten(#00BAC6, 35%) solid
  @media screen and (max-width: $break-small)
   display: none !important
 
+#information .mod-title
+ font-weight: bold
 
 #information-wrapper
- width: 80%
+ width: 90%
  margin-left: 10%
  margin-top: $gutter
 
 
 #information-left
  float: left
- width: 61.8%
+ width: 55%
 
 #information-right
  float: left
@@ -176,8 +169,8 @@ h1,h2,h3,h4,h5,h6,p
  margin-bottom: $half-gutter
 
 #information-title
- margin-top: $half-gutter
  font-weight: bold
+ margin-top: 0px
  color: white
  span
   color: lighten($standard-color, 35%)
