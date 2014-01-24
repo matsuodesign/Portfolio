@@ -8,22 +8,23 @@
   %body
     #page-head
       =render 'modules/global-header'
-    #content-crop
-      #content-hero
-        #hero-track
-          =yield :content_hero
-    #information
-      #hero-right &nbsp;
-      #hero-left &nbsp;
-      #information-wrapper
-        #information-left
-          %h1#information-title
-          %p#information-description
-        #information-right
-          %h3#information-skills 
-            %span#time &nbsp;
-            Time Distribution
-          %p#information-tags
+    #hero
+      #content-crop
+        #content-hero
+          #hero-track
+            =yield :content_hero
+      #information
+        #hero-right &nbsp;
+        #hero-left &nbsp;
+        #information-wrapper
+          #information-left
+            %h1#information-title
+            %p#information-description
+          #information-right
+            %h3#information-skills 
+              %span#time &nbsp;
+              Time Distribution
+            %p#information-tags
     #main
       =yield :content_main
       =javascript_include_tag 'application'

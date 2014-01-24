@@ -21,12 +21,12 @@ h1,h2,h3,h4,h5,h6,p
  padding-top: 0px
  margin-top: $global-header-height
  z-index: 300
- background: $logo-green
  @media screen and (max-width: $break-small)
   height: auto
   padding-top: 0
   padding-bottom: 0
-  margin-top: $global-header-height + 3
+  margin-top: $global-header-height + 50
+  background: white
 
 #content-hero
  height: 600px
@@ -114,15 +114,14 @@ h1,h2,h3,h4,h5,h6,p
   display: none !important
 
 #information
- background: $logo-green
  overflow: auto
  position: relative
+ clear: both
  z-index: $top-level
  display: block
- height: 140px
+ height: 130px
  width: 100%
- box-shadow: inset 0px -30px 30px rgba(0, 0, 0, .15)
- border-bottom: 1px darken(#E6EFF2, 4%) solid
+ box-shadow: inset 0px -5px 15px rgba(0, 162, 172, .07)
  @media screen and (max-width: $break-small)
   display: none !important
 
@@ -132,8 +131,7 @@ h1,h2,h3,h4,h5,h6,p
 #information-wrapper
  width: 90%
  margin-left: 10%
- margin-top: $gutter
-
+ margin-top: 12px
 
 #information-left
  float: left
@@ -162,13 +160,13 @@ h1,h2,h3,h4,h5,h6,p
  line-height: 1.47em
  margin-right: $gutter
  position: relative
- color: white
+ color: $standard-color
  margin-bottom: $half-gutter
 
 #information-title
  font-weight: bold
  margin-top: 0px
- color: white
+ color: $logo-green
  span
   color: lighten($standard-color, 35%)
   font-weight: normal
@@ -227,11 +225,11 @@ h1,h2,h3,h4,h5,h6,p
  font-size: .7em
  margin-bottom: 0
  position: relative
- color: white
+ color: $logo-green
 
 #resume
  display: inline-block
- margin-top: $half-gutter
+ // margin-top: $half-gutter
 
 .mod-information
  padding-bottom: $gutter 
