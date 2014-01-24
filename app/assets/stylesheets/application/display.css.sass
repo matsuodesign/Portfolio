@@ -79,7 +79,7 @@ h1,h2,h3,h4,h5,h6,p
  right: 0
  top: 0px
  width: 50px
- height: 125px
+ height: 120px
  z-index: $top-level
  background: image-url('sprite/right_arrow.png') center center no-repeat
  background-size: 15px 26px
@@ -98,7 +98,7 @@ h1,h2,h3,h4,h5,h6,p
  left: 0
  top: 0
  width: 50px
- height: 125px
+ height: 120px
  overflow: hidden
  z-index: $top-level
  background: image-url('sprite/left_arrow.png') center center no-repeat
@@ -119,9 +119,10 @@ h1,h2,h3,h4,h5,h6,p
  clear: both
  z-index: $top-level
  display: block
- height: 130px
+ height: 120px
  width: 100%
- box-shadow: inset 0px -5px 15px rgba(0, 162, 172, .07)
+ background: darken($logo-green, 7%)
+ box-shadow: inset 0px 0px 80px darken($logo-green, 15%)
  @media screen and (max-width: $break-small)
   display: none !important
 
@@ -160,13 +161,13 @@ h1,h2,h3,h4,h5,h6,p
  line-height: 1.47em
  margin-right: $gutter
  position: relative
- color: $standard-color
+ color: white
  margin-bottom: $half-gutter
 
 #information-title
  font-weight: bold
  margin-top: 0px
- color: $logo-green
+ color: white
  span
   color: lighten($standard-color, 35%)
   font-weight: normal
@@ -225,7 +226,7 @@ h1,h2,h3,h4,h5,h6,p
  font-size: .7em
  margin-bottom: 0
  position: relative
- color: $logo-green
+ color: white
 
 #resume
  display: inline-block

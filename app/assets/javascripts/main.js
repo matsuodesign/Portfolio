@@ -120,8 +120,8 @@ $(function () {
 		hero_height = window_height * 0.45;
 		hero_width = hero_height * (4/3);
 		$("#content-crop").css("height", hero_height);
-		hero_element.css("height", hero_height - 3);
-		hero_element.css("width", hero_width - 3);
+		hero_element.css("height", hero_height);
+		hero_element.css("width", hero_width);
 		hero_element_scene.css("height", "120%");
 		hero_element_scene.css("width", "120%");
 		hero_element_scene.css("margin-left", "-10%");
