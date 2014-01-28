@@ -90,8 +90,8 @@ $(function () {
 
 	set_hero_height = function(){
 		var window_height = $(window).height(),
-		hero_height = window_height * 0.45;
-		hero_width = hero_height * (4/3);
+		hero_height = window_height * 0.6;
+		hero_width = hero_height * (1.618);
 		$("#content-crop").css("height", hero_height + 6);
 		hero_element.css("height", hero_height);
 		hero_element.css("width", hero_width);
