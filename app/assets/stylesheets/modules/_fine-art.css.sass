@@ -2,10 +2,6 @@
  width: $desktop-width / 2 - $half-gutter - $standard-frame * 2
  overflow: hidden
  &:hover
-  .background
-   @include browser-prefix(filter, blur(3px))
-   @media screen and (max-width: $break-small)
-    @include browser-prefix(filter, blur(0))
   .logo
    background-size: 230px * 0.8 230px * 0.8
    @include browser-prefix(transition, background-size 200ms ease-in-out)

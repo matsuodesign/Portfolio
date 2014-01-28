@@ -43,7 +43,7 @@ nav#global_header
 		box-shadow: none
 		text-indent: 60px
 		font-weight: bold
-		color: $logo-green
+		color: darken($logo-green, 5%)
 		text-align: left
 		padding: 0
 		width: 380px
@@ -52,6 +52,7 @@ nav#global_header
 		margin-right: $gutter
 		margin-top: 10px
 		margin-left: 15px
+		font-size: 25px
 		&:hover:before
 			border-bottom: 0
 	#work-downloads
@@ -65,14 +66,13 @@ nav#global_header
 			height: 60px
 			border-top: 1px #eee solid
 			border-bottom: 1px #eee solid
-			background: white
 			a
 				width: 33.33%
 				padding: 0 !important
 		a
 			display: block
 			float: left
-			color: $logo-green
+			color: darken($logo-green, 5%)
 			padding: 3px 15px 3px 15px
 			font-size: 15px
 			font-weight: bold

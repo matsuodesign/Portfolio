@@ -19,14 +19,18 @@ h1,h2,h3,h4,h5,h6,p
  position: relative
  width: 100%
  padding-top: 0px
- margin-top: $global-header-height
  z-index: 300
  @media screen and (max-width: $break-small)
   height: auto
   padding-top: 0
   padding-bottom: 0
   margin-top: $global-header-height + 50
-  background: white
+$local-color: #30686b
+#hero
+ padding: 15px 0 10px 0
+ background: $local-color
+ box-shadow: inset 0px 0px 80px darken($local-color, 10%), inset 0px -3px 3px darken($local-color, 10%), inset 0px 5px 3px darken($local-color, 10%) 
+ margin-top: $global-header-height
 
 #content-hero
  height: 600px
@@ -48,6 +52,8 @@ h1,h2,h3,h4,h5,h6,p
  height: 273px
  cursor: pointer
  position: relative
+ margin-right: 15px
+ box-shadow: 0px 3px 3px darken($local-color, 10%)
  &:after
   content: ' '
   display: block
@@ -56,7 +62,7 @@ h1,h2,h3,h4,h5,h6,p
   top: 0
   right: 0
   bottom: 0 
-  border: 1px solid rgba(37, 43, 65, .05)
+  border: 1px solid rgba(255, 255, 255, .2)
  ul
   @media screen and (max-width: $break-small)
    border: $standard-frame*2 white solid
@@ -121,8 +127,7 @@ h1,h2,h3,h4,h5,h6,p
  display: block
  height: 120px
  width: 100%
- background: darken($logo-green, 7%)
- box-shadow: inset 0px 0px 80px darken($logo-green, 15%)
+ text-shadow: 0px 1px darken($logo-green, 25%)
  @media screen and (max-width: $break-small)
   display: none !important
 

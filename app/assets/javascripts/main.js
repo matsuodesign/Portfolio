@@ -21,12 +21,7 @@ $(function () {
 	content_hero = $("#content-hero"),
 	headers = $(".mod-title"),
 	main_content = $("#main"),
-	header_height = $("#global_header").height(),
-	lminspired = $('#lminspired-scene').parallax(),
-	ask = $('#ask-scene').parallax(),
-	lapsity = $('#lapsity-scene').parallax();
-	intervention = $('#intervention-scene').parallax();
-	fine_art = $('#fine-art-scene').parallax();
+	header_height = $("#global_header").height()
 
 	var check_margins = function(){
 		var left_edge = information.position().left;
@@ -53,30 +48,8 @@ $(function () {
 		}
 	},
 
-	activate_parallax = function(){
-		if(responsive_mode != "mobile"){
-			ask.parallax('enable');
-			lminspired.parallax('enable');
-			lapsity.parallax('enable');
-			intervention.parallax('enable');
-			fine_art.parallax('enable');
-			parallax_active = true;
-		}
-	},
-
-	disable_parallax = function(){
-		if(responsive_mode == "mobile"){
-			ask.parallax('disable');
-			lminspired.parallax('disable');
-			lapsity.parallax('disable');
-			intervention.parallax('disable');
-			fine_art.parallax('disable');
-			parallax_active = false;
-		}
-	},
-
 	size_carousel_track = function(){
-		var track_width = hero_track.children().length * (hero_track.children().first().width()+1);
+		var track_width = hero_track.children().length * (hero_track.children().first().width()+20);
 		hero_track.css("width", track_width + 10);
 	},
 
@@ -119,7 +92,7 @@ $(function () {
 		var window_height = $(window).height(),
 		hero_height = window_height * 0.45;
 		hero_width = hero_height * (4/3);
-		$("#content-crop").css("height", hero_height);
+		$("#content-crop").css("height", hero_height + 6);
 		hero_element.css("height", hero_height);
 		hero_element.css("width", hero_width);
 		hero_element_scene.css("height", "120%");
@@ -263,8 +236,6 @@ $(function () {
 			check_mobile_init();
 			deturmine_carousel_navigation();
 			deturmine_responsive();
-			activate_parallax();
-			disable_parallax();
 			init_flowtype();
 			set_timers();
 			update_infobox($(".hero-element").first());
