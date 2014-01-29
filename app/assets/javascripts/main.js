@@ -23,8 +23,8 @@ $(function () {
 	main_content = $("#main"),
 	header_height = $("#global_header").height(),
 	number_of_rows = 1,
-	hero_viewport_size = .5,
-	hero_element_width_ratio = 1.2;
+	hero_viewport_size = .49,
+	hero_element_width_ratio = 1.85;
 
 	var check_margins = function(current_target){
 		var left_edge = current_target.position().left;

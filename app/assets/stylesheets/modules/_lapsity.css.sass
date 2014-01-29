@@ -2,6 +2,10 @@
  width: $desktop-width / 2 - $half-gutter - $standard-frame * 2
  overflow: hidden
  &:hover
+  .background
+   background-size: 105%
+   background-position: center 2.5%
+   @include browser-prefix(transition, all 100ms ease-in-out)
   .logo
    background-size: 469px * 0.8 185px * 0.8
    @include browser-prefix(transition, background-size 200ms ease-in-out)
@@ -11,9 +15,11 @@
  .background
   position: relative
   background: image-url("static/lapsity/background.png") top center
-  background-size: cover
+  background-size: 100%
   width: 100%
   height: 100%
+  @include browser-prefix(transition, all 100ms ease-in-out)
+
  .logo
   position: absolute
   background: image-url("static/lapsity/lapsity-logo.png") center center no-repeat
