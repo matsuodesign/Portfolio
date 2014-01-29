@@ -4,16 +4,12 @@
  &:hover
   .logo
    background-size: 250px 50px
-   background-position: 140px 110px
+   background-position: 130px 80px
    @include browser-prefix(transition, all 200ms ease-in-out)
    @media screen and (max-width: $break-small)
     background-size: 250px * 0.8 50px * 0.8
     background-position: 160px 110px
  ul
-  width: 120%
-  height: 120%
-  margin-left: -10%
-  margin-top: -10%
  .background
   position: relative
   background: image-url("static/intervention/background.jpg") top center
@@ -24,19 +20,19 @@
   position: absolute
   background: image-url("static/intervention/intervention-logo.png") no-repeat
   background-size: 250px * 0.8 50px * 0.8
-  background-position: 160px 110px
+  background-position: 150px 80px
   display: block
   @include browser-prefix(transition, all 200ms ease-in-out)
 
 #intervention-design
  width: 40%
  border-radius: 2px 0px 0px 2px
- margin: 0 1% 0 0
+ margin: 0
  padding: 0
 #intervention-production
- width: 38%
+ width: 40%
  border-radius: 0px
- margin: 0 1% 0 0
+ margin: 0
  padding: 0
 
 #intervention-marketing

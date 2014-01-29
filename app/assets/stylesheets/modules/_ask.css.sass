@@ -9,10 +9,8 @@
    @media screen and (max-width: $break-small)
     background-size: 250px * 0.6 188px * 0.6
  ul
-  width: 120%
-  height: 120%
-  margin-left: -10%
-  margin-top: -10%
+  width: 100%
+  height: 100%
   -moz-pointer-events: none
   pointer-events: none
  .background
@@ -22,30 +20,31 @@
   width: 100%
   height: 100%
  .logo
-  position: absolute
   background: image-url("static/ask/ask_logo.png") center center no-repeat
   background-size: 250px * 0.6 188px * 0.6
   display: block
+  width: 100%
+  height: 100%
+  position: absolute
   -webkit-pointer-events: none
   @include browser-prefix(transition, background-size 200ms ease-in-out)
 
 #ask-development-tag
- width: 49%
+ width: 50%
  border-radius: 2px 0px 0px 2px
- margin: 0 1% 0 0
+ margin: 0
  margin-top: 0
  padding: 0
 
 #ask-design-tag
- width: 24%
+ width: 25%
  border-radius: 0
- margin-right: 0 1% 0 0
- margin-top: 0
+ margin: 00
  padding: 0 
 
 #ask-research-tag
  width: 25%
  border-radius: 0px 2px 2px 0px
- margin: 0
+ margin: 0 0 0 0
  margin-top: 0
  padding: 0 

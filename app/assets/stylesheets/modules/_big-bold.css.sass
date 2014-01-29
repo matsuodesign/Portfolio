@@ -1,9 +1,9 @@
-#mod-lminspired
+#mod-big-bold
  width: $desktop-width / 2 - $half-gutter - $standard-frame * 2
  overflow: hidden
  &:hover
   .logo
-   background-size: 205px * 0.8 205px * 0.8
+   background-size: 300px auto
    @include browser-prefix(transition, background-size 200ms ease-in-out)
    @media screen and (max-width: $break-small)
     background-size: 170px * 0.8 170px * 0.8
@@ -11,26 +11,20 @@
  ul
  .background
   position: relative
-  background: image-url("static/lminspired/background.jpg") top center
+  background: white image-url("static/big-bold/background.png") top center
   background-size: cover
   width: 100%
   height: 100%
  .logo
   position: absolute
-  background: image-url("static/lminspired/lm-logo.png") center center no-repeat
-  background-size: 170px * 0.8 170px * 0.8
+  background: image-url("static/big-bold/bl-logo.jpg") center center no-repeat
+  background-size: 250px auto
   display: block
   @include browser-prefix(transition, background-size 200ms ease-in-out)
 
 
-#lminspired-development
- width: 50%
+#big-bold-development
+ width: 100%
  border-radius: 2px 0px 0px 2px
- margin: 0
- padding: 0
- 
-#lminspired-design
- width: 50%
- border-radius: 0px 2px 2px 0px
- margin: 0
+ margin: 0 0 0 0
  padding: 0

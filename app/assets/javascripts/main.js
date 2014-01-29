@@ -21,11 +21,14 @@ $(function () {
 	content_hero = $("#content-hero"),
 	headers = $(".mod-title"),
 	main_content = $("#main"),
-	header_height = $("#global_header").height()
+	header_height = $("#global_header").height(),
+	number_of_rows = 1,
+	hero_viewport_size = .5,
+	hero_element_width_ratio = 1.2;
 
-	var check_margins = function(){
-		var left_edge = information.position().left;
-		var right_edge = left_edge + information.width();
+	var check_margins = function(current_target){
+		var left_edge = current_target.position().left;
+		var right_edge = left_edge + current_target.width();
 		var browser_right = $(window).width();
 		var difference_right = right_edge - browser_right;
 		var extra_right = 0;
@@ -46,11 +49,6 @@ $(function () {
 		if(left_edge < 0){
 			content_hero.animate({scrollLeft: content_hero.scrollLeft() + left_edge - extra_left}, 400);
 		}
-	},
-
-	size_carousel_track = function(){
-		var track_width = hero_track.children().length * (hero_track.children().first().width()+20);
-		hero_track.css("width", track_width + 10);
 	},
 
 	deturmine_carousel_navigation = function(){
@@ -88,17 +86,18 @@ $(function () {
 		}
 	},
 
+	size_carousel_track = function(){
+		var track_width = Math.ceil(hero_track.children().length / number_of_rows)  * (hero_track.children().first().width());
+		hero_track.css("width", track_width);
+	},
+
 	set_hero_height = function(){
 		var window_height = $(window).height(),
-		hero_height = window_height * 0.6;
-		hero_width = hero_height * (1.618);
-		$("#content-crop").css("height", hero_height + 6);
+		hero_height = ((window_height * hero_viewport_size) - $("#information").height() - 29) / number_of_rows;
+		hero_width = hero_height * hero_element_width_ratio;
+		$("#content-crop").css("height", hero_height * number_of_rows);
 		hero_element.css("height", hero_height);
 		hero_element.css("width", hero_width);
-		hero_element_scene.css("height", "120%");
-		hero_element_scene.css("width", "120%");
-		hero_element_scene.css("margin-left", "-10%");
-		hero_element_scene.css("margin-top", "-10%");
 		size_carousel_track();
 	},
 
@@ -143,7 +142,7 @@ $(function () {
 	    	}
 	    	
 	    }, 50);
-		}, 2000);
+		}, 1000);
 	},
 	clear_timers = function(){
 		scrolling = false;
@@ -243,6 +242,8 @@ $(function () {
 			hero_element.mouseenter(function(){
 				selected_hero = $(this);
 				clear_timers();
+				check_margins(selected_hero);
+
 				if(responsive_mode != "mobile"){
 					clearTimeout(debounce_background);
 					debounce_background = setTimeout(function() {
@@ -298,24 +299,15 @@ $(window).resize(function(){
 		deturmine_carousel_navigation();
 		switch(responsive_mode){
 			case "mobile":
-			if(parallax_active){
-				disable_parallax();
-				reset_backgrounds();
-				$(window).scrollTop(0);
-			}
+
 			init_flowtype();
 			break;
 			case "tablet":
-			if(!parallax_active){
-				activate_parallax();
-				$(window).scrollTop(0);
-			}
+
 			init_flowtype();
 			break;
 			case "desktop":
-			if(!parallax_active){
-				activate_parallax();
-			}
+
 			init_flowtype();
 			break;
 			default: break;

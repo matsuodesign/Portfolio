@@ -15,25 +15,29 @@ h1,h2,h3,h4,h5,h6,p
 
 #content-crop
  overflow: hidden
- height: 276px
  position: relative
  width: 100%
  padding-top: 0px
  z-index: 300
+ box-shadow: 0px 3px 10px rgba(0, 162, 172, .40), 0px 1px 7px 3px rgba(0, 0, 0, .5)
+
  @media screen and (max-width: $break-small)
   height: auto
   padding-top: 0
   padding-bottom: 0
   margin-top: $global-header-height + 50
-$local-color: #30686b
+
+.logo
+ width: 100%
+ height: 100%
+ position: absolute
+ top: 0
+ left: 0
+
 #hero
  padding: 0px 0 10px 0
- background: $local-color
- box-shadow: inset 0px 0px 80px darken($local-color, 10%), inset 0px -3px 3px darken($local-color, 10%), inset 0px 5px 3px darken($local-color, 10%) 
- // margin-top: $global-header-height
 
 #content-hero
- height: 600px
  overflow: auto
  width: 100%
  z-index: 300
@@ -53,7 +57,7 @@ $local-color: #30686b
  cursor: pointer
  position: relative
  margin-right: 0px
- box-shadow: 0px 3px 3px darken($local-color, 10%)
+ box-shadow: 0px 3px 3px darken(white, 10%)
  &:after
   content: ' '
   display: block
@@ -62,8 +66,11 @@ $local-color: #30686b
   top: 0
   right: 0
   bottom: 0 
-  border: 1px solid rgba(255, 255, 255, .1)
+  border: 1px solid rgba(255, 255, 255, 0)
  ul
+  display: block
+  width: 100%
+  height: 100%
   @media screen and (max-width: $break-small)
    border: $standard-frame*2 white solid
    margin-top: 45px !important
@@ -85,7 +92,7 @@ $local-color: #30686b
  right: 0
  top: 0px
  width: 50px
- height: 120px
+ height: 100%
  z-index: $top-level
  background: image-url('sprite/right_arrow.png') center center no-repeat
  background-size: 15px 26px
@@ -104,7 +111,7 @@ $local-color: #30686b
  left: 0
  top: 0
  width: 50px
- height: 120px
+ height: 100%
  overflow: hidden
  z-index: $top-level
  background: image-url('sprite/left_arrow.png') center center no-repeat
@@ -123,29 +130,30 @@ $local-color: #30686b
  overflow: auto
  position: relative
  clear: both
- z-index: $top-level
+ z-index: 0
  display: block
- height: 120px
+ height: $information-graph-height
  width: 100%
- text-shadow: 0px 1px darken($logo-green, 25%)
+ color: darken($logo-green, 5%)
+ text-shadow: 0px 1px white
+ box-shadow: inset 0px -3px 100px rgba(0, 162, 172, .20)
+ border-bottom: 1px white solid
  @media screen and (max-width: $break-small)
   display: none !important
 
 #information .mod-title
  font-weight: bold
 
-#information-wrapper
- width: 90%
- margin-left: 10%
- margin-top: 12px
 
 #information-left
  float: left
  width: 55%
 
-#information-right
+#information-graph
  float: left
- width: 38.2%
+ width: 100%
+ height: 100%
+ overflow: hidden
 
 .mod-information
  display: none
@@ -166,13 +174,11 @@ $local-color: #30686b
  line-height: 1.47em
  margin-right: $gutter
  position: relative
- color: white
  margin-bottom: $half-gutter
 
 #information-title
  font-weight: bold
  margin-top: 0px
- color: white
  span
   color: lighten($standard-color, 35%)
   font-weight: normal
@@ -192,6 +198,7 @@ $local-color: #30686b
  margin-top: 0px
  display: block
  width: 100%
+ height: 100%
  position: relative
  padding-right: $gutter
  @media screen and (max-width: $break-small)
@@ -200,8 +207,7 @@ $local-color: #30686b
   padding: $half-gutter $gutter 0 $gutter
  span
   display: block
-  height: 2em
-  line-height: 2em
+  height: 100%
   text-align: center
   float: left
   font-weight: bold
@@ -222,16 +228,15 @@ $local-color: #30686b
     content: "#"
 
 #information-tags span
- height: 50px
- line-height: 50px
- box-shadow: none
+ font-size: 18px
+ line-height: $information-graph-height
 
 #information-skills
  margin-top: 10px
  font-size: .7em
  margin-bottom: 0
- position: relative
- color: white
+ position: absolute
+ top: 0
 
 #resume
  display: inline-block
