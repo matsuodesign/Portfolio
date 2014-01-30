@@ -24,7 +24,7 @@ $(function () {
 	header_height = $("#global_header").height(),
 	number_of_rows = 1,
 	hero_viewport_size = .49,
-	hero_element_width_ratio = 1.85;
+	hero_element_width_ratio = 1.618;
 
 	var check_margins = function(current_target){
 		var left_edge = current_target.position().left;
@@ -78,7 +78,7 @@ $(function () {
 	set_hero_height = function(){
 		var window_height = $(window).height(),
 		hero_height = ((window_height * hero_viewport_size) - $("#information").height() - 29) / number_of_rows;
-		hero_width = $(window).width() //hero_height * hero_element_width_ratio;
+		hero_width = $(window).width();//hero_height * hero_element_width_ratio;
 		$("#content-crop").css("height", hero_height * number_of_rows);
 		hero_element.css("height", hero_height);
 		hero_element.css("width", hero_width);
