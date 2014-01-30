@@ -5,9 +5,9 @@
   .background
    background-size: 105%
    background-position: center 2.5%
-   @include browser-prefix(transition, all 100ms ease-in-out)
+   @include browser-prefix(transition, all 300ms ease-in-out)
   .logo
-   background-size: 205px * 0.8 205px * 0.8
+   background-size: 160px auto
    @include browser-prefix(transition, background-size 200ms ease-in-out)
    @media screen and (max-width: $break-small)
     background-size: 170px * 0.8 170px * 0.8
@@ -19,12 +19,12 @@
   background-size: 100%
   width: 100%
   height: 100%
-  @include browser-prefix(transition, all 100ms ease-in-out)
+  @include browser-prefix(transition, all 300ms ease-in-out)
 
  .logo
   position: absolute
   background: image-url("static/lminspired/lm-logo.png") center center no-repeat
-  background-size: 170px * 0.8 170px * 0.8
+  background-size: 180px auto
   display: block
   @include browser-prefix(transition, background-size 200ms ease-in-out)
 

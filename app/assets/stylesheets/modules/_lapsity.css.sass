@@ -5,9 +5,9 @@
   .background
    background-size: 105%
    background-position: center 2.5%
-   @include browser-prefix(transition, all 100ms ease-in-out)
+   @include browser-prefix(transition, all 300ms ease-in-out)
   .logo
-   background-size: 469px * 0.8 185px * 0.8
+   background-size: 378px auto
    @include browser-prefix(transition, background-size 200ms ease-in-out)
    @media screen and (max-width: $break-small)
     background-size: 469px * 0.6 185px * 0.6
@@ -18,12 +18,12 @@
   background-size: 100%
   width: 100%
   height: 100%
-  @include browser-prefix(transition, all 100ms ease-in-out)
+  @include browser-prefix(transition, all 300ms ease-in-out)
 
  .logo
   position: absolute
   background: image-url("static/lapsity/lapsity-logo.png") center center no-repeat
-  background-size: 469px * 0.6 185px * 0.6
+  background-size: 435px auto
   display: block
   @include browser-prefix(transition, background-size 200ms ease-in-out)
 

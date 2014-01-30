@@ -58,6 +58,7 @@ h1,h2,h3,h4,h5,h6,p
  cursor: pointer
  position: relative
  margin-right: 0px
+ // This could be a solution for the selected state
  // &:hover:after
  //  content: ' '
  //  display: block
@@ -87,40 +88,24 @@ h1,h2,h3,h4,h5,h6,p
  overflow: hidden
 
 #hero-right
- position: absolute
- display: none
- right: 0
- top: 0px
- width: 50px
- height: 100%
- z-index: $top-level
- background: image-url('sprite/right_arrow.png') center center no-repeat
- background-size: 15px 26px
- cursor: pointer
+ right: $carousel-navigation-offset
+ background: white image-url('sprite/right_arrow.png') center center no-repeat
+ border-radius: $carousel-navigation-radius 0px 0px $carousel-navigation-radius
  &:hover
-  background: image-url('sprite/right_arrow_active.png') center center no-repeat
-  background-size: 15px 26px
+  background: white image-url('sprite/right_arrow_active.png') center center no-repeat
+  background-size: 15px 26px  
  @media screen and (max-width: $break-mid)
   width: 35px
  @media screen and (max-width: $break-small)
   display: none !important
 
 #hero-left
- display: none
- position: absolute
- left: 0
- top: 0
- width: 50px
- height: 100%
- overflow: hidden
- z-index: $top-level
- background: image-url('sprite/left_arrow.png') center center no-repeat
- background-size: 15px 26px
- cursor: pointer
- border-radius: 2px
+ left: $carousel-navigation-offset
+ background: white image-url('sprite/left_arrow.png') center center no-repeat
+ border-radius: 0px $carousel-navigation-radius $carousel-navigation-radius 0px
  &:hover
-  background: image-url('sprite/left_arrow_active.png') center center no-repeat
-  background-size: 15px 26px
+  background: white image-url('sprite/left_arrow_active.png') center center no-repeat
+  background-size: 15px 26px  
  @media screen and (max-width: $break-mid)
   width: 35px
  @media screen and (max-width: $break-small)
@@ -128,7 +113,16 @@ h1,h2,h3,h4,h5,h6,p
 
 
 #hero-left, #hero-right
- display: none !important
+ display: none
+ position: absolute
+ overflow: hidden
+ z-index: $top-level
+ width: 50px
+ height: 100px
+ top: 40%
+ cursor: pointer
+ background-size: 15px 26px  
+ box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
 
 #information
  overflow: auto
@@ -235,6 +229,7 @@ h1,h2,h3,h4,h5,h6,p
  span
   font-size: 18px
   line-height: $information-graph-height
+  text-shadow: 0px -1px rgba(0, 0, 0, .1)
 
 #information-skills
  margin-top: 10px
@@ -285,7 +280,6 @@ h1,h2,h3,h4,h5,h6,p
  
 .mod-title.fixed.absolute
  position: absolute
-
 
 .mod-description
  padding: $gutter $gutter 0 $gutter

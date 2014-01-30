@@ -35,23 +35,25 @@ $(function () {
 		var extra_left = 0;
 
 		if(hero_right.is(":visible")){
-			extra_right = hero_right.width() + 3;
+			// This can be used to add offset to the auto scroll of hero items on hover.
+			extra_right = 0 //hero_right.width() + 3;
 		}
 
 		if(hero_left.is(":visible")){
-			extra_left = hero_left.width() + 3;
+			// This can be used to add offset to the auto scroll of hero items on hover.
+			extra_left = 0 //hero_left.width() + 3;
 		}
 
 		if(right_edge > browser_right){
-			content_hero.animate({scrollLeft: content_hero.scrollLeft() + difference_right + extra_right}, 400);
+			content_hero.stop().animate({scrollLeft: content_hero.scrollLeft() + difference_right + extra_right}, 400);
 		}
 
 		if(left_edge < 0){
-			content_hero.animate({scrollLeft: content_hero.scrollLeft() + left_edge - extra_left}, 400);
+			content_hero.stop().animate({scrollLeft: content_hero.scrollLeft() + left_edge - extra_left}, 400);
 		}
 	},
 
-	deturmine_carousel_navigation = function(){
+	show_carousel_navigation = function(){
 		var current_hero_scroll_position = content_hero.scrollLeft();
 		var hero_track_scroll_max = $("#hero-track").width() - $(window).width() - 50;
 
@@ -67,6 +69,10 @@ $(function () {
 			hero_right.fadeOut();
 			scroll_direction = "right";
 		}
+	},
+	hide_carousel_navigation = function(){
+		hero_left.fadeOut();
+		hero_right.fadeOut();
 	},
 
 	update_infobox = function(selected_hero){
@@ -233,7 +239,6 @@ $(function () {
 		"ready": function(){
 			size_carousel_track();
 			check_mobile_init();
-			deturmine_carousel_navigation();
 			deturmine_responsive();
 			init_flowtype();
 			set_timers();
@@ -243,26 +248,27 @@ $(function () {
 				selected_hero = $(this);
 				clear_timers();
 				check_margins(selected_hero);
+				show_carousel_navigation();
 
 				if(responsive_mode != "mobile"){
 					clearTimeout(debounce_background);
 					debounce_background = setTimeout(function() {
 						update_infobox(selected_hero);
-						check_margins();
+						check_margins(selected_hero);
 					}, 50);
 				}
 			});
 
 			content_hero.scroll(function(){
-	
 				clearTimeout(debounce_hero_scroll);
 				debounce_hero_scroll = setTimeout(function() {
-					deturmine_carousel_navigation();
+					show_carousel_navigation();
 				}, 50);
 			});
 
 			$("#content-crop").mouseleave(function(){
 				set_timers();  
+				hide_carousel_navigation();
 			});
 
 			hero_left.on({ 
@@ -296,7 +302,7 @@ $(window).resize(function(){
 
 	clearTimeout(debounce_responsive_behaviors);
 	debounce_responsive_behaviors = setTimeout(function() {
-		deturmine_carousel_navigation();
+		show_carousel_navigation();
 		switch(responsive_mode){
 			case "mobile":
 
