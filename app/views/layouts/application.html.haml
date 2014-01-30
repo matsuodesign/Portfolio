@@ -10,14 +10,21 @@
       =render 'modules/global-header'
     #hero
       #content-crop
+        #hero-right &nbsp;
+        #hero-left &nbsp;
         #content-hero
-          #hero-right &nbsp;
-          #hero-left &nbsp;
           #hero-track
             =yield :content_hero
-      #information
-        #information-graph
-          %p#information-tags
+      #information-graph
+        %p#information-tags
+      #information-data
+        #information-description
+        #information-icons
+          #icon-wrapper
+            %span#desktop-icon &nbsp;
+            %span#tablet-icon &nbsp;
+            %span#mobile-icon &nbsp;
+
     #main
       =yield :content_main
       =javascript_include_tag 'application'

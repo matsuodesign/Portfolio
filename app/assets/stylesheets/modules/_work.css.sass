@@ -3,6 +3,7 @@
  padding-bottom: $gutter * 4
  position: relative
  display: inline-block
+ width: 100%
  @include box-style
  background-image: url(data:image/svg+xmlbase64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyYWRpYWxHcmFkaWVudCBpZD0iZyI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRjVGQUZDIi8+PC9yYWRpYWxHcmFkaWVudD48cmVjdCB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGNUZBRkMiIC8+PHJlY3QgeD0iLTIxLjQ5MzclIiB5PSItMTM5LjkwNTclIiB3aWR0aD0iMTQyLjk4NzMlIiBoZWlnaHQ9IjI3OS44MTE0JSIgZmlsbD0idXJsKCNnKSIgLz48L3N2Zz4=)
  background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 162, color-stop(15%, #ffffff), color-stop(100%, darken(#F5FAFC, 2%)))
@@ -17,10 +18,11 @@
   padding-top: 40px
 
  .work-experience
+  max-width: 980px
   padding-bottom: $half-gutter
   width: 80%
-  display: inline-block
-  margin-left: 10%
+  margin: 0 auto
+  overflow: auto
   @media screen and (max-width: $break-mid)
    margin-bottom: $gutter * 2
    padding-bottom: $gutter * 2

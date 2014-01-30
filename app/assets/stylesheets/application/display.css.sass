@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6,p
  left: 0
 
 #hero
- padding: 0px 0 150px 0
+ padding: 0px 0 0 0
  margin-top: $global-header-height
 
 #content-hero
@@ -90,7 +90,7 @@ h1,h2,h3,h4,h5,h6,p
 #hero-right
  right: $carousel-navigation-offset
  background: white image-url('sprite/right_arrow.png') center center no-repeat
- border-radius: $carousel-navigation-radius 0px 0px $carousel-navigation-radius
+ border-radius: $carousel-navigation-radius-inside $carousel-navigation-radius-outside $carousel-navigation-radius-outside $carousel-navigation-radius-inside
  &:hover
   background: white image-url('sprite/right_arrow_active.png') center center no-repeat
   background-size: 15px 26px  
@@ -102,7 +102,7 @@ h1,h2,h3,h4,h5,h6,p
 #hero-left
  left: $carousel-navigation-offset
  background: white image-url('sprite/left_arrow.png') center center no-repeat
- border-radius: 0px $carousel-navigation-radius $carousel-navigation-radius 0px
+ border-radius: $carousel-navigation-radius-outside $carousel-navigation-radius-inside $carousel-navigation-radius-inside $carousel-navigation-radius-outside
  &:hover
   background: white image-url('sprite/left_arrow_active.png') center center no-repeat
   background-size: 15px 26px  
@@ -119,7 +119,7 @@ h1,h2,h3,h4,h5,h6,p
  z-index: $top-level
  width: 50px
  height: 100px
- top: 40%
+ top: 39%
  cursor: pointer
  background-size: 15px 26px  
  box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
@@ -146,6 +146,19 @@ h1,h2,h3,h4,h5,h6,p
  float: left
  width: 55%
 
+#information-title
+ width: 100%
+ float: left
+ background-color: #666666
+ color: white
+ text-align: center
+ line-height: 45px !important
+ height: 45px
+ font-size: 23px !important
+ vertical-align: middle
+ text-shadow: none
+ box-shadow: 3px 0px 3px rgba(0, 0, 0, .2)
+
 #information-graph
  float: left
  width: 100%
@@ -166,12 +179,30 @@ h1,h2,h3,h4,h5,h6,p
  font-size: 20px
  font-weight: bold
 
+#information-data
+ max-width: 700px
+ min-width: 650px
+ width: 40%
+ margin: 0 auto
+ clear: both
+ overflow: auto
+ padding: $gutter*1.5 0 $gutter*1.5 0
+
+#information-icons
+ width: 50%
+ min-height: 50px
+ float: left
+ text-align: center
+
 #information-description
- font-size: 0.70em
+ font-size: 17px
  line-height: 1.47em
- margin-right: $gutter
  position: relative
  margin-bottom: $half-gutter
+ width: 50%
+ float: left
+ color: #999
+ text-shadow: 0px 1px white
 
 #information-title
  font-weight: bold
@@ -230,6 +261,7 @@ h1,h2,h3,h4,h5,h6,p
   font-size: 18px
   line-height: $information-graph-height
   text-shadow: 0px -1px rgba(0, 0, 0, .1)
+  border-bottom: 0
 
 #information-skills
  margin-top: 10px
@@ -248,7 +280,7 @@ h1,h2,h3,h4,h5,h6,p
 .mod-title 
  position: absolute
  top: -$standard-frame
- left: 8%
+ left: 3%
  color: #555
  text-shadow: 0px 1px white
  padding: $half-gutter $gutter $half-gutter $gutter
@@ -261,7 +293,7 @@ h1,h2,h3,h4,h5,h6,p
  border-right: 1px white solid
  border-left: 1px white solid
  border-radius: 0px 0px 7px 7px
- box-shadow: 0px -5px 5px rgba(0, 0, 0, .06)
+ box-shadow: 0px -1px 3px rgba(0, 0, 0, .06)
  @media screen and (max-width: $break-small)
   width: 100%
   padding: 0
@@ -274,6 +306,42 @@ h1,h2,h3,h4,h5,h6,p
   text-indent: $gutter
   border-radius: 0
   box-shadow: 0px 3px 3px rgba(37, 43, 65, .1)
+
+#icon-wrapper
+ display: inline-block
+
+#desktop-icon
+ float: left
+ width: 125px
+ height: 94px
+ background: url('sprite/desktop-icon.png') center center no-repeat
+ background-size: 100%
+ display: block
+ margin: 15px
+ margin-top: 0
+ margin-bottom: 0
+
+#tablet-icon
+ float: left
+ width: 60px
+ height: 78px
+ background: url('sprite/tablet-icon.png') center center no-repeat
+ background-size: 100%
+ display: block
+ margin: 15px
+ margin-top: 10px
+ margin-bottom: 0
+
+#mobile-icon
+ float: left
+ width: 36px
+ height: 66px
+ background: url('sprite/mobile-icon.png') center center no-repeat
+ background-size: 100%
+ display: block
+ margin: 15px
+ margin-top: 20px
+ margin-bottom: 0
 
 .mod-title.fixed
  position: fixed
