@@ -205,13 +205,13 @@ $(function () {
 
 			hero_element.mouseenter(function(){
 				selected_hero = $(this);
-				check_margins(selected_hero);
+				// check_margins(selected_hero);
 
 				if(responsive_mode != "mobile"){
 					clearTimeout(debounce_background);
 					debounce_background = setTimeout(function() {
 						update_infobox(selected_hero);
-						check_margins(selected_hero);
+						// check_margins(selected_hero);
 					}, 50);
 				}
 			});
