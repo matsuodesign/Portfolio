@@ -10,8 +10,10 @@ $(function () {
     debounce_responsive_behaviors,
     selected_hero,
     responsive_mode,
+    swipe = false,
     previous_scroll_position,
     current_scroll_position,
+    debounce_swipe,
     window_width = $(window).width,
     hero_left = $("#hero-left"),
     hero_right = $("#hero-right"),
@@ -25,7 +27,7 @@ $(function () {
     // hero_element_width_ratio = 1.618,
 
     update_window_width = function() {
-      window_width = $(window).width;
+      window_width = $(window).width();
     },
 
     update_infobox = function(selected_hero) {
@@ -95,7 +97,7 @@ $(function () {
           elements.push("false");
         }
       });
-      console.log(elements);
+      // console.log(elements);
     },
 
     init_flowtype = function() {
@@ -184,38 +186,40 @@ $(function () {
         }
       });
 
-      content_hero.scroll(function() {
-        clearTimeout(debounce_hero_scroll);
-        current_scroll_position = content_hero.scrollLeft();
-
-        debounce_hero_scroll = setTimeout(function() {
-          if(!content_hero.is(':animated')){
-            if (current_scroll_position > previous_scroll_position) {
-              console.log("right");
-              hero_element.each(function(index) {
-                if ($(this).position().left >= 0) {
-                  console.log(index);
-                  var difference = $(this).position().left;
-                  content_hero.animate({scrollLeft: content_hero.scrollLeft() + difference}, 200);
-                  return false;
-                }
-              });
-            } else {
-              console.log("left");
-              hero_element.each(function(index) {
-                console.log(index);
-                console.log($(this).position().left + $(window).width());
-                if (($(this).position().left + $(window).width()) > 0) {
-                  console.log(index);
-                  var difference = $(this).position().left;
-                  content_hero.animate({scrollLeft: content_hero.scrollLeft() + difference}, 200);
-                  return false;
-                }
-              });
-            }
+      content_hero.bind( 'mousewheel', function ( e ) {
+        if(swipe == false){          
+          update_window_width();
+          if (e.originalEvent.wheelDeltaX < 0) {
+            // scroll down
+            console.log("right");
+            swipe = true;
+            content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 400, function(){
+              clearTimeout(debounce_swipe);
+              debounce_swipe = setTimeout(function() {
+                console.log("ready");
+                swipe = false;
+              }, 800);
+            });
+          } else {
+            // scroll up
+            console.log("left");
+            swipe = true;
+            content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 400, function(){
+              clearTimeout(debounce_swipe);
+              debounce_swipe = setTimeout(function() {
+                console.log("ready");
+                swipe = false;
+              }, 800);
+            });
           }
-          previous_scroll_position = current_scroll_position;
-        }, 50);
+        }
+        return false
+      });
+      // });
+
+      content_hero.click(function(){
+        // alert((content_hero.scrollLeft() + window_width));
+        content_hero.animate({scrollLeft: 20}, 200);
       });
 
       hero_left.on({
