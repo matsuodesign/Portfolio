@@ -92,6 +92,8 @@ $(function () {
 
     reset_mobile = function() {
       content_hero.css("margin-top", "0");
+      $("#work-downloads").css("position", "absolute");  
+
     },
 
     check_current_header = function() {
@@ -260,9 +262,9 @@ $(function () {
   $(window).resize(function() {
     check_mobile_init();
     content_hero.scrollLeft(window_width * current_slide);
-
     clearTimeout(debounce_responsive_behaviors);
     debounce_responsive_behaviors = setTimeout(function() {
+      deturmine_responsive();
       switch (responsive_mode) {
       case "mobile":
         init_flowtype();
@@ -274,6 +276,7 @@ $(function () {
         break;
       case "desktop":
         init_flowtype();
+        reset_mobile();
         break;
       default:
         break;
