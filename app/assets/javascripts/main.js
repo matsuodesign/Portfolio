@@ -6,13 +6,11 @@ $(function () {
   'use strict';
   var hero_track = $("#hero-track"),
     debounce_background,
-    debounce_hero_scroll,
     debounce_responsive_behaviors,
     selected_hero,
     responsive_mode,
+    current_slide,
     swipe = false,
-    previous_scroll_position,
-    current_scroll_position,
     debounce_swipe,
     window_width = $(window).width,
     hero_left = $("#hero-left"),
@@ -171,7 +169,6 @@ $(function () {
       deturmine_responsive();
       init_flowtype();
       update_infobox($(".hero-element").first());
-      previous_scroll_position = content_hero.scrollLeft();
 
 
       hero_element.mouseenter(function() {
@@ -186,41 +183,30 @@ $(function () {
         }
       });
 
-      content_hero.bind( 'mousewheel', function ( e ) {
-        if(swipe == false){          
+      content_hero.on('mousewheel', function(event) {
+        if (swipe === false) {
           update_window_width();
-          if (e.originalEvent.wheelDeltaX < 0) {
-            // scroll down
-            console.log("right");
+          if (event.deltaX > 0) {
             swipe = true;
-            content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 400, function(){
+            content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 600, function() {
               clearTimeout(debounce_swipe);
               debounce_swipe = setTimeout(function() {
-                console.log("ready");
                 swipe = false;
-              }, 800);
+              }, 300);
             });
           } else {
-            // scroll up
-            console.log("left");
             swipe = true;
-            content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 400, function(){
+            content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 600, function() {
               clearTimeout(debounce_swipe);
               debounce_swipe = setTimeout(function() {
-                console.log("ready");
                 swipe = false;
               }, 800);
             });
           }
         }
-        return false
+        return false;
       });
       // });
-
-      content_hero.click(function(){
-        // alert((content_hero.scrollLeft() + window_width));
-        content_hero.animate({scrollLeft: 20}, 200);
-      });
 
       hero_left.on({
         "click": function() {
