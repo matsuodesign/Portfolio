@@ -20,6 +20,7 @@ $(function () {
     content_hero = $("#content-hero"),
     headers = $(".mod-title"),
     header_height = $("#global_header").height(),
+    downloads_height = $("#work-downloads").height(),
     number_of_rows = 1,
     hero_viewport_size = 0.49,
     // hero_element_width_ratio = 1.618,
@@ -59,6 +60,9 @@ $(function () {
       $("#content-crop").css("height", hero_height * number_of_rows);
       hero_element.css("height", hero_height);
       hero_element.css("width", hero_width);
+      hero_element_scene.css("width", "100%");
+      hero_element_scene.css("height", "100%");
+      hero_element_scene.css("margin-left", "0");
       size_carousel_track();
     },
 
@@ -183,7 +187,7 @@ $(function () {
       });
 
       content_hero.on('mousewheel', function(event) {
-        if (swipe === false) {
+        if (swipe === false && responsive_mode !== "mobile") {
           update_window_width();
 
           if (event.deltaX > 0) {
@@ -206,7 +210,10 @@ $(function () {
             });
           }
         }
-        return false;
+        if(responsive_mode === "mobile"){
+        }else{        
+          return false;
+        }
       });
 
       hero_left.on({
@@ -231,6 +238,14 @@ $(function () {
     if (responsive_mode === "mobile") {
       headers.css("position", "absolute");
       headers.css("top", "0");
+      if ($(window).scrollTop() >= 67) {
+        $("#work-downloads").css("position", "fixed");
+        content_hero.css("margin-top", 49);
+      }else{
+        $("#work-downloads").css("position", "relative");  
+        content_hero.css("margin-top", 0);
+
+      }
     }
   });
 
@@ -246,6 +261,7 @@ $(function () {
         break;
       case "tablet":
         init_flowtype();
+        set_hero_height();
         break;
       case "desktop":
         init_flowtype();

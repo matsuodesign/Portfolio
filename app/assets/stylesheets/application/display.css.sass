@@ -31,7 +31,8 @@ h1,h2,h3,h4,h5,h6,p
   height: auto
   padding-top: 0
   padding-bottom: 0
-  margin-top: $global-header-height + 50
+  margin-top: 0
+  box-shadow: none
 
 .logo
  width: 100%
@@ -43,6 +44,8 @@ h1,h2,h3,h4,h5,h6,p
 #hero
  padding: 0px 0 0 0
  margin-top: $global-header-height
+ @media screen and (max-width: $break-small)
+  margin-top: 0
 
 #content-hero
  overflow: auto
@@ -63,16 +66,16 @@ h1,h2,h3,h4,h5,h6,p
  height: 273px
  cursor: pointer
  position: relative
- // This could be a solution for the selected state
- // &:hover:after
- //  content: ' '
- //  display: block
- //  position: absolute
- //  left: 0
- //  top: 0
- //  right: 0
- //  bottom: 0 
- //  border-bottom: 3px white solid
+ @media screen and (max-width: $break-small)
+  background: lighten(#eeeef0, 4%) /* Old browsers */
+  background: -moz-linear-gradient(top,  lighten(#eeeef0, 4%) 6%, lighten(#eeeef0, 4%) 80%, #e5e5e5 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,lighten(#eeeef0, 4%)), color-stop(80%,lighten(#eeeef0, 4%)), color-stop(100%,#e5e5e5)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* IE10+ */
+  background: linear-gradient(to bottom,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(#eeeef0, 4%)', endColorstr='#e5e5e5',GradientType=0 ) /* IE6-9 */
+
  ul
   display: block
   width: 100%
@@ -80,7 +83,7 @@ h1,h2,h3,h4,h5,h6,p
   position: relative
   @media screen and (max-width: $break-small)
    border: $standard-frame*2 white solid
-   margin-top: 45px !important
+   margin-top: 58px !important
    margin-bottom: 20px
    box-shadow: 0px 1px 5px rgba(37, 43, 65, 0.3) 
  @media screen and (max-width: $break-small)
@@ -244,7 +247,7 @@ h1,h2,h3,h4,h5,h6,p
  padding-right: $gutter
  @media screen and (max-width: $break-small)
   margin-top: $gutter
-  border-top: 1px #d5ecf3 dashed
+  border-top: 1px darken(#d5ecf3, 10%) dashed
   padding: $half-gutter $gutter 0 $gutter
  span
   display: block
@@ -325,6 +328,9 @@ h1,h2,h3,h4,h5,h6,p
   font-size: 20px
   text-indent: $gutter
   border-radius: 0
+  border-top: 2px white solid
+  border-left: 0
+  border-rightL 0
   box-shadow: 0px 3px 3px rgba(37, 43, 65, .1)
 
 #icon-wrapper
@@ -370,7 +376,8 @@ h1,h2,h3,h4,h5,h6,p
  position: absolute
 
 .mod-description
- padding: $gutter $gutter 0 $gutter
+ padding: $gutter + 5 $gutter 0 $gutter
+ text-shadow: 0px 1px white
 
 .development-tag
  @include tag-style(lighten($logo-green, 5%))
