@@ -58,6 +58,7 @@ $(function () {
         hero_width = $(window).width(); //hero_height * hero_element_width_ratio;
 
       $("#content-crop").css("height", hero_height * number_of_rows);
+      content_hero.css("height", hero_height + 100);
       hero_element.css("height", hero_height);
       hero_element.css("width", hero_width);
       hero_element_scene.css("width", "100%");
