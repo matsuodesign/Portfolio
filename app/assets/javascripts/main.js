@@ -186,11 +186,13 @@ $(function () {
       content_hero.on('mousewheel', function(event) {
         if (swipe === false) {
           update_window_width();
+
           if (event.deltaX > 0) {
             swipe = true;
             content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 600, function() {
               clearTimeout(debounce_swipe);
               debounce_swipe = setTimeout(function() {
+                current_slide = content_hero.scrollLeft() / window_width;
                 swipe = false;
               }, 300);
             });
@@ -199,6 +201,7 @@ $(function () {
             content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 600, function() {
               clearTimeout(debounce_swipe);
               debounce_swipe = setTimeout(function() {
+                current_slide = content_hero.scrollLeft() / window_width;
                 swipe = false;
               }, 800);
             });
@@ -206,7 +209,6 @@ $(function () {
         }
         return false;
       });
-      // });
 
       hero_left.on({
         "click": function() {
@@ -234,8 +236,8 @@ $(function () {
   });
 
   $(window).resize(function() {
-    // $("title").html($(window).width());
     check_mobile_init();
+    content_hero.scrollLeft(window_width * current_slide);
 
     clearTimeout(debounce_responsive_behaviors);
     debounce_responsive_behaviors = setTimeout(function() {
