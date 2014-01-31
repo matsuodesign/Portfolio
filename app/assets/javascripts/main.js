@@ -205,7 +205,7 @@ $(function () {
               debounce_swipe = setTimeout(function() {
                 current_slide = content_hero.scrollLeft() / window_width;
                 swipe = false;
-              }, 300);
+              }, 700);
             });
           } else {
             swipe = true;
@@ -214,7 +214,7 @@ $(function () {
               debounce_swipe = setTimeout(function() {
                 current_slide = content_hero.scrollLeft() / window_width;
                 swipe = false;
-              }, 800);
+              }, 700);
             });
           }
         }
