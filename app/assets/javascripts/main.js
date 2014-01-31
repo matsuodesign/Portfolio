@@ -170,7 +170,6 @@ $(function () {
       init_flowtype();
       update_infobox($(".hero-element").first());
 
-
       hero_element.mouseenter(function() {
         selected_hero = $(this);
         // check_margins(selected_hero);

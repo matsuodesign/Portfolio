@@ -3,19 +3,19 @@
  overflow: hidden
  &:hover
   .background
-   background-size: 105%
-   background-position: center 2.5%
-   @include browser-prefix(transition, all 300ms ease-in-out)
+
   .logo
    background-size: 378px auto
    @include browser-prefix(transition, background-size 200ms ease-in-out)
    @media screen and (max-width: $break-small)
     background-size: 469px * 0.6 185px * 0.6
+    @media screen and (max-width: $break-small)
+     background-size: 170px auto
  ul
  .background
   position: relative
   background: image-url("static/lapsity/background.png") top center
-  background-size: 100%
+  background-size: cover
   width: 100%
   height: 100%
   @include browser-prefix(transition, all 300ms ease-in-out)
@@ -26,6 +26,8 @@
   background-size: 435px auto
   display: block
   @include browser-prefix(transition, background-size 200ms ease-in-out)
+  @media screen and (max-width: $break-small)
+   background-size: 170px auto
 
 #lapsity-research
  width: 35%

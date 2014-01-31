@@ -3,22 +3,20 @@
  overflow: hidden
  &:hover
   .background
-   background-size: 105%
-   background-position: center 2.5%
-   @include browser-prefix(transition, all 300ms ease-in-out)
+
 
   .logo
    background-size: 195px auto
    background-position: 230px 135px
    @include browser-prefix(transition, all 200ms ease-in-out)
    @media screen and (max-width: $break-small)
-    background-size: 250px * 1 50px * 1
-    background-position: 165px 110px
+    background-size: 170px auto
+
  ul
  .background
   position: relative
   background: image-url("static/intervention/background.jpg") top center
-  background-size: 100%
+  background-size: cover
   width: 100%
   height: 100%
   @include browser-prefix(transition, all 300ms ease-in-out)
@@ -30,6 +28,8 @@
   background-position: 215px 140px
   display: block
   @include browser-prefix(transition, all 200ms ease-in-out)
+  @media screen and (max-width: $break-small)
+   background-size: 170px auto
 
 #intervention-design
  width: 40%
