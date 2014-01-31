@@ -68,13 +68,13 @@ h1,h2,h3,h4,h5,h6,p
  position: relative
  @media screen and (max-width: $break-small)
   background: lighten(#eeeef0, 4%) /* Old browsers */
-  background: -moz-linear-gradient(top,  lighten(#eeeef0, 4%) 6%, lighten(#eeeef0, 4%) 80%, #e5e5e5 100%) /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,lighten(#eeeef0, 4%)), color-stop(80%,lighten(#eeeef0, 4%)), color-stop(100%,#e5e5e5)) /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* IE10+ */
-  background: linear-gradient(to bottom,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,#e5e5e5 100%) /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(#eeeef0, 4%)', endColorstr='#e5e5e5',GradientType=0 ) /* IE6-9 */
+  background: -moz-linear-gradient(top,  lighten(#eeeef0, 4%) 6%, lighten(#eeeef0, 4%) 80%, darken(#EEF6FA, 1%) 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,lighten(#eeeef0, 4%)), color-stop(80%,lighten(#eeeef0, 4%)), color-stop(100%,darken(#EEF6FA, 1%))) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* IE10+ */
+  background: linear-gradient(to bottom,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(#eeeef0, 4%)', endColorstr='darken(#EEF6FA, 1%)',GradientType=0 ) /* IE6-9 */
 
  ul
   display: block
@@ -271,6 +271,9 @@ h1,h2,h3,h4,h5,h6,p
    &:before
     content: "#"
 
+.mod-tags
+ span
+  text-shadow: 0px 1px white
 #information-tags 
  span
   font-size: 18px
@@ -323,7 +326,7 @@ h1,h2,h3,h4,h5,h6,p
   padding: 0
   height: 40px
   line-height: 40px
-  z-index: 99999
+  z-index: 0
   margin: 0px
   left: 0
   font-size: 20px

@@ -18,6 +18,7 @@ $(function () {
     hero_element = $(".hero-element"),
     hero_element_scene = $("ul", hero_element),
     content_hero = $("#content-hero"),
+    content_crop = $("#content-crop"),
     headers = $(".mod-title"),
     header_height = $("#global_header").height(),
     downloads_height = $("#work-downloads").height(),
@@ -57,7 +58,7 @@ $(function () {
         hero_height = ((window_height * hero_viewport_size) - $("#information").height() - 29) / number_of_rows,
         hero_width = $(window).width(); //hero_height * hero_element_width_ratio;
 
-      $("#content-crop").css("height", hero_height * number_of_rows);
+      content_crop.css("height", hero_height * number_of_rows);
       content_hero.css("height", hero_height + 100);
       hero_element.css("height", hero_height);
       hero_element.css("width", hero_width);
@@ -71,8 +72,10 @@ $(function () {
       deturmine_responsive();
       if (responsive_mode === "mobile") {
         update_window_width();
-        $("#content-crop").css("height", "auto");
+        content_crop.css("height", "auto");
+        content_hero.css("height", "auto");
         hero_element.css("height", "auto");
+        hero_track.css("height", "auto");
         hero_element_scene.css("margin-top", "0");
         hero_element_scene.css("margin-left", "7px");
         hero_element_scene.css("display", "block");
@@ -85,6 +88,10 @@ $(function () {
       } else {
         set_hero_height();
       }
+    },
+
+    reset_mobile = function() {
+      content_hero.css("margin-top", "0");
     },
 
     check_current_header = function() {
@@ -263,6 +270,7 @@ $(function () {
       case "tablet":
         init_flowtype();
         set_hero_height();
+        reset_mobile();
         break;
       case "desktop":
         init_flowtype();
