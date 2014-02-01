@@ -21,7 +21,6 @@ $(function () {
     content_crop = $("#content-crop"),
     headers = $(".mod-title"),
     header_height = $("#global_header").height(),
-    downloads_height = $("#work-downloads").height(),
     number_of_rows = 1,
     hero_viewport_size = 0.49,
     // hero_element_width_ratio = 1.618,
@@ -92,8 +91,7 @@ $(function () {
 
     reset_mobile = function() {
       content_hero.css("margin-top", "0");
-      $("#work-downloads").css("position", "absolute");  
-
+      $("#work-downloads").css("position", "absolute");
     },
 
     check_current_header = function() {
@@ -220,8 +218,7 @@ $(function () {
             });
           }
         }
-        if(responsive_mode === "mobile"){
-        }else{        
+        if (responsive_mode !== "mobile") {
           return false;
         }
       });
@@ -251,8 +248,8 @@ $(function () {
       if ($(window).scrollTop() >= 67) {
         $("#work-downloads").css("position", "fixed");
         content_hero.css("margin-top", 49);
-      }else{
-        $("#work-downloads").css("position", "relative");  
+      } else {
+        $("#work-downloads").css("position", "relative");
         content_hero.css("margin-top", 0);
 
       }
@@ -261,6 +258,7 @@ $(function () {
 
   $(window).resize(function() {
     check_mobile_init();
+    $("title").html($(window).width());
     content_hero.scrollLeft(window_width * current_slide);
     clearTimeout(debounce_responsive_behaviors);
     debounce_responsive_behaviors = setTimeout(function() {
