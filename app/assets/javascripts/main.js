@@ -258,7 +258,6 @@ $(function () {
 
   $(window).resize(function() {
     check_mobile_init();
-    $("title").html($(window).width());
     content_hero.scrollLeft(window_width * current_slide);
     clearTimeout(debounce_responsive_behaviors);
     debounce_responsive_behaviors = setTimeout(function() {
