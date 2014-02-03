@@ -227,6 +227,7 @@ $(function () {
               current_slide += 1;
               iterate_pagination(current_slide);
               update_infobox();
+              check_carousel_nav();
               swipe = true;
               content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 600, function() {
                 clearTimeout(debounce_swipe);
@@ -240,6 +241,7 @@ $(function () {
               current_slide -= 1;
               iterate_pagination(current_slide);
               update_infobox();
+              check_carousel_nav();
               swipe = true;
               content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 600, function() {
                 clearTimeout(debounce_swipe);
