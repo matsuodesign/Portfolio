@@ -29,6 +29,11 @@ $(function () {
       window_width = $(window).width();
     },
 
+    iterate_pagination = function(current_slide) {
+      $("#slide-pagination li").removeClass("active");
+      $("#slide-pagination li").slice(current_slide, current_slide + 1).addClass("active"); 
+    },
+
     update_infobox = function(selected_hero) {
       $("#information-title").html(selected_hero.find(".mod-information .mod-title").html());
       $("#information-description").html(selected_hero.find(".mod-information .mod-description").html());
@@ -91,6 +96,7 @@ $(function () {
 
     reset_mobile = function() {
       content_hero.css("margin-top", "0");
+      headers.css("top", "-3px")
       $("#work-downloads").css("position", "absolute");
     },
 
@@ -204,6 +210,7 @@ $(function () {
               clearTimeout(debounce_swipe);
               debounce_swipe = setTimeout(function() {
                 current_slide = content_hero.scrollLeft() / window_width;
+                iterate_pagination(current_slide);
                 swipe = false;
               }, 700);
             });
@@ -213,6 +220,7 @@ $(function () {
               clearTimeout(debounce_swipe);
               debounce_swipe = setTimeout(function() {
                 current_slide = content_hero.scrollLeft() / window_width;
+                iterate_pagination(current_slide);
                 swipe = false;
               }, 700);
             });

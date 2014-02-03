@@ -1,414 +1,433 @@
 html, body
- color: $standard-color
- background: #eee
- width: 100%
- height: 100%
- font-size: 18px
- line-height: 26px
+  color: $standard-color
+  background: #eee
+  width: 100%
+  height: 100%
+  font-size: 18px
+  line-height: 26px
 
 #wrapper
- width: 100%
- height: 100%
- overflow-x: hidden
- overflow-y: scroll
- -webkit-overflow-scrolling: touch
+  width: 100%
+  height: 100%
+  overflow-x: hidden
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
 
 h1,h2,h3,h4,h5,h6,p
- font-family: inherit
- font-size: inherit
+  font-family: inherit
+  font-size: inherit
 
 #content-crop
- overflow: hidden
- position: relative
- width: 100%
- padding-top: 0px
- z-index: 300
- box-shadow: 0px 0px 4px rgba(0, 0, 0, .5)
- -webkit-touch-callout: none
- -webkit-user-select: none
- -khtml-user-select: none
- -moz-user-select: none
- -ms-user-select: none
- user-select: none
+  overflow: hidden
+  position: relative
+  width: 100%
+  padding-top: 0px
+  z-index: 300
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, .5)
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
 
- @media screen and (max-width: $break-small)
-  height: auto
-  padding-top: 0
-  padding-bottom: 0
-  margin-top: 0
-  box-shadow: none
+  @media screen and (max-width: $break-small)
+    height: auto
+    padding-top: 0
+    padding-bottom: 0
+    margin-top: 0
+    box-shadow: none
 
 *
- // outline: thin red solid
+  // outline: thin red solid
 
 .logo
- width: 100%
- height: 100%
- position: absolute
- top: 0
- left: 0
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
 
 #hero
- padding: 0px 0 0 0
- margin-top: $global-header-height
- @media screen and (max-width: $break-mid)
-  margin-top: 51px
- @media screen and (max-width: $break-small)
-  margin-top: 0
+  padding: 0px 0 0 0
+  margin-top: $global-header-height
+  @media screen and (max-width: $break-mid)
+    margin-top: 51px
+  @media screen and (max-width: $break-small)
+    margin-top: 0
 
 #content-hero
- overflow: auto
- width: 100%
- z-index: 300
- margin-bottom: $gutter
- @media screen and (max-width: $break-small)
-  height: auto
-  margin-bottom: 0
+  overflow: auto
+  width: 100%
+  z-index: 300
+  margin-bottom: $gutter
+  @media screen and (max-width: $break-small)
+    height: auto
+    margin-bottom: 0
 
 #hero-track
- @media screen and (max-width: $break-small)
-  width: 100% !important
-  padding-left: 0
+  @media screen and (max-width: $break-small)
+    width: 100% !important
+    padding-left: 0
 
 .hero-element
- float: left
- height: 273px
- cursor: pointer
- position: relative
- @media screen and (max-width: $break-small)
-  background: lighten(#eeeef0, 4%) /* Old browsers */
-  background: -moz-linear-gradient(top,  lighten(#eeeef0, 4%) 6%, lighten(#eeeef0, 4%) 80%, darken(#EEF6FA, 1%) 100%) /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,lighten(#eeeef0, 4%)), color-stop(80%,lighten(#eeeef0, 4%)), color-stop(100%,darken(#EEF6FA, 1%))) /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* IE10+ */
-  background: linear-gradient(to bottom,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(#eeeef0, 4%)', endColorstr='darken(#EEF6FA, 1%)',GradientType=0 ) /* IE6-9 */
+  float: left
+  height: 273px
+  cursor: pointer
+  position: relative
+  @media screen and (max-width: $break-small)
+    background: lighten(#eeeef0, 4%) /* Old browsers */
+    background: -moz-linear-gradient(top,  lighten(#eeeef0, 4%) 6%, lighten(#eeeef0, 4%) 80%, darken(#EEF6FA, 1%) 100%) /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,lighten(#eeeef0, 4%)), color-stop(80%,lighten(#eeeef0, 4%)), color-stop(100%,darken(#EEF6FA, 1%))) /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* IE10+ */
+    background: linear-gradient(to bottom,  lighten(#eeeef0, 4%) 6%,lighten(#eeeef0, 4%) 80%,darken(#EEF6FA, 1%) 100%) /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(#eeeef0, 4%)', endColorstr='darken(#EEF6FA, 1%)',GradientType=0 ) /* IE6-9 */
 
- ul
+  ul
+    display: block
+    width: 100%
+    height: 100%
+    position: relative
+    @media screen and (max-width: $break-small)
+      border: $standard-frame*2 white solid
+      margin-top: 58px !important
+      margin-bottom: 20px
+      box-shadow: 0px 1px 5px rgba(37, 43, 65, 0.3) 
+  @media screen and (max-width: $break-small)
+    clear: both
+    width: 100% !important
+    margin: 0 !important
+
+.hero-crop
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+#hero-right
+  right: $carousel-navigation-offset
+  background: white image-url('sprite/right_arrow.png') center center no-repeat
+  border-radius: $carousel-navigation-radius-inside $carousel-navigation-radius-outside $carousel-navigation-radius-outside $carousel-navigation-radius-inside
+  &:hover
+    background: white image-url('sprite/right_arrow_active.png') center center no-repeat
+    background-size: 15px 26px  
+  @media screen and (max-width: $break-mid)
+    width: 35px
+  @media screen and (max-width: $break-small)
+    display: none !important
+
+#hero-left
+  left: $carousel-navigation-offset
+  background: white image-url('sprite/left_arrow.png') center center no-repeat
+  border-radius: $carousel-navigation-radius-outside $carousel-navigation-radius-inside $carousel-navigation-radius-inside $carousel-navigation-radius-outside
+  &:hover
+    background: white image-url('sprite/left_arrow_active.png') center center no-repeat
+    background-size: 15px 26px  
+  @media screen and (max-width: $break-mid)
+    width: 35px
+  @media screen and (max-width: $break-small)
+    display: none !important
+
+
+#hero-left, #hero-right
+  display: none
+  position: absolute
+  overflow: hidden
+  z-index: $top-level
+  width: 50px
+  height: 100px
+  top: 39%
+  cursor: pointer
+  background-size: 15px 26px  
+  box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
+
+#information
+  overflow: auto
+  position: relative
+  clear: both
+  z-index: 0
+  display: block
+  height: $information-graph-height
+  width: 100%
+  color: darken($logo-green, 5%)
+  text-shadow: 0px 1px white
+  box-shadow: inset 0px -3px 100px rgba(0, 162, 172, .20), 0px 3px 4px rgba(255, 255, 255, .5)
+  @media screen and (max-width: $break-small)
+    display: none !important
+
+#information .mod-title
+  font-weight: bold
+
+
+#information-left
+  float: left
+  width: 55%
+
+#information-title
+  width: 100%
+  float: left
+  color: darken(#999, 5%)
+  margin-bottom: $half-gutter
+  text-align: left
+  line-height: 20px !important
+  font-size: 23px !important
+  vertical-align: middle
+  text-shadow: none
+
+#information-graph
+  float: left
+  width: 100%
+  height: 100%
+  overflow: hidden
+  border-bottom: 2px white solid
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, .5)
+  @media screen and (max-width: $break-small)
+    display: none !important
+
+.mod-information
+  display: none
+  @media screen and (max-width: $break-small)
+    display: block
+    float: left
+    width: 60%
+    padding: 40px 0 0 0
+
+.mod-information .mod-title
+  height: 40px
+  line-height: 40px
+  font-size: 20px
+  font-weight: bold
+
+#information-data
+  max-width: 700px
+  min-height: 120px
+  min-width: 650px
+  width: 40%
+  margin: 0 auto
+  clear: both
+  overflow: auto
+  padding: 25px 0 10px 0
+  @media screen and (max-width: $break-small)
+    display: none !important
+
+#information-icons
+  width: 50%
+  min-height: 50px
+  float: left
+  text-align: center
+
+#information-description
+  font-size: 17px
+  line-height: 1.47em
+  position: relative
+  margin-bottom: $half-gutter
+  width: 48%
+  margin-right: 2%
+  float: left
+  text-align: left
+  color: #8f8f8f
+  text-shadow: 0px 1px white
+
+#information-title
+  font-weight: bold
+  margin-top: 0px
+  text-align: left
+  span
+    color: lighten($standard-color, 35%)
+    font-weight: normal
+    display: inline-block
+
+#time
+  display: block
+  float: left
+  margin-top: 6px
+  margin-right: 3px
+  width: 12px
+  height: 12px
+  background: image-url("sprite/time.png") center center no-repeat
+  background-size: cover
+
+#information-tags, .mod-tags
+  margin-top: 0px
   display: block
   width: 100%
   height: 100%
   position: relative
+  border-bottom-size: 10px
+  padding-right: $gutter
   @media screen and (max-width: $break-small)
-   border: $standard-frame*2 white solid
-   margin-top: 58px !important
-   margin-bottom: 20px
-   box-shadow: 0px 1px 5px rgba(37, 43, 65, 0.3) 
- @media screen and (max-width: $break-small)
-  clear: both
-  width: 100% !important
-  margin: 0 !important
-
-.hero-crop
- width: 100%
- height: 100%
- overflow: hidden
-
-#hero-right
- right: $carousel-navigation-offset
- background: white image-url('sprite/right_arrow.png') center center no-repeat
- border-radius: $carousel-navigation-radius-inside $carousel-navigation-radius-outside $carousel-navigation-radius-outside $carousel-navigation-radius-inside
- &:hover
-  background: white image-url('sprite/right_arrow_active.png') center center no-repeat
-  background-size: 15px 26px  
- @media screen and (max-width: $break-mid)
-  width: 35px
- @media screen and (max-width: $break-small)
-  display: none !important
-
-#hero-left
- left: $carousel-navigation-offset
- background: white image-url('sprite/left_arrow.png') center center no-repeat
- border-radius: $carousel-navigation-radius-outside $carousel-navigation-radius-inside $carousel-navigation-radius-inside $carousel-navigation-radius-outside
- &:hover
-  background: white image-url('sprite/left_arrow_active.png') center center no-repeat
-  background-size: 15px 26px  
- @media screen and (max-width: $break-mid)
-  width: 35px
- @media screen and (max-width: $break-small)
-  display: none !important
-
-
-#hero-left, #hero-right
- display: none
- position: absolute
- overflow: hidden
- z-index: $top-level
- width: 50px
- height: 100px
- top: 39%
- cursor: pointer
- background-size: 15px 26px  
- box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
-
-#information
- overflow: auto
- position: relative
- clear: both
- z-index: 0
- display: block
- height: $information-graph-height
- width: 100%
- color: darken($logo-green, 5%)
- text-shadow: 0px 1px white
- box-shadow: inset 0px -3px 100px rgba(0, 162, 172, .20), 0px 3px 4px rgba(255, 255, 255, .5)
- @media screen and (max-width: $break-small)
-  display: none !important
-
-#information .mod-title
- font-weight: bold
-
-
-#information-left
- float: left
- width: 55%
-
-#information-title
- width: 100%
- float: left
- color: darken(#999, 5%)
- margin-bottom: $half-gutter
- text-align: left
- line-height: 20px !important
- font-size: 23px !important
- vertical-align: middle
- text-shadow: none
-
-#information-graph
- float: left
- width: 100%
- height: 100%
- overflow: hidden
- border-bottom: 2px white solid
- box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, .5)
- @media screen and (max-width: $break-small)
-  display: none !important
-
-.mod-information
- display: none
- @media screen and (max-width: $break-small)
-  display: block
-  float: left
-  width: 60%
-  padding: 40px 0 0 0
-
-.mod-information .mod-title
- height: 40px
- line-height: 40px
- font-size: 20px
- font-weight: bold
-
-#information-data
- max-width: 700px
- min-height: 120px
- min-width: 650px
- width: 40%
- margin: 0 auto
- clear: both
- overflow: auto
- padding: $gutter*1.5 0 $gutter 0 
- @media screen and (max-width: $break-small)
-  display: none !important
-
-#information-icons
- width: 50%
- min-height: 50px
- float: left
- text-align: center
-
-#information-description
- font-size: 17px
- line-height: 1.47em
- position: relative
- margin-bottom: $half-gutter
- width: 48%
- margin-right: 2%
- float: left
- color: #8f8f8f
- text-shadow: 0px 1px white
-
-#information-title
- font-weight: bold
- margin-top: 0px
- span
-  color: lighten($standard-color, 35%)
-  font-weight: normal
-  display: inline-block
-
-#time
- display: block
- float: left
- margin-top: 6px
- margin-right: 3px
- width: 12px
- height: 12px
- background: image-url("sprite/time.png") center center no-repeat
- background-size: cover
-
-#information-tags, .mod-tags
- margin-top: 0px
- display: block
- width: 100%
- height: 100%
- position: relative
- border-bottom-size: 10px
- padding-right: $gutter
- @media screen and (max-width: $break-small)
-  margin-top: $gutter
-  border-top: 1px darken(#d5ecf3, 10%) dashed
-  padding: $half-gutter $gutter 0 $gutter
- span
-  display: block
-  height: 100%
-  text-align: center
-  float: left
-  font-weight: bold
-  @media screen and (max-width: $break-small)
-   background: none
-   border-bottom: none
-   color: $logo-green
-   box-shadow: none
-   height: 25px
-   width: auto !important
-   display: inline-block
-   margin-right: 15px !important
-   font-size: 15px
-   margin-top: 0
-   margin-bottom: 0
-   padding: 0
-   &:before
-    content: "#"
+    margin-top: $gutter
+    border-top: 1px darken(#d5ecf3, 10%) dashed
+    padding: $half-gutter $gutter 0 $gutter
+  span
+    display: block
+    height: 100%
+    text-align: center
+    float: left
+    font-weight: bold
+    @media screen and (max-width: $break-small)
+      background: none
+      border-bottom: none
+      color: $logo-green
+      box-shadow: none
+      height: 25px
+      width: auto !important
+      display: inline-block
+      margin-right: 15px !important
+      font-size: 15px
+      margin-top: 0
+      margin-bottom: 0
+      padding: 0
+      &:before
+        content: "#"
 
 .mod-tags
- span
-  text-shadow: 0px 1px white
+  span
+    text-shadow: 0px 1px white
 #information-tags 
- span
-  font-size: 18px
-  line-height: $information-graph-height
-  text-shadow: 0px -1px rgba(0, 0, 0, .1)
-  border-bottom: 0
-  border-radius: 0
+  span
+    font-size: 18px
+    line-height: $information-graph-height
+    text-shadow: 0px -1px rgba(0, 0, 0, .1)
+    border-bottom: 0
+    border-radius: 0
 
 #information-skills
- margin-top: 10px
- font-size: .7em
- margin-bottom: 0
- position: absolute
- top: 0
+  margin-top: 10px
+  font-size: .7em
+  margin-bottom: 0
+  position: absolute
+  top: 0
 
 #resume
- display: inline-block
- // margin-top: $half-gutter
+  display: inline-block
+  // margin-top: $half-gutter
 
 .mod-information
- padding-bottom: $gutter 
+  padding-bottom: $gutter 
 
 .mod-title 
- position: absolute
- top: -$standard-frame
- left: 3%
- color: lighten(#489fa3, 1%)
- text-shadow: 0px 1px white
- padding: $half-gutter $gutter $half-gutter $gutter
- height: 25px
- text-align: center
- line-height: 22px
- font-size: 20px
- border-top: 1px white solid
- border-bottom: 1px white solid
- border-right: 1px white solid
- border-left: 1px white solid
- border-radius: 0px 0px 7px 7px
- box-shadow: 0px -3px 5px rgba(0, 0, 0, .06)
- background: rgb(255,255,255) /* Old browsers */
- background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(239,247,251,1) 100%) /* FF3.6+ */
- background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(239,247,251,1))) /* Chrome,Safari4+ */
- background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* Chrome10+,Safari5.1+ */
- background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* Opera 11.10+ */
- background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* IE10+ */
- background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* W3C */
- filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff7fb',GradientType=0 ) /* IE6-9 */
- @media screen and (max-width: $break-small)
-  width: 100%
-  padding: 0
-  height: 40px
-  line-height: 40px
-  z-index: 0
-  margin: 0
-  left: 0
+  position: absolute
+  top: -$standard-frame
+  left: 3%
+  color: lighten(#489fa3, 1%)
+  text-shadow: 0px 1px white
+  padding: $half-gutter $gutter $half-gutter $gutter
+  height: 25px
+  text-align: center
+  line-height: 22px
   font-size: 20px
-  text-indent: $gutter
-  border-radius: 0
-  border-top: 2px white solid
-  border-left: 0
-  border-right: 0
-  box-shadow: 0px 3px 3px rgba(37, 43, 65, .1)
+  border-top: 1px white solid
+  border-bottom: 1px white solid
+  border-right: 1px white solid
+  border-left: 1px white solid
+  border-radius: 0px 0px 7px 7px
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, .06)
+  background: rgb(255,255,255) /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(239,247,251,1) 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(239,247,251,1))) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(239,247,251,1) 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff7fb',GradientType=0 ) /* IE6-9 */
+  @media screen and (max-width: $break-small)
+    width: 100%
+    padding: 0
+    height: 40px
+    line-height: 40px
+    z-index: 0
+    margin: 0
+    left: 0
+    font-size: 20px
+    text-indent: $gutter
+    border-radius: 0
+    border-top: 2px white solid
+    border-left: 0
+    border-right: 0
+    box-shadow: 0px 3px 3px rgba(37, 43, 65, .1)
 
 #icon-wrapper
- display: block
- margin-top: -25px
+  display: block
+  margin-top: -25px
 
 #desktop-icon
- float: left
- width: 125px
- height: 94px
- background: url('sprite/desktop-icon.png') center center no-repeat
- background-size: 100%
- display: block
- margin: 15px
- margin-top: 0
- margin-bottom: 0
+  float: left
+  width: 125px
+  height: 94px
+  background: url('sprite/desktop-icon.png') center center no-repeat
+  background-size: 100%
+  display: block
+  margin: 15px
+  margin-top: 0
+  margin-bottom: 0
 
 #tablet-icon
- float: left
- width: 60px
- height: 78px
- background: url('sprite/tablet-icon.png') center center no-repeat
- background-size: 100%
- display: block
- margin: 15px
- margin-top: 10px
- margin-bottom: 0
+  float: left
+  width: 60px
+  height: 78px
+  background: url('sprite/tablet-icon.png') center center no-repeat
+  background-size: 100%
+  display: block
+  margin: 15px
+  margin-top: 10px
+  margin-bottom: 0
 
 #mobile-icon
- float: left
- width: 36px
- height: 66px
- background: url('sprite/mobile-icon.png') center center no-repeat
- background-size: 100%
- display: block
- margin: 15px
- margin-top: 20px
- margin-bottom: 0
+  float: left
+  width: 36px
+  height: 66px
+  background: url('sprite/mobile-icon.png') center center no-repeat
+  background-size: 100%
+  display: block
+  margin: 15px
+  margin-top: 20px
+  margin-bottom: 0
+
+#slide-pagination
+  display: block
+  clear: both
+  text-align: center
+  width: 100%
+  li
+    margin: 0 5px 0 5px
+    display: inline-block
+    height: 36px
+    width: 36px
+    background: url('sprite/carousel-inactive.png') center center no-repeat
+    background-size: 10px
+    text-indent: -9999px
+    &.active
+      background: url('sprite/carousel-active.png') center center no-repeat
+      background-size: 18px
 
 .mod-title.fixed
- position: fixed
- 
+  position: fixed
+  
 .mod-title.fixed.absolute
- position: absolute
+  position: absolute
 
 .mod-description
- padding: $gutter + 5 $gutter 0 $gutter
- text-shadow: 0px 1px white
+  padding: $gutter + 5 $gutter 0 $gutter
+  text-shadow: 0px 1px white
 
 .development-tag
- @include tag-style(lighten($logo-green, 5%))
- border-bottom: 4px #00B3BF solid
+  @include tag-style(lighten($logo-green, 5%))
+  border-bottom: 4px #00B3BF solid
 
 .design-tag
- @include tag-style(lighten(#45B856, 5%))
- border-bottom: 4px #51B560 solid
+  @include tag-style(lighten(#45B856, 5%))
+  border-bottom: 4px #51B560 solid
 
 .research-tag
- @include tag-style(#D8BA06)
- border-bottom: 4px #D1B306 solid
+  @include tag-style(#D8BA06)
+  border-bottom: 4px #D1B306 solid
 
 .production-tag
- @include tag-style(lighten(#A15F98, 10%))
- border-bottom: 4px #AB79A4 solid
+  @include tag-style(lighten(#A15F98, 10%))
+  border-bottom: 4px #AB79A4 solid
 
 .marketing-tag
- @include tag-style(#38A2C4)
- border-bottom: 4px #3699BA solid
+  @include tag-style(#38A2C4)
+  border-bottom: 4px #3699BA solid
