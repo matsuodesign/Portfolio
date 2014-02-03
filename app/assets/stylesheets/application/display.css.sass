@@ -129,15 +129,18 @@ h1,h2,h3,h4,h5,h6,p
   @media screen and (max-width: $break-small)
     display: none !important
 
+#information-wrapper
+  max-width: 750px
+  margin: 0 auto
 
 #hero-left, #hero-right
   display: none
   position: absolute
   overflow: hidden
   z-index: $top-level
-  width: 50px
-  height: 100px
-  top: 39%
+  width: 35px
+  height: 120px
+  bottom: 35px
   cursor: pointer
   background-size: 15px 26px  
   box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
@@ -200,11 +203,10 @@ h1,h2,h3,h4,h5,h6,p
   font-weight: bold
 
 #information-data
-  max-width: 700px
   min-height: 120px
   min-width: 650px
-  width: 40%
-  margin: 0 auto
+  width: 100%
+  position: relative
   clear: both
   overflow: auto
   padding: 25px 0 10px 0

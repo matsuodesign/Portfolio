@@ -16,6 +16,7 @@ $(function () {
     hero_left = $("#hero-left"),
     hero_right = $("#hero-right"),
     hero_element = $(".hero-element"),
+    total_slides = hero_element.length - 1,
     hero_element_scene = $("ul", hero_element),
     content_hero = $("#content-hero"),
     content_crop = $("#content-crop"),
@@ -31,10 +32,11 @@ $(function () {
 
     iterate_pagination = function(current_slide) {
       $("#slide-pagination li").removeClass("active");
-      $("#slide-pagination li").slice(current_slide, current_slide + 1).addClass("active"); 
+      $("#slide-pagination li").slice(current_slide, current_slide + 1).addClass("active");
     },
 
     update_infobox = function(selected_hero) {
+      selected_hero = typeof selected_hero !== 'undefined' ? selected_hero : hero_element.slice(current_slide, current_slide + 1);
       $("#information-title").html(selected_hero.find(".mod-information .mod-title").html());
       $("#information-description").html(selected_hero.find(".mod-information .mod-description").html());
       $("#information-tags").html(selected_hero.find(".mod-information .mod-tags").html());
@@ -96,7 +98,7 @@ $(function () {
 
     reset_mobile = function() {
       content_hero.css("margin-top", "0");
-      headers.css("top", "-3px")
+      headers.css("top", "-3px");
       $("#work-downloads").css("position", "absolute");
     },
 
@@ -114,6 +116,19 @@ $(function () {
         }
       });
       // console.log(elements);
+    },
+
+    check_carousel_nav = function() {
+      if (current_slide === total_slides) {
+        hero_right.fadeOut();
+        hero_left.fadeIn();
+      } else if (current_slide === 0) {
+        hero_left.fadeOut();
+        hero_right.fadeIn();
+      } else {
+        hero_left.fadeIn();
+        hero_right.fadeIn();
+      }
     },
 
     init_flowtype = function() {
@@ -186,7 +201,10 @@ $(function () {
       check_mobile_init();
       deturmine_responsive();
       init_flowtype();
-      update_infobox($(".hero-element").first());
+      current_slide = 0;
+      iterate_pagination(current_slide);
+      check_carousel_nav();
+      update_infobox();
 
       hero_element.mouseenter(function() {
         selected_hero = $(this);
@@ -205,25 +223,31 @@ $(function () {
           update_window_width();
 
           if (event.deltaX > 0) {
-            swipe = true;
-            content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 600, function() {
-              clearTimeout(debounce_swipe);
-              debounce_swipe = setTimeout(function() {
-                current_slide = content_hero.scrollLeft() / window_width;
-                iterate_pagination(current_slide);
-                swipe = false;
-              }, 700);
-            });
+            if (current_slide < total_slides) {
+              current_slide += 1;
+              iterate_pagination(current_slide);
+              update_infobox();
+              swipe = true;
+              content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 600, function() {
+                clearTimeout(debounce_swipe);
+                debounce_swipe = setTimeout(function() {
+                  swipe = false;
+                }, 700);
+              });
+            }
           } else {
-            swipe = true;
-            content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 600, function() {
-              clearTimeout(debounce_swipe);
-              debounce_swipe = setTimeout(function() {
-                current_slide = content_hero.scrollLeft() / window_width;
-                iterate_pagination(current_slide);
-                swipe = false;
-              }, 700);
-            });
+            if (current_slide > 0) {
+              current_slide -= 1;
+              iterate_pagination(current_slide);
+              update_infobox();
+              swipe = true;
+              content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 600, function() {
+                clearTimeout(debounce_swipe);
+                debounce_swipe = setTimeout(function() {
+                  swipe = false;
+                }, 700);
+              });
+            }
           }
         }
         if (responsive_mode !== "mobile") {
@@ -233,13 +257,25 @@ $(function () {
 
       hero_left.on({
         "click": function() {
-          content_hero.animate({scrollLeft: (content_hero.scrollLeft() - $(window).width())}, 800);
+          if (current_slide > 0) {
+            current_slide -= 1;
+            iterate_pagination(current_slide);
+            check_carousel_nav();
+            update_infobox();
+            content_hero.animate({scrollLeft: (content_hero.scrollLeft() - $(window).width())}, 400);
+          }
         }
       });
 
       hero_right.on({
         "click": function() {
-          content_hero.animate({scrollLeft: (content_hero.scrollLeft() + $(window).width())}, 800);
+          if (current_slide < total_slides) {
+            current_slide += 1;
+            iterate_pagination(current_slide);
+            check_carousel_nav();
+            update_infobox();
+            content_hero.animate({scrollLeft: (content_hero.scrollLeft() + $(window).width())}, 400);
+          }
         }
       });
     }

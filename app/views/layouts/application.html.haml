@@ -11,21 +11,22 @@
         =render 'modules/global-header'
       #hero
         #content-crop
-          #hero-right &nbsp;
-          #hero-left &nbsp;
           #content-hero
             #hero-track
               =yield :content_hero
         #information-graph
           %p#information-tags
         #information-data
-          #information-title
-          #information-description
-          #information-icons
-            #icon-wrapper
-              %span#desktop-icon &nbsp;
-              %span#tablet-icon &nbsp;
-              %span#mobile-icon &nbsp;
+          #hero-right &nbsp;
+          #hero-left &nbsp;
+          #information-wrapper
+            #information-title
+            #information-description
+            #information-icons
+              #icon-wrapper
+                %span#desktop-icon &nbsp;
+                %span#tablet-icon &nbsp;
+                %span#mobile-icon &nbsp;
           %ol#slide-pagination
             %li.active Ask.com
             %li Lm-inspired.com

@@ -5,4 +5,5 @@ class ResumeController < ApplicationController
    @page_title = "UX & Interaction Design"
   	render 'composers/index'
   end
+
 end
