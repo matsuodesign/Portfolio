@@ -122,6 +122,10 @@ $(function () {
       $('#quote').css("margin-top", (footer_height - paragraph_height) / 2);
     },
 
+    show_hero_items = function() {
+      hero_element.fadeIn();
+    },
+
     reset_mobile = function() {
       content_hero.css("margin-top", "0");
       headers.css("top", "-3px");
@@ -232,6 +236,7 @@ $(function () {
       check_carousel_nav();
       update_infobox();
       calculate_footer_margins();
+      show_hero_items();
 
       hero_element.mouseenter(function() {
         selected_hero = $(this);
