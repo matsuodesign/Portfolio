@@ -21,6 +21,7 @@ $(function () {
     content_hero = $("#content-hero"),
     content_crop = $("#content-crop"),
     headers = $(".mod-title"),
+    hero_thumbnails = $("#thumbnails li"),
     header_height = $("#global_header").height(),
     number_of_rows = 1,
     hero_viewport_size = 0.49,
@@ -33,6 +34,8 @@ $(function () {
     iterate_pagination = function(current_slide) {
       $("#slide-pagination li").removeClass("active");
       $("#slide-pagination li").slice(current_slide, current_slide + 1).addClass("active");
+      hero_thumbnails.removeClass("active");
+      hero_thumbnails.slice(current_slide, current_slide + 1).addClass("active");
     },
 
     update_infobox = function(selected_hero) {
@@ -63,9 +66,9 @@ $(function () {
       $("#film-strip").stop().animate({height: 190}, 200);
       $("#hero-right").stop().animate({right: -40}, 400);
       $("#hero-left").stop().animate({left: -40}, 400);
-      $("#information-description").fadeOut();
-      $("#information-icons").fadeOut();
-      $("#information-title").fadeOut();
+      $("#information-description").fadeOut(0);
+      $("#information-icons").fadeOut(0);
+      $("#information-title").fadeOut(0);
       $("#slide-pagination").fadeOut();
     },
 
@@ -124,6 +127,11 @@ $(function () {
 
     show_hero_items = function() {
       hero_element.fadeIn();
+    },
+
+    size_hero_thumbnails = function() {
+      update_window_width();
+      hero_thumbnails.css("width", (window_width - (hero_thumbnails.length * 30) - 30) / hero_thumbnails.length);
     },
 
     reset_mobile = function() {
@@ -237,6 +245,7 @@ $(function () {
       update_infobox();
       calculate_footer_margins();
       show_hero_items();
+      size_hero_thumbnails();
 
       hero_element.mouseenter(function() {
         selected_hero = $(this);
@@ -346,6 +355,7 @@ $(function () {
 
   $(window).resize(function() {
     check_mobile_init();
+    size_hero_thumbnails();
     content_hero.scrollLeft(window_width * current_slide);
     clearTimeout(debounce_responsive_behaviors);
     debounce_responsive_behaviors = setTimeout(function() {
