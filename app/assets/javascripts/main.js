@@ -119,7 +119,7 @@ $(function () {
     calculate_footer_margins = function() {
       var paragraph_height = $(".mod-footer p").height(),
         footer_height = $(".mod-footer").height();
-      $('.mod-footer p').css("margin-top", (footer_height - paragraph_height) / 2);
+      $('#quote').css("margin-top", (footer_height - paragraph_height) / 2);
     },
 
     reset_mobile = function() {

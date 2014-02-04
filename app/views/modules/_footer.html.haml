@@ -1,2 +1,3 @@
 .mod-footer
- %p= @positivity.sample(1)[0];
+ %p#quote= @positivity.sample(1)[0];
+ %p#copyright= "Copyright &copy; #{Time.now.year} Russell Matsuo".html_safe 
