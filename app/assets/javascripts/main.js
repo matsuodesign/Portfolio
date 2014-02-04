@@ -96,6 +96,12 @@ $(function () {
       }
     },
 
+    calculate_footer_margins = function() {
+      var paragraph_height = $(".mod-footer p").height();
+      var footer_height = $(".mod-footer").height();
+      $('.mod-footer p').css("margin-top", (footer_height - paragraph_height) / 2);
+    },
+
     reset_mobile = function() {
       content_hero.css("margin-top", "0");
       headers.css("top", "-3px");
@@ -205,6 +211,7 @@ $(function () {
       iterate_pagination(current_slide);
       check_carousel_nav();
       update_infobox();
+      calculate_footer_margins();
 
       hero_element.mouseenter(function() {
         selected_hero = $(this);
