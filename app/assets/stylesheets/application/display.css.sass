@@ -225,6 +225,8 @@ h1,h2,h3,h4,h5,h6,p
   min-height: 50px
   float: left
   text-align: center
+  @media screen and (max-width: $break-mid)
+    display: none !important
 
 #information-description
   font-size: 17px
@@ -237,6 +239,10 @@ h1,h2,h3,h4,h5,h6,p
   text-align: left
   color: #8f8f8f
   text-shadow: 0px 1px white
+  @media screen and (max-width: $break-mid)
+    width: 80%
+    margin-left: 10%
+
 
 #information-title
   font-weight: bold
@@ -246,6 +252,9 @@ h1,h2,h3,h4,h5,h6,p
     color: lighten($standard-color, 35%)
     font-weight: normal
     display: inline-block
+  @media screen and (max-width: $break-mid)
+    width: 80%
+    margin-left: 10%
 
 #time
   display: block
