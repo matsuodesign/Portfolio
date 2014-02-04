@@ -59,6 +59,26 @@ $(function () {
       hero_track.css("width", track_width);
     },
 
+    open_filmstrip = function() {
+      $("#film-strip").stop().animate({height: 190}, 200);
+      $("#hero-right").stop().animate({right: -40}, 400);
+      $("#hero-left").stop().animate({left: -40}, 400);
+      $("#information-description").fadeOut();
+      $("#information-icons").fadeOut();
+      $("#information-title").fadeOut();
+      $("#slide-pagination").fadeOut();
+    },
+
+    close_filmstrip = function() {
+      $("#film-strip").stop().animate({height: 0}, 200);
+      $("#hero-right").stop().animate({right: 0}, 400);
+      $("#hero-left").stop().animate({left: 0}, 400);
+      $("#information-description").fadeIn();
+      $("#information-icons").fadeIn();
+      $("#information-title").fadeIn();
+      $("#slide-pagination").fadeIn();
+    },
+
     set_hero_height = function() {
       var window_height = $(window).height(),
         hero_height = ((window_height * hero_viewport_size) - $("#information").height() - 29) / number_of_rows,
@@ -97,8 +117,8 @@ $(function () {
     },
 
     calculate_footer_margins = function() {
-      var paragraph_height = $(".mod-footer p").height();
-      var footer_height = $(".mod-footer").height();
+      var paragraph_height = $(".mod-footer p").height(),
+        footer_height = $(".mod-footer").height();
       $('.mod-footer p').css("margin-top", (footer_height - paragraph_height) / 2);
     },
 
@@ -223,6 +243,16 @@ $(function () {
             update_infobox(selected_hero);
           }, 50);
         }
+      });
+
+      $("#slide-pagination li").mouseenter(function() {
+        console.log("activate slide nav");
+        open_filmstrip();
+      });
+
+      $("#film-strip").mouseleave(function() {
+        console.log("activate slide nav");
+        close_filmstrip();
       });
 
       content_hero.on('mousewheel', function(event) {
