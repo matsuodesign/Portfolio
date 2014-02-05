@@ -10,10 +10,10 @@ $(function () {
     selected_hero,
     responsive_mode,
     current_slide,
-    swipe = false,
     debounce_swipe,
     doublecheck_hero_target,
     thumbnails_open = false,
+    swipe = false,
     window_width = $(window).width,
     hero_left = $("#hero-left"),
     hero_right = $("#hero-right"),
@@ -22,9 +22,13 @@ $(function () {
     hero_element_scene = $("ul", hero_element),
     content_hero = $("#content-hero"),
     content_crop = $("#content-crop"),
+    information_title = $("#information-title"),
+    information_description = $("#information-description"),
+    information_icons = $("#information-icons"),
     headers = $(".mod-title"),
     hero_thumbnails = $("#thumbnails li"),
     slide_pagination = $("#slide-pagination"),
+    work_downloads = $("#work-downloads"),
     slide_pagination_items = $("li", slide_pagination),
     header_height = $("#global_header").height(),
     number_of_rows = 1,
@@ -47,8 +51,8 @@ $(function () {
 
     update_infobox = function(selected_hero) {
       selected_hero = typeof selected_hero !== 'undefined' ? selected_hero : hero_element.slice(current_slide, current_slide + 1);
-      $("#information-title").html(selected_hero.find(".mod-information .mod-title").html());
-      $("#information-description").html(selected_hero.find(".mod-information .mod-description").html());
+      information_title.html(selected_hero.find(".mod-information .mod-title").html());
+      information_description.html(selected_hero.find(".mod-information .mod-description").html());
       $("#information-tags").html(selected_hero.find(".mod-information .mod-tags").html());
     },
 
@@ -84,9 +88,9 @@ $(function () {
       $("#film-strip").stop().animate({height: 190}, 200);
       hero_right.stop().animate({right: -40}, 400);
       hero_left.stop().animate({left: -40}, 400);
-      $("#information-description").fadeOut(0);
-      $("#information-icons").fadeOut(0);
-      $("#information-title").fadeOut(0);
+      information_description.fadeOut(0);
+      information_icons.fadeOut(0);
+      information_title.fadeOut(0);
       slide_pagination.animate({paddingBottom: 3}, 200);
       size_pagination("animate");
     },
@@ -96,9 +100,9 @@ $(function () {
       $("#film-strip").stop().animate({height: 0}, 200);
       hero_right.stop().animate({right: 0}, 400);
       hero_left.stop().animate({left: 0}, 400);
-      $("#information-description").fadeIn();
-      $("#information-icons").fadeIn();
-      $("#information-title").fadeIn();
+      information_description.fadeIn();
+      information_icons.fadeIn();
+      information_title.fadeIn();
       slide_pagination.fadeIn();
       slide_pagination.animate({paddingBottom: 10}, 200);
       slide_pagination_items.animate({paddingLeft: 10, paddingRight: 10}, 200);
@@ -160,7 +164,7 @@ $(function () {
     reset_mobile = function() {
       content_hero.css("margin-top", "0");
       headers.css("top", "-3px");
-      $("#work-downloads").css("position", "absolute");
+      work_downloads.css("position", "absolute");
     },
 
     check_current_header = function() {
@@ -386,10 +390,10 @@ $(function () {
       headers.css("position", "absolute");
       headers.css("top", "0");
       if ($(window).scrollTop() >= 67) {
-        $("#work-downloads").css("position", "fixed");
+        work_downloads.css("position", "fixed");
         content_hero.css("margin-top", 49);
       } else {
-        $("#work-downloads").css("position", "relative");
+        work_downloads.css("position", "relative");
         content_hero.css("margin-top", 0);
 
       }
