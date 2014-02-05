@@ -7,7 +7,6 @@ class ResumeController < ApplicationController
      "True happiness comes from the joy of deeds well done, the zest of creating things new.",
      "Be kind whenever possible. It is always possible.",
      "Always do your best. What you plant now, you will harvest later.",
-     "If you can dream it, you can do it.",
      "The key is to keep company only with people who uplift you, \nwhose presence calls forth your best.",
      "A smile is a curve that sets everything straight.",
      "A warm smile is the universal language of kindness.",
