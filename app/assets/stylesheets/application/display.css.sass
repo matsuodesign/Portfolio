@@ -428,6 +428,8 @@ h1,h2,h3,h4,h5,h6,p
   ul
     display: inline-block
     margin-top: 10px
+    @media screen and (max-width: $break-mid)
+      margin-top: 25px
   li
     float: left
     width: 200px
@@ -440,6 +442,8 @@ h1,h2,h3,h4,h5,h6,p
     cursor: pointer
     @include browser-prefix(transition, all 50ms ease-in-out)
     @include browser-prefix(transition, all 50ms ease-in-out)
+    @media screen and (max-width: $break-mid)
+      height: 110px
     &:first-child
       margin-left: 15px
     &:before  
