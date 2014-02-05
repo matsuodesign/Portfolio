@@ -352,8 +352,8 @@ $(function () {
       });
 
       content_hero.on('mousewheel', function(event) {
-        var diffx = event.deltaX, 
-          diffy = event.deltaY, 
+        var diffx = event.deltaX,
+          diffy = event.deltaY,
           posx,
           posy;
 
