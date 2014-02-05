@@ -30,6 +30,7 @@ $(function () {
     information_description = $("#information-description"),
     information_icons = $("#information-icons"),
     headers = $(".mod-title"),
+    thumbnail_strip = $("#film-strip"),
     hero_thumbnails = $("#thumbnails li"),
     slide_pagination = $("#slide-pagination"),
     work_downloads = $("#work-downloads"),
@@ -139,7 +140,7 @@ $(function () {
       clearTimeout(debounce_thumbnails_close);
       debounce_thumbnails_close = setTimeout(function() {
         thumbnails_open = false;
-        $("#film-strip").stop().animate({height: 0}, 200);
+        thumbnail_strip.stop().animate({height: 0}, 200);
         hero_right.stop().animate({right: 0}, 400);
         hero_left.stop().animate({left: 0}, 400);
         information_description.stop().fadeIn();
@@ -226,7 +227,7 @@ $(function () {
       clearTimeout(debounce_thumbnails_close);
       debounce_thumbnails_open = setTimeout(function() {
         thumbnails_open = true;
-        $("#film-strip").stop().animate({height: 190}, 200);
+        thumbnail_strip.stop().animate({height: 190}, 200);
         hero_right.stop().animate({right: -40}, 400);
         hero_left.stop().animate({left: -40}, 400);
         information_description.stop().fadeOut(0);
@@ -311,6 +312,14 @@ $(function () {
         animate_carousel();
       });
 
+      slide_pagination_items.click(function(){
+        current_slide = $(this).index();
+        iterate_pagination(current_slide);
+        check_carousel_nav();
+        update_infobox();
+        animate_carousel();
+      });
+
       $("#hero *").on({
         mouseenter: function() {
           clear_auto_cycle();
@@ -341,7 +350,7 @@ $(function () {
         e.stopPropagation();
       });
 
-      $("#film-strip").mouseover(function(e) {
+      thumbnail_strip.mouseover(function(e) {
         e.stopPropagation();
       });
 
