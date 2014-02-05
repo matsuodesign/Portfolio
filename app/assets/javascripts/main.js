@@ -289,16 +289,18 @@ $(function () {
         }
       });
 
-      slide_pagination.mouseenter(function() {
-        clearTimeout(doublecheck_hero_target);
+      slide_pagination.mouseover(function(e) {
+        e.stopPropagation();
       });
 
-      $("#film-strip").mouseleave(function() {
-        doublecheck_hero_target = setTimeout(function() {
-          if (thumbnails_open) {
-            close_filmstrip();
-          }
-        }, 10);
+      $("#film-strip").mouseover(function(e) {
+        e.stopPropagation();
+      });
+
+      $(document).mouseover(function() {
+        if (thumbnails_open) {
+          close_filmstrip();
+        }
       });
 
       content_hero.on('mousewheel', function(event) {
