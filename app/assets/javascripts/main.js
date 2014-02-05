@@ -86,7 +86,7 @@ $(function () {
       $("#information-title").fadeIn();
       $("#slide-pagination").fadeIn();
       $("#slide-pagination").animate({paddingBottom: 10}, 200);
-      slide_pagination_items.animate({paddingLeft: 15, paddingRight: 15}, 200);
+      slide_pagination_items.animate({paddingLeft: 10, paddingRight: 10}, 200);
 
     },
 
