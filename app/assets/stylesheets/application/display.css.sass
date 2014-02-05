@@ -215,7 +215,7 @@ h1,h2,h3,h4,h5,h6,p
   width: 100%
   position: relative
   clear: both
-  overflow: auto
+  overflow: hidden
   padding: 25px 0 10px 0
   @media screen and (max-width: $break-small)
     display: none !important
@@ -412,6 +412,7 @@ h1,h2,h3,h4,h5,h6,p
   width: 100%
   position: absolute
   bottom: 0
+  z-index: 999999
   padding-bottom: $half-gutter
   li
     padding: 0 5px 0 5px
@@ -441,9 +442,11 @@ h1,h2,h3,h4,h5,h6,p
     height: 130px
     position: relative
     background: #ccc
-    margin: 30px 15px 0 15px
+    margin: 15px 15px 0 15px
     text-indent: -9999px
     box-shadow: 0px 3px 15px rgba(0, 162, 172, .1)
+    @include browser-prefix(transition, all 50ms ease-in-out)
+    @include browser-prefix(transition, all 50ms ease-in-out)
     &:first-child
       margin-left: 30px
     &:before  
@@ -454,7 +457,21 @@ h1,h2,h3,h4,h5,h6,p
       left: 0
       right: 0
       bottom: 0
-      border: 2px solid white
+      border: 5px solid white
+    &:hover
+      @include browser-prefix(transform, scale(0.9))
+      @include browser-prefix(transition, all 50ms ease-in-out)
+    &.active:hover
+      @include browser-prefix(transform, scale(1))
+    &.active:before  
+      content: " "
+      position: absolute
+      z-index: 1
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      box-shadow: 0px 0px 20px 0px #87dbff
   #ask-thumb
     background: image-url("static/ask/background.jpg") center center
     background-size: cover
