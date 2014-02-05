@@ -14,9 +14,11 @@ $(function () {
     thumbnails_open = false,
     swipe = false,
     window_width = $(window).width,
-    cycle_interval, 
+    cycle_interval,
     cycle_interval_time = 3500,
     cycle_direction = "right",
+    debounce_thumbnails_open,
+    debounce_thumbnails_close,
     hero_left = $("#hero-left"),
     hero_right = $("#hero-right"),
     hero_element = $(".hero-element"),
@@ -82,31 +84,6 @@ $(function () {
       }
     },
 
-    start_auto_cycle = function() {
-      clearInterval(cycle_interval);
-      cycle_interval = setInterval(function() {
-        if (cycle_direction === "right") {
-          current_slide += 1;
-          iterate_pagination(current_slide);
-          check_carousel_nav();
-          update_infobox();
-          animate_carousel();
-          if (current_slide === total_slides) {
-            cycle_direction = "left";
-          }
-        } else if (cycle_direction === "left") {
-          current_slide -= 1;
-          iterate_pagination(current_slide);
-          check_carousel_nav();
-          update_infobox();
-          animate_carousel();
-          if (current_slide === 0) {
-            cycle_direction = "right";
-          }
-        }
-      }, cycle_interval_time);
-    },
-
     clear_auto_cycle = function() {
       clearInterval(cycle_interval);
     },
@@ -158,16 +135,20 @@ $(function () {
     },
 
     close_filmstrip = function() {
-      thumbnails_open = false;
-      $("#film-strip").stop().animate({height: 0}, 200);
-      hero_right.stop().animate({right: 0}, 400);
-      hero_left.stop().animate({left: 0}, 400);
-      information_description.fadeIn();
-      information_icons.fadeIn();
-      information_title.fadeIn();
-      slide_pagination.fadeIn();
-      slide_pagination.animate({paddingBottom: 7}, 200);
-      slide_pagination_items.animate({paddingLeft: 10, paddingRight: 10}, 200);
+      clearTimeout(debounce_thumbnails_open);
+      clearTimeout(debounce_thumbnails_close);
+      debounce_thumbnails_close = setTimeout(function() {
+        thumbnails_open = false;
+        $("#film-strip").stop().animate({height: 0}, 200);
+        hero_right.stop().animate({right: 0}, 400);
+        hero_left.stop().animate({left: 0}, 400);
+        information_description.stop().fadeIn();
+        information_icons.stop().fadeIn();
+        information_title.stop().fadeIn();
+        slide_pagination.stop().fadeIn();
+        slide_pagination.stop().animate({paddingBottom: 7}, 200);
+        slide_pagination_items.stop().animate({paddingLeft: 10, paddingRight: 10}, 200);
+      }, 50);
     },
 
     init_flowtype = function() {
@@ -241,15 +222,19 @@ $(function () {
     },
 
     open_filmstrip = function() {
-      thumbnails_open = true;
-      $("#film-strip").stop().animate({height: 190}, 200);
-      hero_right.stop().animate({right: -40}, 400);
-      hero_left.stop().animate({left: -40}, 400);
-      information_description.fadeOut(0);
-      information_icons.fadeOut(0);
-      information_title.fadeOut(0);
-      slide_pagination.animate({paddingBottom: 0}, 200);
-      size_pagination("animate");
+      clearTimeout(debounce_thumbnails_open);
+      clearTimeout(debounce_thumbnails_close);
+      debounce_thumbnails_open = setTimeout(function() {
+        thumbnails_open = true;
+        $("#film-strip").stop().animate({height: 190}, 200);
+        hero_right.stop().animate({right: -40}, 400);
+        hero_left.stop().animate({left: -40}, 400);
+        information_description.stop().fadeOut(0);
+        information_icons.stop().fadeOut(0);
+        information_title.stop().fadeOut(0);
+        slide_pagination.stop().animate({paddingBottom: 0}, 200);
+        size_pagination("animate");
+      }, 300);
     },
 
     show_hero_items = function() {
@@ -258,8 +243,8 @@ $(function () {
 
     size_hero_thumbnails = function() {
       update_window_width();
-      var current_padding_left = parseInt(hero_thumbnails.first().css("margin-left")),
-        current_padding_right = parseInt(hero_thumbnails.first().css("margin-right")) * 2;
+      var current_padding_left = parseInt(hero_thumbnails.first().css("margin-left"), 10),
+        current_padding_right = parseInt(hero_thumbnails.first().css("margin-right"), 10) * 2;
       hero_thumbnails.css("width", (window_width - (hero_thumbnails.length * current_padding_right) - current_padding_left) / hero_thumbnails.length);
     },
 
@@ -274,6 +259,31 @@ $(function () {
       content_hero.css("margin-top", "0");
       headers.css("top", "-3px");
       work_downloads.css("position", "absolute");
+    },
+
+    start_auto_cycle = function() {
+      clearInterval(cycle_interval);
+      cycle_interval = setInterval(function() {
+        if (cycle_direction === "right") {
+          current_slide += 1;
+          iterate_pagination(current_slide);
+          check_carousel_nav();
+          update_infobox();
+          animate_carousel();
+          if (current_slide === total_slides) {
+            cycle_direction = "left";
+          }
+        } else if (cycle_direction === "left") {
+          current_slide -= 1;
+          iterate_pagination(current_slide);
+          check_carousel_nav();
+          update_infobox();
+          animate_carousel();
+          if (current_slide === 0) {
+            cycle_direction = "right";
+          }
+        }
+      }, cycle_interval_time);
     };
 
   $(document).on({
@@ -308,7 +318,7 @@ $(function () {
         mouseleave: function() {
           start_auto_cycle();
         }
-      })
+      });
 
       hero_element.mouseenter(function() {
         selected_hero = $(this);
@@ -342,6 +352,25 @@ $(function () {
       });
 
       content_hero.on('mousewheel', function(event) {
+        var diffx = event.deltaX, 
+          diffy = event.deltaY, 
+          posx,
+          posy;
+
+        posx = -diffx > 0 ? -diffx : diffx;
+        posy = -diffy > 0 ? -diffy : diffy;
+
+        console.log(posx);
+        console.log((600 * (posy + 1)));
+
+        if (posx > (600 * posy + 1)) {
+          console.log("Swipe");
+        } else {
+          console.log("scroll");
+        }
+
+
+
         if (swipe === false && responsive_mode !== "mobile") {
           update_window_width();
 
