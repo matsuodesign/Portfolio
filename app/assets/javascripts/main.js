@@ -28,7 +28,7 @@ $(function () {
     slide_pagination_items = $("li", slide_pagination),
     header_height = $("#global_header").height(),
     number_of_rows = 1,
-    hero_viewport_size = 0.49,
+    hero_viewport_size = 0.55,
     // hero_element_width_ratio = 1.618,
 
     update_window_width = function() {
