@@ -14,6 +14,9 @@ $(function () {
     thumbnails_open = false,
     swipe = false,
     window_width = $(window).width,
+    cycle_interval, 
+    cycle_interval_time = 3500,
+    cycle_direction = "right",
     hero_left = $("#hero-left"),
     hero_right = $("#hero-right"),
     hero_element = $(".hero-element"),
@@ -30,7 +33,7 @@ $(function () {
     work_downloads = $("#work-downloads"),
     slide_pagination_items = $("li", slide_pagination),
     number_of_rows = 1,
-    hero_viewport_size = 0.55,
+    hero_viewport_size = 0.60,
 
     // Initiating functions
     update_window_width = function() {
@@ -70,13 +73,42 @@ $(function () {
     },
 
     size_pagination = function(mode) {
-      var padding_amount = ((window_width - (44 * slide_pagination_items.length)) / slide_pagination_items.length) / 2;
+      var padding_amount = ((window_width - (43 * slide_pagination_items.length)) / slide_pagination_items.length) / 2;
 
       if (mode === "animate") {
         slide_pagination_items.delay(130).animate({paddingLeft: padding_amount, paddingRight: padding_amount}, 200);
       } else {
         slide_pagination_items.css({paddingLeft: padding_amount, paddingRight: padding_amount});
       }
+    },
+
+    start_auto_cycle = function() {
+      clearInterval(cycle_interval);
+      cycle_interval = setInterval(function() {
+        if (cycle_direction === "right") {
+          current_slide += 1;
+          iterate_pagination(current_slide);
+          check_carousel_nav();
+          update_infobox();
+          animate_carousel();
+          if (current_slide === total_slides) {
+            cycle_direction = "left";
+          }
+        } else if (cycle_direction === "left") {
+          current_slide -= 1;
+          iterate_pagination(current_slide);
+          check_carousel_nav();
+          update_infobox();
+          animate_carousel();
+          if (current_slide === 0) {
+            cycle_direction = "right";
+          }
+        }
+      }, cycle_interval_time);
+    },
+
+    clear_auto_cycle = function() {
+      clearInterval(cycle_interval);
     },
 
     //Interactions
@@ -134,7 +166,7 @@ $(function () {
       information_icons.fadeIn();
       information_title.fadeIn();
       slide_pagination.fadeIn();
-      slide_pagination.animate({paddingBottom: 10}, 200);
+      slide_pagination.animate({paddingBottom: 7}, 200);
       slide_pagination_items.animate({paddingLeft: 10, paddingRight: 10}, 200);
     },
 
@@ -216,7 +248,7 @@ $(function () {
       information_description.fadeOut(0);
       information_icons.fadeOut(0);
       information_title.fadeOut(0);
-      slide_pagination.animate({paddingBottom: 3}, 200);
+      slide_pagination.animate({paddingBottom: 0}, 200);
       size_pagination("animate");
     },
 
@@ -228,8 +260,6 @@ $(function () {
       update_window_width();
       var current_padding_left = parseInt(hero_thumbnails.first().css("margin-left")),
         current_padding_right = parseInt(hero_thumbnails.first().css("margin-right")) * 2;
-      console.log(current_padding_left);
-      console.log(current_padding_right);
       hero_thumbnails.css("width", (window_width - (hero_thumbnails.length * current_padding_right) - current_padding_left) / hero_thumbnails.length);
     },
 
@@ -253,12 +283,13 @@ $(function () {
       deturmine_responsive();
       init_flowtype();
       current_slide = 0;
+      calculate_footer_margins();
+      show_hero_items();
       iterate_pagination(current_slide);
       check_carousel_nav();
       update_infobox();
-      calculate_footer_margins();
-      show_hero_items();
       size_hero_thumbnails();
+      start_auto_cycle();
 
       hero_thumbnails.click(function() {
         hero_thumbnails.removeClass("active");
@@ -270,6 +301,14 @@ $(function () {
         animate_carousel();
       });
 
+      $("#hero *").on({
+        mouseenter: function() {
+          clear_auto_cycle();
+        },
+        mouseleave: function() {
+          start_auto_cycle();
+        }
+      })
 
       hero_element.mouseenter(function() {
         selected_hero = $(this);

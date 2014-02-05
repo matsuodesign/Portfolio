@@ -148,24 +148,10 @@ h1,h2,h3,h4,h5,h6,p
   z-index: $top-level
   width: 35px
   height: 120px
-  bottom: 35px
+  bottom: 30px
   cursor: pointer
   background-size: 15px 26px  
   box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
-
-#information
-  overflow: auto
-  position: relative
-  clear: both
-  z-index: 0
-  display: block
-  height: $information-graph-height
-  width: 100%
-  color: darken($logo-green, 5%)
-  text-shadow: 0px 1px white
-  box-shadow: inset 0px -3px 100px rgba(0, 162, 172, .20), 0px 3px 4px rgba(255, 255, 255, .5)
-  @media screen and (max-width: $break-small)
-    display: none !important
 
 #information .mod-title
   font-weight: bold
@@ -182,7 +168,7 @@ h1,h2,h3,h4,h5,h6,p
   margin-bottom: $half-gutter
   text-align: left
   line-height: 20px !important
-  font-size: 23px !important
+  font-size: 20px !important
   vertical-align: middle
   text-shadow: none
 
@@ -211,7 +197,7 @@ h1,h2,h3,h4,h5,h6,p
   font-weight: bold
 
 #information-data
-  min-height: 160px
+  min-height: 140px
   width: 100%
   position: relative
   clear: both
@@ -231,7 +217,7 @@ h1,h2,h3,h4,h5,h6,p
     display: none !important
 
 #information-description
-  font-size: 17px
+  font-size: 16px
   line-height: 1.47em
   position: relative
   margin-bottom: $half-gutter
@@ -307,7 +293,7 @@ h1,h2,h3,h4,h5,h6,p
     text-shadow: 0px 1px white
 #information-tags 
   span
-    font-size: 18px
+    font-size: $information-graph-font-size
     line-height: $information-graph-height
     text-shadow: 0px -1px rgba(0, 0, 0, .1)
     border-bottom: 0
@@ -413,7 +399,7 @@ h1,h2,h3,h4,h5,h6,p
   position: absolute
   bottom: 0
   z-index: 999999
-  padding-bottom: $half-gutter
+  padding-bottom: 7px
   @include browser-prefix(pointer-events, none)
   li
     padding: 0 5px 0 5px
@@ -438,6 +424,9 @@ h1,h2,h3,h4,h5,h6,p
   height: 0
   border-top: 1px white solid
   z-index: 99999
+  ul
+    display: inline-block
+    margin-top: 10px
   li
     float: left
     width: 200px
