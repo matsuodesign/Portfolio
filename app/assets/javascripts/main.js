@@ -360,49 +360,42 @@ $(function () {
         posx = -diffx > 0 ? -diffx : diffx;
         posy = -diffy > 0 ? -diffy : diffy;
 
-        console.log(posx);
-        console.log((600 * (posy + 1)));
+        if (posx > (250 * posy + 1)) {
+          if (swipe === false && responsive_mode !== "mobile") {
+            update_window_width();
 
-        if (posx > (600 * posy + 1)) {
-          console.log("Swipe");
-        } else {
-          console.log("scroll");
-        }
-
-
-
-        if (swipe === false && responsive_mode !== "mobile") {
-          update_window_width();
-
-          if (event.deltaX > 0) {
-            if (current_slide < total_slides) {
-              current_slide += 1;
-              iterate_pagination(current_slide);
-              update_infobox();
-              check_carousel_nav();
-              swipe = true;
-              content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 600, function() {
-                clearTimeout(debounce_swipe);
-                debounce_swipe = setTimeout(function() {
-                  swipe = false;
-                }, 700);
-              });
-            }
-          } else {
-            if (current_slide > 0) {
-              current_slide -= 1;
-              iterate_pagination(current_slide);
-              update_infobox();
-              check_carousel_nav();
-              swipe = true;
-              content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 600, function() {
-                clearTimeout(debounce_swipe);
-                debounce_swipe = setTimeout(function() {
-                  swipe = false;
-                }, 700);
-              });
+            if (event.deltaX > 0) {
+              if (current_slide < total_slides) {
+                current_slide += 1;
+                iterate_pagination(current_slide);
+                update_infobox();
+                check_carousel_nav();
+                swipe = true;
+                content_hero.animate({scrollLeft: (content_hero.scrollLeft() + window_width)}, 600, function() {
+                  clearTimeout(debounce_swipe);
+                  debounce_swipe = setTimeout(function() {
+                    swipe = false;
+                  }, 700);
+                });
+              }
+            } else {
+              if (current_slide > 0) {
+                current_slide -= 1;
+                iterate_pagination(current_slide);
+                update_infobox();
+                check_carousel_nav();
+                swipe = true;
+                content_hero.animate({scrollLeft: (content_hero.scrollLeft() - window_width)}, 600, function() {
+                  clearTimeout(debounce_swipe);
+                  debounce_swipe = setTimeout(function() {
+                    swipe = false;
+                  }, 700);
+                });
+              }
             }
           }
+        } else {
+          $("body").scrollTop($("body").scrollTop() - event.deltaY);
         }
         if (responsive_mode !== "mobile") {
           return false;
