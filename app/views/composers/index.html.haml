@@ -1,10 +1,49 @@
 -content_for :content_hero do
- =render 'modules/ask'
- =render 'modules/lminspired'
- =render 'modules/big-bold'
- =render 'modules/lapsity'
- =render 'modules/intervention'
- =render 'modules/fine-art'
+ #content-crop
+  #content-hero
+   #hero-track
+    =render 'modules/ask'
+    =render 'modules/lminspired'
+    =render 'modules/big-bold'
+    =render 'modules/lapsity'
+    =render 'modules/intervention'
+    =render 'modules/fine-art'
+ #information-graph
+  %p#information-tags
+ #information-data
+  #hero-right &nbsp;
+  #hero-left &nbsp;
+  #information-wrapper
+   #information-title
+   #information-description
+   #information-icons
+    #icon-wrapper
+     %span#desktop-icon &nbsp;
+     %span#tablet-icon &nbsp;
+     %span#mobile-icon &nbsp;
+  #film-strip
+   %ul#thumbnails
+    %li#ask-thumb.active 
+     #ask-logo Ask.com
+    %li#lm-inspired-thumb 
+     #lminspired-logo Lm-inspired.com
+    %li#big-bold-thumb 
+     #big-bold-logo Kudosed.com
+    %li#lapsity-thumb 
+     #lapsity-logo Lapsity
+    %li#intervention-thumb 
+     #intervention-logo Intervention
+    %li#fine-art-thumb 
+     #fine-art-logo Fine Art
+  %ol#slide-pagination
+   %li.active Ask.com
+   %li Lm-inspired.com
+   %li Kudosed.com
+   %li Lapsity
+   %li Intervention
+   %li Fine Art
+
+
 -content_for :content_main do
  =render 'modules/work'  
  =render 'modules/education'
