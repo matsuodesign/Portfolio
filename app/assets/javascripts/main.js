@@ -19,7 +19,6 @@ $(function () {
     cycle_direction = "right",
     debounce_thumbnails_open,
     debounce_thumbnails_close,
-    sound_active = false,
     hero_left = $("#hero-left"),
     hero_right = $("#hero-right"),
     hero_element = $(".hero-element"),
@@ -321,16 +320,6 @@ $(function () {
       update_infobox();
       size_hero_thumbnails();
       start_auto_cycle();
-
-      $(".sc-play").click(function(){
-        if(!sound_active){
-          $(".sc-play").addClass("sound_active");
-          sound_active = true;
-        }else{
-          $(".sc-play").removeClass("sound_active");
-          sound_active = false;
-        }
-      }) 
 
       hero_thumbnails.click(function() {
         hero_thumbnails.removeClass("active");

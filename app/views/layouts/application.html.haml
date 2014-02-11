@@ -35,5 +35,6 @@
     #page-foot
       =render 'modules/footer'
     =javascript_include_tag 'application'
-    =javascript_include_tag 'soundcloud.player.api.js'
-    =javascript_include_tag 'sc-player.js'
+    -local_javascript = yield :local_javascript
+    -unless local_javascript.blank?
+      =yield :local_javascript
