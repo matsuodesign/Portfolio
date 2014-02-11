@@ -1,7 +1,9 @@
 #mod-fine-art.hero-element
  %ul#fine-art-scene
-  %li.layer.background{"data-depth" => "0.40"} &nbsp;
-  %li.layer.logo{"data-depth" => "0.80"} &nbsp;
+  %li.layer.background &nbsp;
+  %li.layer.logo &nbsp;
+  %li.slide-link
+   =link_to 'Fine Art', :controller => "projects",  :action => "fine_art"
  .mod-information
   %h1.mod-title
    Fine Art

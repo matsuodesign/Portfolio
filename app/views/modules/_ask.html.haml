@@ -1,7 +1,9 @@
-#mod-ask.hero-element{"data-main-bg" => "assets/static/ask/background.jpg"}
+#mod-ask.hero-element
  %ul#ask-scene
-  %li.layer.background{"data-depth" => "0.40"} &nbsp;
-  %li.layer.logo{"data-depth" => "0.60"} &nbsp;
+  %li.background &nbsp;
+  %li.logo &nbsp;
+  %li.slide-link
+   =link_to 'Ask.com', :controller => "projects",  :action => "intervention"
  .mod-information
   %h1.mod-title
    Ask.com User Experience

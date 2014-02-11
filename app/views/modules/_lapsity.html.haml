@@ -1,7 +1,9 @@
 #mod-lapsity.hero-element
  %ul#lapsity-scene
-  %li.layer.background{"data-depth" => "0.40"} &nbsp;
-  %li.layer.logo{"data-depth" => "0.80"} &nbsp;
+  %li.background &nbsp;
+  %li.logo &nbsp;
+  %li.slide-link
+   =link_to 'Lapsity', :controller => "projects",  :action => "lapsity"
  .mod-information
   %h1.mod-title
    Lapsity App Concept

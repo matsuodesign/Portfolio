@@ -2,7 +2,10 @@
 %html
   %head
     %title= "Russell Matsuo · " + @page_title
-    = stylesheet_link_tag "application", :debug => false
+    =stylesheet_link_tag "application", :debug => false
+    -local_stylesheet = yield :local_stylesheet
+    -unless local_stylesheet.blank?
+      =yield :local_stylesheet
     =favicon_link_tag 'static/favicon.png'
     %link{:href => 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600', :rel => 'stylesheet', :type => 'text/css'}
     %meta{:name => "viewport", :content => "width=device-width, user-scalable=no, initial-scale=.7"}
@@ -17,14 +20,18 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-47787528-1', 'russellmatsuo.com');
       ga('send', 'pageview');
-  %body
+  %body{:class => @body_class}
     #wrapper
       #page-head
         =render 'modules/global-header'
       #hero
-        =yield :content_hero
+        -content_hero = yield :content_hero
+        -unless content_hero.blank?
+          =yield :content_hero
       #main
-        =yield :content_main
+        -content_main = yield :content_main
+        -unless content_main.blank?
+          =yield :content_main
     #page-foot
-      =yield :content_foot
+      =render 'modules/footer'
     =javascript_include_tag 'application'

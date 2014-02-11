@@ -63,6 +63,24 @@ h1,h2,h3,h4,h5,h6,p
   @media screen and (max-width: $break-small)
     margin-top: 0
 
+.experience
+  max-width: 1000px
+  padding-bottom: $half-gutter
+  width: 80%
+  margin: 0 auto
+  overflow: auto
+  @media screen and (max-width: $break-mid)
+    margin-bottom: $gutter * 2
+    padding-bottom: $gutter * 2
+    border-bottom: 1px lighten(#38A2C4, 40%) dashed
+  &:last-child
+    @media screen and (max-width: $break-mid)
+      margin-bottom: 0
+      padding-bottom: 0
+      border-bottom: none
+  h1
+    color: white
+
 #content-hero
   overflow: auto
   width: 100%
@@ -155,7 +173,6 @@ h1,h2,h3,h4,h5,h6,p
 
 #information .mod-title
   font-weight: bold
-
 
 #information-left
   float: left
@@ -416,6 +433,9 @@ h1,h2,h3,h4,h5,h6,p
       background: url('sprite/carousel-active.png') center center no-repeat
       background-size: 18px
 
+.background, .logo
+  @include browser-prefix(pointer-events, none)
+
 #film-strip
   position: absolute
   background: rgba(255, 255, 255, .7)
@@ -516,6 +536,17 @@ h1,h2,h3,h4,h5,h6,p
     background: image-url("static/fine-art/fine-art-logo.png") center center no-repeat
     background-size: 60%
 
+.slide-link
+  position: absolute
+  top: 0
+  width: 100%
+  height: 100%
+  left: 0
+  a
+    width: 100%
+    height: 100% 
+    display: block
+    text-indent: -9999px
 .mod-title.fixed
   position: fixed
   

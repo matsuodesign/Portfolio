@@ -35,6 +35,7 @@ $(function () {
     slide_pagination = $("#slide-pagination"),
     work_downloads = $("#work-downloads"),
     slide_pagination_items = $("li", slide_pagination),
+    intervention_video,
     number_of_rows = 1,
     hero_viewport_size = 0.60,
 
@@ -178,7 +179,19 @@ $(function () {
         fontRatio : work_description_ratio
       });
 
+      $('.experience').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_description_ratio
+      });
+      
       $('.work-title, #information-title').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_title_ratio
+      });
+
+      $('.intervention-description-container h1').flowtype({
         minimum : 400,
         maximum : 1200,
         fontRatio : work_title_ratio

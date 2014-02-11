@@ -1,7 +1,9 @@
 #mod-intervention.hero-element
  %ul#intervention-scene
-  %li.layer.background{"data-depth" => "0.40"} &nbsp;
-  %li.layer.logo{"data-depth" => "0.70"} &nbsp;
+  %li.background &nbsp;
+  %li.logo &nbsp;
+  %li.slide-link
+   =link_to 'intervention', :controller => "projects",  :action => "intervention"
  .mod-information
   %h1.mod-title
    Event Promotion

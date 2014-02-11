@@ -1,0 +1,28 @@
+-content_for :local_stylesheet do
+ =stylesheet_link_tag "intervention"
+-content_for :content_hero do
+ =video_tag(["/videos/intervention.webm", "/videos/intervention.mp4"], :poster => "/videos/intervention.png", :loop => true, :controls => false, :autoplay => true, :id => "video-background")
+-content_for :content_main do
+ #intervention-logo
+ %p{:id => "information-tags"}
+  %span{:class => "design-tag", :id => "intervention-design"} Design
+  %span{:class => "production-tag", :id => "intervention-production"} Production
+  %span{:class => "marketing-tag", :id => "intervention-marketing"} Marketing
+ .intervention-description-container#intervention-introduction 
+  %h1 Creative Direction for Intervention, a party at Ruby Skye
+  .experience
+   .experience-main
+    %h3.experience-location San Francisco, California
+    %p.experience-description
+     I got my start in party promotion working as a graphic and web designer for the popular party promotion duo Jeffrey Paradise and Ava Berlin &mdash; good friends and well published promoters responsible for creating some of San Francisco's most notorious and popular parties.
+   %ul#intervention-images
+    %li
+     =image_tag "static/intervention/intervention_1.jpg", :id => "intervention_1"
+     =image_tag "static/intervention/intervention_2.jpg", :id => "intervention_2"
+     =image_tag "static/intervention/intervention_3.jpg", :id => "intervention_3"
+     =image_tag "static/intervention/intervention_4.jpg", :id => "intervention_4"
+     =image_tag "static/intervention/intervention_5.jpg", :id => "intervention_5"
+     =image_tag "static/intervention/intervention_6.jpg", :id => "intervention_6"
+
+-content_for :content_foot do
+ %p test
