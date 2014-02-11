@@ -197,6 +197,12 @@ $(function () {
         fontRatio : work_title_ratio
       });
 
+      $('#plurhype-1').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_title_ratio * 1.6
+      });
+
       $('.intervention-description-container h4').flowtype({
         minimum : 400,
         maximum : 1200,

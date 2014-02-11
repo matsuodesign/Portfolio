@@ -18,8 +18,10 @@
         =video_tag(["/videos/intervention.webm", "/videos/intervention.mp4"], :poster => "/videos/intervention.png", :loop => true, :controls => false, :autoplay => true, :controls => true, :id => "video-inline")
         %p.caption
           A portion of from our motion graphics real, custom designed as a visualizer for the party.
+        %h4.clear.section-header Intervention 2 Promo, run of 1000
+        =image_tag "static/intervention/full2.jpg", :class => "full_flyer"
         %h4.clear.section-header Intervention 3 Promo, run of 1000
-        =image_tag "static/intervention/full.png", :id => "full_flyer"
+        =image_tag "static/intervention/full.png", :class => "full_flyer"
         %h4.clear.section-header Art Directed Photo Shoot
       %ul#intervention-images
         %li
@@ -29,6 +31,9 @@
           =image_tag "static/intervention/intervention_4.jpg", :id => "intervention_4"
           =image_tag "static/intervention/intervention_5.jpg", :id => "intervention_5"
           =image_tag "static/intervention/intervention_6.jpg", :id => "intervention_6"
+      %h4.clear.section-header We Created a Brand, Photos by Plurhype
+      %p#plurhype-1 At it's peak our brand 'Plurhype' employeed a team of 15 photographers throughout California, whos photos were published through plurhype.com. This was a great strategy for direct marketing because people would visit the website to find their photos, and subsequently see our advertisements, and upcoming events. People became friends with our photographers, and before long Plurhype was a well recognised brand in the party promotion scene.
+      =image_tag "static/intervention/party.jpg", :class => "full_flyer"
 
 -content_for :local_javascript do
   =javascript_include_tag 'soundcloud.player.api.js'
