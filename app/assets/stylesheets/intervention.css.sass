@@ -25,7 +25,6 @@ nav#global_header
       box-shadow: inset 0px 3px 5px rgba(0, 0, 0, .3)
       border-bottom: 1px #1a1a1a solid
       color: darken($logo-green, 3%)
-
     #pdf_icon
       background: image-url("sprite/pdf-dark.png") top left no-repeat
     #word_icon
@@ -73,6 +72,10 @@ nav#global_header
   position: relative
   margin: 250px auto 0 auto
   z-index: 50
+  @media screen and (max-width: $break-small)
+    width: 300px
+    height: 100px
+    margin-top: 150px
 
 .intervention-description-container
   width: 100%
@@ -99,12 +102,36 @@ nav#global_header
   height: 40px
   padding: 0
   margin-top: 150px
+  @media screen and (max-width: $break-small)
+    background: black
+    margin-top: 100px
+    text-indent: 20px
   span
     border-top: 2px black solid
     border-bottom: 2px black solid
 
+#intervention-description-2
+  width: 49%
+  margin-top: 30px
+  margin-bottom: 50px
+  display: block
+  float: left
+
+#video-inline
+  float: left
+  width: 49%
+  margin-top: 30px
+  background: image-url("videos/intervention.png")
+
 #intervention_1, #intervention_2, #intervention_3, #intervention_4, #intervention_5, #intervention_6
   width: 32%
+  @media screen and (max-width: $break-mid)
+    width: 49%
+
+#intervention-images
+  display: block
+  clear: both
+  margin-top: 50px
 
 #intervention-posters
   border-top: 10px #111 solid
