@@ -1,9 +1,34 @@
 -content_for :local_stylesheet do
- =stylesheet_link_tag "lapsity"
+  =stylesheet_link_tag "lapsity"
 
 -content_for :content_hero do
- #mod-lapsity-demo
-  =image_tag("static/lapsity/background.png")
+  #mod-lapsity-demo
+    =image_tag("static/lapsity/background.png")
+    #lapsity-logo 
+      %h1 Lapsity
+    -lapsity_demo = asset_path('/Lapsity_demo.swf')
+    %object{:type => "application/x-shockwave-flash", :data => "#{lapsity_demo}", :width => "30%", :height => "480", :id => "lapsity_demo"}
+      %param{:name => "movie", :value => "Lapsity_demo.swf"}
+      %param{:name => "quality", :value => "high"}
+      %param{:name => "bgcolor", :value => "#383127"}
+      %param{:name => "play", :value => "true"}
+      %param{:name => "loop", :value => "true"}
+      %param{:name => "wmode", :value => "window"}
+      %param{:name => "scale", :value => "showall"}
+      %param{:name => "menu", :value => "true"}
+      %param{:name => "devicefont", :value => "false"}
+      %param{:name => "salign", :value => "true"}
+      %param{:name => "allowScriptAccess", :value => "sameDomain"}
 
 -content_for :content_main do
- %p test
+  #mod-lapsity-description
+    %h1 Product Design for Lapsity
+    .experience
+      .experience-main
+        %h3.experience-location San Francisco, California
+        %p#lapsity-description-1
+          People want to be involved in something greater than themselves. This was the idea that spurred a collaborative effort to reinvent the way we use technology in the name of promoting charity and personal wellness.
+        %h4 App Concept
+        %p#lapsity-description-2
+          Lets turn a morning jog into a fight against Cancer. A walk to get doughnuts into support for ending world hunger. By using existing technology we can connect people, businesses, and charities together providing the funding and support, which will bring about some good.
+        
