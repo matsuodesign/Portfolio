@@ -204,12 +204,6 @@ $(function () {
         fontRatio : work_title_ratio * 1.4
       });
 
-      $('.intervention-description-container .caption').flowtype({
-        minimum : 400,
-        maximum : 1200,
-        fontRatio : work_title_ratio
-      });
-
       $('.work-location').flowtype({
         minimum : 400,
         maximum : 1200,
