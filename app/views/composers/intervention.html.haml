@@ -4,10 +4,7 @@
  =video_tag(["/videos/intervention.webm", "/videos/intervention.mp4"], :poster => "/videos/intervention.png", :loop => true, :controls => false, :autoplay => true, :id => "video-background")
 -content_for :content_main do
  #intervention-logo
- %p{:id => "information-tags"}
-  %span{:class => "design-tag", :id => "intervention-design"} Design
-  %span{:class => "production-tag", :id => "intervention-production"} Production
-  %span{:class => "marketing-tag", :id => "intervention-marketing"} Marketing
+ %a{:href => "https://soundcloud.com/diorable-1/faded-in-the-afternoon-mix-vol", :class => "sc-player"} hello
  .intervention-description-container#intervention-introduction 
   %h1 Creative Direction for Intervention, a party at Ruby Skye
   .experience
@@ -15,9 +12,15 @@
     %h3.experience-location San Francisco, California
     %p.experience-description
      I started in party promotion working as a graphic and web designer for the popular party promotion duo Jeffrey Paradise and Ava Berlin &mdash; good friends and well published promoters responsible for creating some of San Francisco's most notorious and popular parties.
+    %h4 A Party to Call our Own
     %p#intervention-description-2
      After some experience I started a party of my own along with my best friend and DJ partner, a monthly event at San Franisco's Ruby Skye night club. We orchastrated all aspects of the marketing campaign and promotional materials for the party, including print production for environmental signage and event fliers, motion graphics for party visuals, branding, and a social marketing campaign.
-    =video_tag(["/videos/intervention.webm", "/videos/intervention.mp4"], :poster => "/videos/intervention.png", :loop => true, :controls => false, :autoplay => false, :id => "video-inline")
+    =video_tag(["/videos/intervention.webm", "/videos/intervention.mp4"], :poster => "/videos/intervention.png", :loop => true, :controls => false, :autoplay => true, :controls => true, :id => "video-inline")
+    %p.caption
+     A portion of from our motion graphics real, custom designed as a visualizer for the party.
+    %h4.clear.section-header Intervention 3 Promo, run of 1000
+    =image_tag "static/intervention/full.png", :id => "full_flyer"
+
    %ul#intervention-images
     %li
      =image_tag "static/intervention/intervention_1.jpg", :id => "intervention_1"

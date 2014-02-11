@@ -19,6 +19,7 @@ $(function () {
     cycle_direction = "right",
     debounce_thumbnails_open,
     debounce_thumbnails_close,
+    sound_active = false,
     hero_left = $("#hero-left"),
     hero_right = $("#hero-right"),
     hero_element = $(".hero-element"),
@@ -197,6 +198,18 @@ $(function () {
         fontRatio : work_title_ratio
       });
 
+      $('.intervention-description-container h4').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_title_ratio * 1.4
+      });
+
+      $('.intervention-description-container .caption').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_title_ratio
+      });
+
       $('.work-location').flowtype({
         minimum : 400,
         maximum : 1200,
@@ -314,6 +327,16 @@ $(function () {
       update_infobox();
       size_hero_thumbnails();
       start_auto_cycle();
+
+      $(".sc-play").click(function(){
+        if(!sound_active){
+          $(".sc-play").addClass("sound_active");
+          sound_active = true;
+        }else{
+          $(".sc-play").removeClass("sound_active");
+          sound_active = false;
+        }
+      }) 
 
       hero_thumbnails.click(function() {
         hero_thumbnails.removeClass("active");
