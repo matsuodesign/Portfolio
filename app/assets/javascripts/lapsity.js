@@ -22,8 +22,8 @@ $(function () {
   }, 
 
   size_gallery = function() {
-    var current_width = $("#lapsity_demo").width();
-    var current_height = current_width * (2.35/1);
+    var current_width = $("#pdf_headline").width();
+    var current_height = current_width * (1/1.83);
     $("#iframe_protector").css("height", current_height);
     $("#google_viewer").css("height", current_height);
     $("#pdf_viewer").css("height", current_height + 60);
