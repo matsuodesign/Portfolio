@@ -34,5 +34,7 @@
             %param{:name => "devicefont", :value => "false"}
             %param{:name => "salign", :value => "true"}
             %param{:name => "allowScriptAccess", :value => "sameDomain"}
-        %h4#user-study User Study
-        %iframe{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:600px; height:500px;", :frameborder => "0"}
+        %h4#user-study View User Study PDF
+  #pdf_viewer
+    #iframe_protector &nbsp;
+    %iframe{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:100%; height:600px;", :frameborder => "0"}
