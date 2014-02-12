@@ -197,10 +197,22 @@ $(function () {
         fontRatio : work_title_ratio
       });
 
+      $('#mod-lapsity-description h1').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_title_ratio
+      });
+
       $('#plurhype-1').flowtype({
         minimum : 400,
         maximum : 1200,
-        fontRatio : work_title_ratio * 1.6
+        fontRatio : work_title_ratio * 1.4
+      });
+
+      $('.col1').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_title_ratio * 1.1
       });
 
       $('.intervention-description-container h4').flowtype({

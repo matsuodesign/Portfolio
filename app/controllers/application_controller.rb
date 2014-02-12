@@ -10,8 +10,6 @@ private
    "Be kind whenever possible. It is always possible.",
    "Always do your best. What you plant now, you will harvest later.",
    "The key is to keep company only with people who uplift you, \nwhose presence calls forth your best.",
-   "A smile is a curve that sets everything straight.",
-   "A warm smile is the universal language of kindness.",
    "A smile is happiness you'll find right under your nose.",
    "Do not go where the path may lead, go instead where there is no path and leave a trail.",
    "For beautiful eyes, look for the good in others; \nfor beautiful lips, speak only words of kindness; \nand for poise, walk with the knowledge that you are never alone.",

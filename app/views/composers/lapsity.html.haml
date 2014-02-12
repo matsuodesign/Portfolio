@@ -9,6 +9,7 @@
 
 -content_for :content_main do
   #mod-lapsity-description
+    %h2.pullquote "People want to be involved in something greater than themselves."
     %h1 Product Design for Lapsity
     .experience
       .experience-main
@@ -19,7 +20,6 @@
           %h4 App Concept
           %p#lapsity-description-2
             Lets turn a morning jog into a fight against Cancer. A walk to get doughnuts into support for ending world hunger. By using existing technology we can connect people, businesses, and charities together providing the funding and support, which will bring about some good.
-          %h4 User Study
         .col2
           -lapsity_demo = asset_path('/Lapsity_demo.swf')
           %object{:type => "application/x-shockwave-flash", :data => "#{lapsity_demo}", :width => "100%", :id => "lapsity_demo"}
@@ -34,3 +34,5 @@
             %param{:name => "devicefont", :value => "false"}
             %param{:name => "salign", :value => "true"}
             %param{:name => "allowScriptAccess", :value => "sameDomain"}
+        %h4#user-study User Study
+        %iframe{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:600px; height:500px;", :frameborder => "0"}

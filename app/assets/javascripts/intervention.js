@@ -6,6 +6,7 @@ $(function () {
   'use strict';
   var sound_active = false;
   $(document).ready(function() {
+
     $(".sc-play").click(function() {
       if (!sound_active) {
         $(".sc-play").addClass("sound_active");
