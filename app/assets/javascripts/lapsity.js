@@ -19,14 +19,23 @@ $(function () {
     var current_width = $("#lapsity_demo").width();
     var current_height = current_width * (480/320);
     $("#lapsity_demo").css("height", current_height);
+  }, 
+
+  size_gallery = function() {
+    var current_width = $("#lapsity_demo").width();
+    var current_height = current_width * (2.35/1);
+    $("#iframe_protector").css("height", current_height);
+    $("#google_viewer").css("height", current_height);
   };
 
   $(document).ready(function() {
     replace_images($("#mod-lapsity-demo"));
     size_demo();
+    size_gallery();
   });
 
   $(window).resize(function() {
     size_demo();
+    size_gallery();
   });
 });
