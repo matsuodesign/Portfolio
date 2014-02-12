@@ -7,10 +7,13 @@
  box-shadow: inset 0px -10px 50px rgba(0, 162, 172, 0.7)
 
 #lapsity_demo
- position: relative
- border: 12px #111 solid
+ position: absolute
+ width: 120%
+ border: 10px white solid
+ box-shadow: 0px 0px 7px rgba(0, 162, 172, 0.1)
  border-radius: 7px
- margin-top: -20px
+ margin-top: -30%
+ margin-left: -15%
 
 #lapsity-logo h1
  background: image-url("static/lapsity/lapsity-logo.png") center center no-repeat
@@ -37,15 +40,34 @@
  width: 60%
  padding: 0
  margin-right: 10%
+ margin-bottom: 15%
  float: left
 
 .col2
+ position: relative
  width: 30%
  float: left
 
+#pdf_headline
+ background: #ffffff /* Old browsers */
+ background: -moz-linear-gradient(top,  #ffffff 0%, #f3f9fc 100%) /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f3f9fc)) /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* Opera 11.10+ */
+ background: -ms-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* IE10+ */
+ background: linear-gradient(to bottom,  #ffffff 0%,#f3f9fc 100%) /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f9fc',GradientType=0 ) /* IE6-9 */
+ height: 60px
+
 #user-study
  clear: both
- padding-top: $gutter
+ line-height: 60px
+ vertical-align: middle
+ max-width: 1000px
+ font-size: 20px
+ width: 80%
+ margin: 0 auto
+ color: $logo-green
 
 #iframe_protector
  width: 100%
@@ -87,16 +109,26 @@
  padding-bottom: 20px
 
 .three-up
- width: 33%
+ width: 29.8%
  float: left
+ border: 10px white solid
+ box-shadow: 0px 0px 7px rgba(0, 162, 172, 0.1)
+ border-radius: 2px
+ margin-right: 1%
+ &:last-child
+  margin-right: 0
  @media screen and (max-width: $break-small)
   width: 100%
 
 .three-up-wrapper
  max-width: 1000px
- width: 90%
+ width: 91%
  display: inline-block
  padding-bottom: 30px
+
+#pdf_viewer
+ display: block
+ overflow: hidden
 
 #lapsity-description-1
  max-width: 500px

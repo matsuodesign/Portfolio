@@ -22,7 +22,7 @@
             Lets turn a morning jog into a fight against Cancer. A walk to get doughnuts into support for ending world hunger. By using existing technology we can connect people, businesses, and charities together providing the funding and support, which will bring about some good.
         .col2
           -lapsity_demo = asset_path('/Lapsity_demo.swf')
-          %object{:type => "application/x-shockwave-flash", :data => "#{lapsity_demo}", :width => "100%", :id => "lapsity_demo"}
+          %object{:type => "application/x-shockwave-flash", :data => "#{lapsity_demo}", :id => "lapsity_demo"}
             %param{:name => "movie", :value => "Lapsity_demo.swf"}
             %param{:name => "quality", :value => "high"}
             %param{:name => "bgcolor", :value => "#383127"}
@@ -34,14 +34,15 @@
             %param{:name => "devicefont", :value => "false"}
             %param{:name => "salign", :value => "true"}
             %param{:name => "allowScriptAccess", :value => "sameDomain"}
-        %h4#user-study Usability &amp; Research PDF
-  #pdf_viewer
-    #iframe_protector &nbsp;
-    %iframe{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:100%; height:600px;", :frameborder => "0", :id => "google_viewer"}
   #mod-lapsity-key-screens
     %h4#key-screens-header Key Screens
     .three-up-wrapper
-      =image_tag "static/lapsity/launch_pad_10.png", :class => "three-up"
-      =image_tag "static/lapsity/lap_details_04.png", :class => "three-up"
-      =image_tag "static/lapsity/unlocked_prize.png", :class => "three-up"
+      =image_tag "static/lapsity/key_1.png", :class => "three-up"
+      =image_tag "static/lapsity/key_2.png", :class => "three-up"
+      =image_tag "static/lapsity/key_3.png", :class => "three-up"
+  #pdf_viewer
+    #pdf_headline
+      %h4#user-study Usability &amp; Research PDF
+    #iframe_protector &nbsp;
+    %iframe{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:100%; height:600px;", :frameborder => "0", :id => "google_viewer"}
 

@@ -26,7 +26,7 @@ $(function () {
     var current_height = current_width * (2.35/1);
     $("#iframe_protector").css("height", current_height);
     $("#google_viewer").css("height", current_height);
-    $("#pdf_viewer").css("height", current_height);
+    $("#pdf_viewer").css("height", current_height + 60);
   };
 
   $(document).ready(function() {
