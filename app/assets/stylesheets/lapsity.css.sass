@@ -16,6 +16,8 @@
   margin-left: -15%
   background: image-url("static/lapsity/background_loading.png")
   background-size: 100%
+  @media screen and (max-width: $break-small)
+    display: none
 
 #lapsity-logo h1
   background: image-url("static/lapsity/lapsity-logo.png") center center no-repeat
@@ -46,6 +48,8 @@
   float: left
   .experience-location
     color: #777
+  @media screen and (max-width: $break-small)
+    width: 100%
 .col2
   position: relative
   width: 30%
@@ -83,7 +87,7 @@
   margin: 0 auto
   color: $logo-green
 
-#close_viewer
+#close_viewer, #download_viewer
   position: absolute
   right: 15px
   top: 10px
@@ -120,7 +124,8 @@
     background: linear-gradient(to bottom,  #f3f9fc 0%,#ffffff 100%) /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f9fc', endColorstr='#ffffff',GradientType=0 ) /* IE6-9 */
 
-
+#download_viewer
+  right: 115px
 
 #iframe_protector
   width: 100%
@@ -172,6 +177,8 @@
   margin-right: 1%
   &:last-child
     margin-right: 0
+  @media screen and (max-width: $break-mid)
+    width: 28.5%
   @media screen and (max-width: $break-small)
     width: 100%
 
@@ -212,6 +219,10 @@
   font-weight: bold
   color: $logo-green
   cursor: pointer
+
+#view_inline
+  @media screen and (max-width: $break-small)
+    display: none
 
 #view_pdf
   display: block

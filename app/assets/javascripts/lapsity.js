@@ -9,6 +9,24 @@ $(function () {
     viewer_open = false,
     called_once = false,
     debounce_scroll,
+    responsive_mode,
+    window_width,
+
+  update_window_width = function() {
+    window_width = $(window).width();
+  },
+
+  deturmine_responsive = function() {
+    update_window_width();
+
+    if (window_width <= 575) {
+      responsive_mode = "mobile";
+    } else if (window_width <= 850) {
+      responsive_mode = "tablet";
+    } else {
+      responsive_mode = "desktop";
+    }
+  },
 
   replace_images = function (targets) {
     $.each(targets, function () {
@@ -35,11 +53,29 @@ $(function () {
   }, 
 
   open_viewer = function() {
-    $("#google_viewer").css("height", $(window).height() - $("#global_header").height() - 30);
-    $("#pdf_viewer").css("height", $(window).height() - $("#global_header").height());
-    var new_scrolltop = $("#pdf_headline").offset().top - $("#global_header").height();
+    var new_scrolltop;
+
+    switch(responsive_mode){
+    case "desktop":
+      new_scrolltop = $("#pdf_headline").offset().top - $("#global_header").height();
+      $("#google_viewer").css("height", $(window).height() - $("#global_header").height() - 30);
+      $("#pdf_viewer").css("height", $(window).height() - $("#global_header").height());
+      break;
+    case "tablet":
+      new_scrolltop = $("#pdf_headline").offset().top;
+      $("#google_viewer").css("height", $(window).height() - 30);
+      $("#pdf_viewer").css("height", $(window).height());
+      break;
+    case "mobile":
+      new_scrolltop = $("#pdf_headline").offset().top - $("#work-downloads").height();
+      $("#google_viewer").css("height", $(window).height() - $("#work-downloads").height() - 30);
+      $("#pdf_viewer").css("height", $(window).height() - $("#work-downloads").height());
+      break;
+    };
+
     $("#user-study").css({width: "95%"});
     $("#close_viewer").fadeIn();
+    $("#download_viewer").fadeIn();
     $("html, body").animate({scrollTop: new_scrolltop}, 400, function(){
       if(!called_once){
         setTimeout(function() {
@@ -61,8 +97,13 @@ $(function () {
     $("#user-study").css({width: "80%"});
     $("#google_viewer").addClass("blurred");
     $("#close_viewer").fadeOut();
+    $("#download_viewer").fadeOut();
     viewer_open = false;
     called_once = false;
+  }, 
+  position_viewer = function() {
+    var new_scrolltop = $("#pdf_headline").offset().top - $("#global_header").height();
+    $("html, body").scrollTop(new_scrolltop);
   };
 
   $(document).ready(function() {
@@ -74,6 +115,7 @@ $(function () {
       $("#iframe_protector").fadeOut();
       $("#view_options").fadeOut();
       $("#google_viewer").removeClass("blurred");
+      deturmine_responsive();
       open_viewer();
     });
 
@@ -85,6 +127,9 @@ $(function () {
   $(window).resize(function() {
     size_demo();
     size_gallery();
+    if (viewer_open) {
+      position_viewer();
+    }
   });
 
   $(window).scroll(function() {
