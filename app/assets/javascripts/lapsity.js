@@ -26,13 +26,19 @@ $(function () {
     var current_height = current_width * (1/1.83);
     $("#iframe_protector").css("height", current_height);
     $("#google_viewer").css("height", current_height);
-    $("#pdf_viewer").css("height", current_height + 60);
+    $("#pdf_viewer").css("height", current_height + 30);
   };
 
   $(document).ready(function() {
     replace_images($("#mod-lapsity-demo"));
     size_demo();
     size_gallery();
+
+    $("#view_inline").click(function() {
+      $("#iframe_protector").fadeOut();
+      $("#view_options").fadeOut();
+      $("#google_viewer").removeClass("blurred");
+    });
   });
 
   $(window).resize(function() {

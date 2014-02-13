@@ -41,8 +41,15 @@
       =image_tag "static/lapsity/key_2.png", :class => "three-up"
       =image_tag "static/lapsity/key_3.png", :class => "three-up"
   #pdf_viewer
+    #view_options
+      %a#view_inline 
+        %span#view_pdf
+        View in Browser
+      %a#download 
+        %span#download_pdf
+        Download PDF
     #pdf_headline
       %h4#user-study Usability &amp; Research PDF
     #iframe_protector &nbsp;
-    %iframe{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:100%; height:600px;", :frameborder => "0", :id => "google_viewer"}
+    %iframe.blurred{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:100%; height:600px;", :frameborder => "0", :id => "google_viewer"}
 
