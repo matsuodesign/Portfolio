@@ -2,190 +2,229 @@
 @import application/mixins
 
 #mod-lapsity-demo
- height: 400px
- background-size: cover
- box-shadow: inset 0px -10px 50px rgba(0, 162, 172, 0.7)
+  height: 400px
+  background-size: cover
+  box-shadow: inset 0px -10px 50px rgba(0, 162, 172, 0.7)
 
 #lapsity_demo
- position: absolute
- width: 120%
- border: 10px white solid
- box-shadow: 0px 0px 7px rgba(0, 162, 172, 0.1)
- border-radius: 7px
- margin-top: -30%
- margin-left: -15%
+  position: absolute
+  width: 120%
+  border: 10px white solid
+  box-shadow: 0px 0px 7px rgba(0, 162, 172, 0.1)
+  border-radius: 7px
+  margin-top: -30%
+  margin-left: -15%
 
 #lapsity-logo h1
- background: image-url("static/lapsity/lapsity-logo.png") center center no-repeat
- background-size: 500px auto
- display: block
- width: 100%
- height: 400px
- text-indent: -9999px
+  background: image-url("static/lapsity/lapsity-logo.png") center center no-repeat
+  background-size: 500px auto
+  display: block
+  width: 100%
+  height: 400px
+  text-indent: -9999px
 
 .pullquote
- max-width: 400px
- padding-bottom: $half-gutter
- width: 80%
- margin: 0 auto
- font-size: 30px
- margin-top: 30px  
- font-style: italic
- text-align: center
- color: #ccc
- line-height: 1.3em
- font-weight: normal
-
-.col1
- width: 60%
- padding: 0
- margin-right: 10%
- margin-bottom: 15%
- float: left
- .experience-location
-  color: #777
-.col2
- position: relative
- width: 30%
- float: left
-
-#google_viewer
- margin-top: 30px
- &.blurred
-  @include browser-prefix(filter, blur(7px))
-
-#pdf_headline
- background: #ffffff /* Old browsers */
- background: -moz-linear-gradient(top,  #ffffff 0%, #f3f9fc 100%) /* FF3.6+ */
- background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f3f9fc)) /* Chrome,Safari4+ */
- background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* Chrome10+,Safari5.1+ */
- background: -o-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* Opera 11.10+ */
- background: -ms-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* IE10+ */
- background: linear-gradient(to bottom,  #ffffff 0%,#f3f9fc 100%) /* W3C */
- filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f9fc',GradientType=0 ) /* IE6-9 */
- height: 60px
- border-bottom: 1px #eee solid
- box-shadow: 0px 1px 0px white
- z-index: 9999
- position: absolute
- top: 0
- width: 100%
-
-#user-study
- clear: both
- line-height: 60px
- vertical-align: middle
- max-width: 1000px
- font-size: 20px
- width: 80%
- margin: 0 auto
- color: $logo-green
-
-#iframe_protector
- width: 100%
- height: 600px
- position: absolute
- background: rgba(255, 255, 255, .25)
- box-shadow: inset 0px -10px 50px rgba(0, 162, 172, 0.2)
- border-top: 1px rgba(0, 162, 172, 0.05) solid
- z-index: 999
- margin-top: 30px
-
-#mod-lapsity-description, #mod-lapsity-key-screens
- width: 100%
- display: inline-block
- z-index: 50
- @include white-box
- h1
-  color: $logo-green
-  max-width: 1000px
+  max-width: 400px
+  padding-bottom: $half-gutter
   width: 80%
   margin: 0 auto
   font-size: 30px
+  margin-top: 30px  
+  font-style: italic
+  text-align: center
+  color: #ccc
+  line-height: 1.3em
+  font-weight: normal
+
+.col1
+  width: 60%
+  padding: 0
+  margin-right: 10%
+  margin-bottom: 15%
+  float: left
+  .experience-location
+    color: #777
+.col2
+  position: relative
+  width: 30%
+  float: left
+
+#google_viewer
   margin-top: 30px
- h4
-  font-size: 20px
-  margin-top: $gutter
-  color: $logo-green
-  margin-bottom: 5px
+  &.blurred
+    @include browser-prefix(filter, blur(7px))
 
-#mod-lapsity-key-screens
- text-align: center
-
-#mod-lapsity-key-screens h4
- max-width: 1000px
- text-align: left
- width: 80%
- margin: 0 auto 
-
-#key-screens-header
- padding-top: 20px
- padding-bottom: 20px
-
-.three-up
- width: 29.8%
- float: left
- border: 10px white solid
- box-shadow: 0px 0px 7px rgba(0, 162, 172, 0.1)
- border-radius: 2px
- margin-right: 1%
- &:last-child
-  margin-right: 0
- @media screen and (max-width: $break-small)
+#pdf_headline
+  background: #ffffff /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f3f9fc 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f3f9fc)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#f3f9fc 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f9fc',GradientType=0 ) /* IE6-9 */
+  height: 60px
+  border-bottom: 1px #eee solid
+  box-shadow: 0px 1px 0px white
+  z-index: 9999
+  position: absolute
+  top: 0
   width: 100%
 
+#user-study
+  clear: both
+  line-height: 60px
+  vertical-align: middle
+  max-width: 1000px
+  font-size: 20px
+  width: 80%
+  margin: 0 auto
+  color: $logo-green
+
+#close_viewer
+  position: absolute
+  right: 10px
+  top: 10px
+  cursor: pointer
+  display: block
+  width: 90px
+  height: 40px
+  border: 1px darken(#f3f9fc, 2%) solid
+  border-bottom-color: darken(#f3f9fc, 5%)
+  color: darken(#f3f9fc, 40%)
+  text-align: center
+  line-height: 40px
+  vertical-align: middle
+  display: none
+  border-radius: 7px
+  font-weight: bold
+  font-size: 12px  
+  text-shadow: 0px 1px white
+  box-shadow: inset 0px 3px 7px white
+  background: -moz-linear-gradient(top,  #ffffff 0%, darken(#f3f9fc, 2%) 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,darken(#f3f9fc, 2%))) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,darken(#f3f9fc, 2%) 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,darken(#f3f9fc, 2%) 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,darken(#f3f9fc, 2%) 100%) /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,darken(#f3f9fc, 2%) 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='darken(#f3f9fc, 2%)',GradientType=0 ) /* IE6-9 */
+  &:hover
+    background: #f3f9fc /* Old browsers */
+    background: -moz-linear-gradient(top,  #f3f9fc 0%, #ffffff 100%) /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f9fc), color-stop(100%,#ffffff)) /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f3f9fc 0%,#ffffff 100%) /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f3f9fc 0%,#ffffff 100%) /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f3f9fc 0%,#ffffff 100%) /* IE10+ */
+    background: linear-gradient(to bottom,  #f3f9fc 0%,#ffffff 100%) /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f9fc', endColorstr='#ffffff',GradientType=0 ) /* IE6-9 */
+
+
+
+#iframe_protector
+  width: 100%
+  height: 600px
+  position: absolute
+  background: rgba(255, 255, 255, .25)
+  box-shadow: inset 0px -10px 50px rgba(0, 162, 172, 0.2)
+  border-top: 1px rgba(0, 162, 172, 0.05) solid
+  z-index: 999
+  margin-top: 30px
+
+#mod-lapsity-description, #mod-lapsity-key-screens
+  width: 100%
+  display: inline-block
+  z-index: 50
+  @include white-box
+  h1
+    color: $logo-green
+    max-width: 1000px
+    width: 80%
+    margin: 0 auto
+    font-size: 30px
+    margin-top: 30px
+  h4
+    font-size: 20px
+    margin-top: $gutter
+    color: $logo-green
+    margin-bottom: 5px
+
+#mod-lapsity-key-screens
+  text-align: center
+
+#mod-lapsity-key-screens h4
+  max-width: 1000px
+  text-align: left
+  width: 80%
+  margin: 0 auto 
+
+#key-screens-header
+  padding-top: 20px
+  padding-bottom: 20px
+
+.three-up
+  width: 29.8%
+  float: left
+  border: 10px white solid
+  box-shadow: 0px 0px 7px rgba(0, 162, 172, 0.1)
+  border-radius: 2px
+  margin-right: 1%
+  &:last-child
+    margin-right: 0
+  @media screen and (max-width: $break-small)
+    width: 100%
+
 .three-up-wrapper
- max-width: 1000px
- width: 91%
- display: inline-block
- padding-bottom: 30px
+  max-width: 1000px
+  width: 91%
+  display: inline-block
+  padding-bottom: 30px
 
 #pdf_viewer
- display: block
- overflow: hidden
- position: relative
- border-bottom: 1px #cfcfcf solid
+  display: block
+  overflow: hidden
+  position: relative
+  border-bottom: 1px #cfcfcf solid
 
 #view_options
- position: absolute
- width: 100%
- text-align: center
- height: 150px
- margin: 0 auto
- z-index: 9999
- top: 200px
+  position: absolute
+  width: 100%
+  text-align: center
+  height: 150px
+  margin: 0 auto
+  z-index: 9999
+  top: 200px
 
 #view_inline
- margin-right: 15px
+  margin-right: 15px
 
 #view_inline, #download
- display: inline-block
- width: 150px
- height: 150px
- background: white
- border-radius: 7px
- border: 3px white solid
- box-shadow: 0px 0px 50px rgba(0, 162, 172, 0.1), 0px 3px 7px rgba(0, 162, 172, 0.3)
- vertical-align: bottom
- font-weight: bold
- color: $logo-green
- cursor: pointer
+  display: inline-block
+  width: 150px
+  height: 150px
+  background: white
+  border-radius: 7px
+  border: 3px white solid
+  box-shadow: 0px 0px 50px rgba(0, 162, 172, 0.1), 0px 3px 7px rgba(0, 162, 172, 0.3)
+  vertical-align: bottom
+  font-weight: bold
+  color: $logo-green
+  cursor: pointer
 
 #view_pdf
- display: block
- background: image-url("sprite/eyeball.png") top left no-repeat
- width: 107px
- height: 80px
- background-size: 107px
- margin: 15px auto
+  display: block
+  background: image-url("sprite/eyeball.png") top left no-repeat
+  width: 107px
+  height: 80px
+  background-size: 107px
+  margin: 15px auto
 
 #download_pdf
- display: block
- margin: 15px auto
- background: image-url("sprite/download.png") top left no-repeat
- width: 80px
- height: 80px
- background-size: 80px
+  display: block
+  margin: 15px auto
+  background: image-url("sprite/download.png") top left no-repeat
+  width: 80px
+  height: 80px
+  background-size: 80px
 
 #lapsity-description-1
- max-width: 500px
+  max-width: 500px

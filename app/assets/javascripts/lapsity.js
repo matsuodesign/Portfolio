@@ -39,6 +39,7 @@ $(function () {
     $("#pdf_viewer").css("height", $(window).height() - $("#global_header").height());
     var new_scrolltop = $("#pdf_headline").offset().top - $("#global_header").height();
     $("#user-study").css({width: "95%"});
+    $("#close_viewer").fadeIn();
     $("html, body").animate({scrollTop: new_scrolltop}, 400, function(){
       if(!called_once){
         setTimeout(function() {
@@ -59,6 +60,7 @@ $(function () {
     $("#view_options").fadeIn();
     $("#user-study").css({width: "80%"});
     $("#google_viewer").addClass("blurred");
+    $("#close_viewer").fadeOut();
     viewer_open = false;
     called_once = false;
   };
@@ -73,6 +75,10 @@ $(function () {
       $("#view_options").fadeOut();
       $("#google_viewer").removeClass("blurred");
       open_viewer();
+    });
+
+    $("#close_viewer").click(function() {
+      close_viewer();
     });
   });
 
