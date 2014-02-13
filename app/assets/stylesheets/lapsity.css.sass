@@ -78,12 +78,14 @@
   width: 100%
 
 #user-study
+  position: absolute
+  padding-left: 20px
   clear: both
   line-height: 60px
   vertical-align: middle
   max-width: 1000px
   font-size: 20px
-  width: 80%
+  left: 3%
   margin: 0 auto
   color: $logo-green
 
@@ -137,10 +139,13 @@
   z-index: 999
   margin-top: 30px
 
-#mod-lapsity-description, #mod-lapsity-key-screens
+#mod-lapsity-description, #mod-lapsity-key-screens, #mod-lapsity-desktop-site
   width: 100%
   display: inline-block
   z-index: 50
+  position: relative
+  padding-top: $gutter * 3
+  margin-bottom: 5px
   @include white-box
   h1
     color: $logo-green
@@ -151,18 +156,20 @@
     margin-top: 30px
   h4
     font-size: 20px
-    margin-top: $gutter
     color: $logo-green
     margin-bottom: 5px
+
+#mod-lapsity-description
+  padding-top: 0
 
 #mod-lapsity-key-screens
   text-align: center
 
-#mod-lapsity-key-screens h4
+#mod-lapsity-desktop-site img
+  display: block
   max-width: 1000px
-  text-align: left
-  width: 80%
-  margin: 0 auto 
+  width: 88%
+  margin: -20px auto 0 auto
 
 #key-screens-header
   padding-top: 20px
@@ -194,6 +201,7 @@
   position: relative
   border-bottom: 1px #cfcfcf solid
   box-shadow: inset 0px -2px 0px white
+  margin-top: -7px
 
 #view_options
   position: absolute
