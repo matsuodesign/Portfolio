@@ -134,10 +134,10 @@ h1,h2,h3,h4,h5,h6,p
 
 #hero-right
   right: $carousel-navigation-offset
-  background: white image-url('sprite/right_arrow.png') center center no-repeat
+  background: transparent image-url('sprite/right_arrow.png') center center no-repeat
   border-radius: $carousel-navigation-radius-inside $carousel-navigation-radius-outside $carousel-navigation-radius-outside $carousel-navigation-radius-inside
   &:hover
-    background: white image-url('sprite/right_arrow_active.png') center center no-repeat
+    background: transparent image-url('sprite/right_arrow_active.png') center center no-repeat
     background-size: 15px 26px  
   @media screen and (max-width: $break-mid)
     width: 35px
@@ -146,10 +146,10 @@ h1,h2,h3,h4,h5,h6,p
 
 #hero-left
   left: $carousel-navigation-offset
-  background: white image-url('sprite/left_arrow.png') center center no-repeat
+  background: transparent image-url('sprite/left_arrow.png') center center no-repeat
   border-radius: $carousel-navigation-radius-outside $carousel-navigation-radius-inside $carousel-navigation-radius-inside $carousel-navigation-radius-outside
   &:hover
-    background: white image-url('sprite/left_arrow_active.png') center center no-repeat
+    background: transparent image-url('sprite/left_arrow_active.png') center center no-repeat
     background-size: 15px 26px  
   @media screen and (max-width: $break-mid)
     width: 35px
@@ -165,12 +165,12 @@ h1,h2,h3,h4,h5,h6,p
   position: absolute
   overflow: hidden
   z-index: $top-level
-  width: 35px
+  width: 50px
   height: 120px
   bottom: 30px
   cursor: pointer
   background-size: 15px 26px  
-  box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
+  // box-shadow: 0px 0px 5px rgba(0, 162, 172, .20)
 
 #information .mod-title
   font-weight: bold
