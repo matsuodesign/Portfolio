@@ -31,7 +31,7 @@ $(function () {
     $("#iframe_protector").css("height", current_pdf_size);
     $("#google_viewer").css("height", current_pdf_size);
     $("#pdf_viewer").css("height", current_pdf_size + 30);
-
+    $("#view_options").css("top", (current_pdf_size / 2) - (150 / 3));
   }, 
 
   open_viewer = function() {
