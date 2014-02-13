@@ -56,7 +56,7 @@
   float: left
 
 #google_viewer
-  margin-top: 30px
+  margin-top: 0px
   &.blurred
     @include browser-prefix(filter, blur(7px))
 
@@ -69,7 +69,7 @@
   background: -ms-linear-gradient(top,  #ffffff 0%,#f3f9fc 100%) /* IE10+ */
   background: linear-gradient(to bottom,  #ffffff 0%,#f3f9fc 100%) /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f9fc',GradientType=0 ) /* IE6-9 */
-  height: 60px
+  height: 43px
   border-bottom: 1px #eee solid
   box-shadow: 0px 1px 0px white
   z-index: 9999
@@ -77,31 +77,23 @@
   top: 0
   width: 100%
 
-#user-study
-  position: absolute
-  padding-left: 20px
-  clear: both
-  line-height: 60px
-  vertical-align: middle
-  max-width: 1000px
-  font-size: 20px
-  left: 3%
-  margin: 0 auto
-  color: $logo-green
+#pdf_headline .mod-title
+  border-radius: 0
+  border-bottom: 0
 
 #close_viewer, #download_viewer
   position: absolute
   right: 15px
-  top: 10px
+  top: 5px
   cursor: pointer
   display: block
-  width: 90px
-  height: 40px
+  width: 110px
+  height: 33px
   border: 1px darken(#f3f9fc, 2%) solid
   border-bottom-color: darken(#f3f9fc, 5%)
   color: darken(#f3f9fc, 40%)
   text-align: center
-  line-height: 40px
+  line-height: 33px
   vertical-align: middle
   display: none
   border-radius: 7px
@@ -127,7 +119,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f9fc', endColorstr='#ffffff',GradientType=0 ) /* IE6-9 */
 
 #download_viewer
-  right: 115px
+  right: 132px
 
 #iframe_protector
   width: 100%
