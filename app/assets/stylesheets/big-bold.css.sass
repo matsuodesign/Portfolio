@@ -14,7 +14,7 @@
   height: 100%
 
 
-#mod-kudosed-description, #mod-kudosed-continued
+#mod-kudosed-description, #mod-kudosed-continued, #mod-kudosed-key-screens
   width: 100%
   display: inline-block
   z-index: 50
@@ -37,6 +37,32 @@
 
 #kudosed-description-2
   margin-top: $gutter
+
+#mod-kudosed-key-screens
+  text-align: center
+  padding-bottom: $gutter * 3
+  padding-top: $gutter * 3
+  margin-bottom: 0
+
+
+.three-up-wrapper
+  max-width: 1000px
+  width: 80%
+  display: inline-block
+
+.three-up
+  width: 29.90%
+  float: left
+  border: 10px white solid
+  box-shadow: 0px 0px 7px rgba(0, 162, 172, 0.1)
+  border-radius: 2px
+  margin-right: 1%
+  &:last-child
+    margin-right: 0
+  @media screen and (max-width: $break-mid)
+    width: 28.5%
+  @media screen and (max-width: $break-small)
+    width: 100%
 
 #kudos-desktop
   background: image-url("static/big-bold/kudosed_desktop.png") top center no-repeat
