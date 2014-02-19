@@ -41,6 +41,7 @@ $(function () {
     var current_width = $("#lapsity_demo").width();
     var current_height = current_width * (480/320);
     $("#lapsity_demo").css("height", current_height);
+    $("#interactive-message").css("height", current_height);
   }, 
 
   size_gallery = function() {
@@ -118,6 +119,7 @@ $(function () {
       deturmine_responsive();
       open_viewer();
     });
+
 
     $("#close_viewer").click(function() {
       close_viewer();

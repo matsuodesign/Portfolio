@@ -20,6 +20,9 @@
           %p#lapsity-description-2
             Lets turn a morning jog into a fight against Cancer. A walk to get doughnuts into support for ending world hunger. By using existing technology we can connect people, businesses, and charities together providing the funding and support, which will bring about some good.
         .col2
+          #interactive-message 
+            %span#click-me &nbsp;
+            %span#message Interactive Prototype, click to begin
           -lapsity_demo = asset_path('/Lapsity_demo.swf')
           %object{:type => "application/x-shockwave-flash", :data => "#{lapsity_demo}", :id => "lapsity_demo"}
             %param{:name => "movie", :value => "Lapsity_demo.swf"}
