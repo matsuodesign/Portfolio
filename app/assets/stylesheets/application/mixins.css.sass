@@ -58,3 +58,13 @@
  background-image: radial-gradient(farthest-corner circle at center top, #ffffff 15%, darken(#F5FAFC, 2%) 100%)
  box-shadow: inset 0px -3px 30px white, 0px 1px 2px 1px rgba(0, 162, 172, .10)
  border-top: 2px white solid
+
+@mixin dark-gradient  
+ background: -moz-linear-gradient(top,  rgba(25,25,25,1) 0%, rgba(28,28,28,0.92) 91%, rgba(19,19,19,0.92) 100%) /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(25,25,25,1)), color-stop(91%,rgba(28,28,28,0.92)), color-stop(100%,rgba(19,19,19,0.92))) /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(28,28,28,0.92) 91%,rgba(19,19,19,0.92) 100%) /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(28,28,28,0.92) 91%,rgba(19,19,19,0.92) 100%) /* Opera 11.10+ */
+ background: -ms-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(28,28,28,0.92) 91%,rgba(19,19,19,0.92) 100%) /* IE10+ */
+ background: linear-gradient(to bottom,  rgba(25,25,25,1) 0%,rgba(28,28,28,0.92) 91%,rgba(19,19,19,0.92) 100%) /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6191919', endColorstr='#d9131313',GradientType=0 ) /* IE6-9 */
+

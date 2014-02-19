@@ -1,6 +1,12 @@
+-content_for :local_stylesheet do
+  =stylesheet_link_tag "lminspired"
 -content_for :content_hero do
-  %p hello
+  #lminspired-hero
+    #lminspired-logo &nbsp;
 -content_for :content_main do
-  %p world
--content_for :content_foot do
-  %p test
+  #mod-lminspired-description
+    %h1 Portfolio and E Commerce, Lm-inspired
+    .experience
+      .experience-main
+        %p#lminspired-description-1
+          Designed, coded and deployed a portfolio site for Lauren matsuo, creator of fine jewelery and artisan lamps. The site was built in Ruby on Rails, with the intention of being hooked into Etsy's API for a direct e-commerse experience.
