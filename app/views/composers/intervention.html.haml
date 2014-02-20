@@ -34,6 +34,9 @@
       %p#plurhype-1 At it's peak our brand 'Plurhype' employeed a team of 15 photographers throughout California, whos photos were published through plurhype.com. This was a great strategy for direct marketing because people would visit the website to find their photos, and subsequently see our advertisements, and upcoming events. People became friends with our photographers, and before long Plurhype was a well recognised brand in the party promotion scene.
       =image_tag "static/intervention/party.jpg", :class => "full_flyer"
 
+-content_for :content_foot do
+  =render 'modules/quicknav'
+
 -content_for :local_javascript do
   =javascript_include_tag 'soundcloud.player.api.js'
   =javascript_include_tag 'sc-player.js'  

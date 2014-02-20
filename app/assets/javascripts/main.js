@@ -32,6 +32,7 @@ $(function () {
     headers = $(".mod-title"),
     thumbnail_strip = $("#film-strip"),
     hero_thumbnails = $("#thumbnails li"),
+    quick_thumbnails = $("#thumbnails-quicknav li"),
     slide_pagination = $("#slide-pagination"),
     work_downloads = $("#work-downloads"),
     slide_pagination_items = $("li", slide_pagination),
@@ -310,6 +311,15 @@ $(function () {
       hero_thumbnails.css("width", (window_width - (hero_thumbnails.length * current_padding_right) - current_padding_left) / hero_thumbnails.length);
     },
 
+    size_quicknav = function() {
+      var current_padding_left = parseInt(quick_thumbnails.first().css("margin-left"), 10),
+        current_padding_right = parseInt(quick_thumbnails.first().css("margin-right"), 10) * 2,
+        quicknav_width = $("#thumbnails-quicknav").width();
+      quick_thumbnails.css("width", (quicknav_width - (quick_thumbnails.length * current_padding_right) - current_padding_left - 22) / 3);
+      quick_thumbnails.css("height", (quicknav_width - (quick_thumbnails.length * current_padding_right) - current_padding_left - 22) / 3);
+
+    },
+
     update_infobox = function(selected_hero) {
       selected_hero = (selected_hero !== undefined) ? selected_hero : hero_element.slice(current_slide, current_slide + 1);
       information_title.html(selected_hero.find(".mod-information .mod-title").html());
@@ -362,6 +372,7 @@ $(function () {
       update_infobox();
       size_hero_thumbnails();
       start_auto_cycle();
+      size_quicknav();
 
       hero_thumbnails.click(function() {
         hero_thumbnails.removeClass("active");
@@ -516,6 +527,7 @@ $(function () {
   $(window).resize(function() {
     check_mobile_init();
     size_hero_thumbnails();
+    size_quicknav();
     if (thumbnails_open) {
       size_pagination("static");
     }

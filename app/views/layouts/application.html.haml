@@ -32,7 +32,11 @@
         -content_main = yield :content_main
         -unless content_main.blank?
           =yield :content_main
+          
     #page-foot
+      -content_foot = yield :content_foot
+      -unless content_foot.blank?
+        =yield :content_foot
       =render 'modules/footer'
     =javascript_include_tag 'application'
     -local_javascript = yield :local_javascript

@@ -63,4 +63,6 @@
       %a#close_viewer Close Viewer
     #iframe_protector &nbsp;
     %iframe.blurred{:src => "http://docs.google.com/gview?url=http://www.russellmatsuo.com/Usability_Research.pdf&embedded=true", :style => "width:100%; height:600px;", :frameborder => "0", :id => "google_viewer"}
+-content_for :content_foot do
+  =render 'modules/quicknav'
 
