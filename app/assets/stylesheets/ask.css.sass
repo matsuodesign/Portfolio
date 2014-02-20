@@ -107,23 +107,33 @@
 #technology
   display: inline-block
   margin-top: 40px
+  @media screen and (max-width: $break-mid)
+    min-width: 650px
+  @media screen and (max-width: $break-small)
+    min-width: 0
   li
     float: left
     text-indent: -9999px
-    margin: 0 35px 0 35px
+    margin: 0 24px 0 24px
     @media screen and (max-width: $break-mid)
-      margin: 0 16px 0 16px
+      margin: 0 7px 0 7px
     @media screen and (max-width: $break-small)
-      margin: 0 8px 0 8px
+      margin: 15px
+      height: 64px !important
   #rails
     width: 60px
-    height: 71px
+    height: 64px
     background: image-url("static/ask/rails.png") center center no-repeat
     background-size: cover
   #omnigraffle
     width: 64px
     height: 64px
     background: image-url("static/ask/omnigraffle.png") center center no-repeat
+    background-size: cover
+  #invision
+    width: 140px
+    height: 64px
+    background: image-url("static/ask/invision.png") center center no-repeat
     background-size: cover
   #sublime
     width: 64px
