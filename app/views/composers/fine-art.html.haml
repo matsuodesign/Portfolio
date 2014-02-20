@@ -1,6 +1,15 @@
+-content_for :local_stylesheet do
+  =stylesheet_link_tag "fine-art"
 -content_for :content_hero do
-  %p hello
+  #fine-art-hero &nbsp;
 -content_for :content_main do
-  %p world
--content_for :content_foot do
-  %p test
+  #mod-fine-art-description
+    %h1 Academy of Art University
+    .experience
+      .experience-main
+        %p#fine-art-description-1
+          During my time at the Academy of Art University I had the opportunity to take design classes across a broad assortment of digital and traditional media. Being curious to a fault, the program was an amazing opportunity that allowed me to experience hands on how various design disciplines have evolved from a very manual process and provided context for today's digital capabilities.
+        .pullquote
+          "You can't do better design with a computer, but you can speed up your work enormously." - Wim Crouwel
+  #mod-fine-art-photography
+    =image_tag("static/fine-art/portraits.jpg")

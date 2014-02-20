@@ -203,6 +203,12 @@ $(function () {
         fontRatio : work_title_ratio
       });
       
+      $('#mod-fine-art-description h1').flowtype({
+        minimum : 400,
+        maximum : 1200,
+        fontRatio : work_title_ratio
+      });
+      
       $('#mod-lminspired-description h1').flowtype({
         minimum : 400,
         maximum : 1200,
