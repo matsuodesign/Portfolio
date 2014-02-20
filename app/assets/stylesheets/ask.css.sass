@@ -26,7 +26,7 @@
   text-align: center
   font-size: 12px
 
-#mod-ask-description
+#mod-ask-description, #mod-ask-description-2, #mod-ask-technology
   width: 100%
   display: inline-block
   z-index: 50
@@ -49,7 +49,7 @@
 
 .three-up-wrapper
   display: inline-block
-  margin-top: 70px
+  margin-top: 80px
   width: 720px
   position: relative
   text-align: center
@@ -62,22 +62,29 @@
   border-radius: 2px
 
 #ask-landing
-  left: -30px
+  left: -28px
   position: absolute
   @media screen and (max-width: $break-mid)
     display: none
 #ask-result
-  right: -30px
+  right: -28px
   position: absolute
   @media screen and (max-width: $break-mid)
     display: none
 #ask-browse
   margin: -50px auto 0 auto
-  width: 310px
+  width: 300px
   z-index: 9999
   position: relative
   @media screen and (max-width: $break-mid)
     margin-left: 0
+
+#mod-ask-community
+  width: 100%
+  height: 700px
+  background: image-url("static/ask/master_template.jpg")
+  background-size: cover
+  box-shadow: inset 0px -15px 30px rgba(0, 162, 172, 0.2)
 
 #mod-ask-images
   text-align: center
@@ -87,3 +94,50 @@
   height: 600px
   background: image-url("static/ask/image.jpg") center center no-repeat
   background-size: cover
+  box-shadow: inset 0px -15px 30px rgba(0, 162, 172, 0.2)
+
+#mod-ask-technology
+  text-align: center
+  padding-bottom: $gutter
+
+#technology
+  display: inline-block
+  margin-top: 40px
+  li
+    float: left
+    text-indent: -9999px
+    margin: 0 35px 0 35px
+    @media screen and (max-width: $break-mid)
+      margin: 0 16px 0 16px
+    @media screen and (max-width: $break-small)
+      margin: 0 8px 0 8px
+  #rails
+    width: 60px
+    height: 71px
+    background: image-url("static/ask/rails.png") center center no-repeat
+    background-size: cover
+  #omnigraffle
+    width: 64px
+    height: 64px
+    background: image-url("static/ask/omnigraffle.png") center center no-repeat
+    background-size: cover
+  #sublime
+    width: 64px
+    height: 64px
+    background: image-url("static/ask/sublime.png") center center no-repeat
+    background-size: cover
+  #photoshop
+    width: 64px
+    height: 64px
+    background: image-url("static/ask/photoshop.png") center center no-repeat
+    background-size: cover
+  #illustrator
+    width: 64px
+    height: 64px
+    background: image-url("static/ask/illustrator.png") center center no-repeat
+    background-size: cover
+  #flash
+    width: 64px
+    height: 64px
+    background: image-url("static/ask/flash.png") center center no-repeat
+    background-size: cover
