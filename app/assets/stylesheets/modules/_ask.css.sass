@@ -16,8 +16,6 @@
  ul
   width: 100%
   height: 100%
-  -moz-pointer-events: none
-  pointer-events: none
  .background
   position: relative
   background: image-url("static/ask/background.jpg") center center
@@ -33,7 +31,6 @@
   width: 100%
   height: 100%
   position: absolute
-  -webkit-pointer-events: none
   @include browser-prefix(transition, background-size 200ms ease-in-out) 
   @media screen and (max-width: $break-small)
    background-size: 100px auto
