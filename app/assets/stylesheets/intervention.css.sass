@@ -77,13 +77,16 @@ nav#global_header
 .experience-description
   margin-bottom: $gutter * 2
 
-.intervention-description-container
+#intervention-introduction, #intervention-key-images, #intervention-plurhype
   width: 100%
   min-height: 300px
   border-top: 3px black solid
   z-index: 500
   position: relative
+  display: inline-block
+  padding-bottom: $gutter * 2
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .05)
+  border-bottom: 10px #111 solid
   @include dark-gradient
   h1
     color: white
@@ -101,6 +104,33 @@ nav#global_header
     color: #9f9f9f
     text-shadow: 0px -1px black
 
+#main
+  z-index: 500
+  position: relative
+
+#intervention-key-images
+  text-align: center
+  padding-top: $gutter * 4
+  margin-top: -10px
+
+.mod-title
+  background: black
+  text-shadow: none
+  border: none
+
+#intervention-flyer
+  width: 100%
+  z-index: 500
+  background: rgba(0, 0, 0, .8)
+  display: inline-block
+  margin-bottom: 0
+  img
+    max-width: 1000px
+    width: 80%
+    margin: $gutter * 2 auto
+    display: block
+    box-shadow: 0px 0px 30px black
+
 #intervention-description-2
   width: 47%
   margin-bottom: 30px
@@ -116,6 +146,12 @@ nav#global_header
 
 #plurhype-1
   color: #9f9f9f
+  max-width: 1000px
+  width: 80%
+  margin: 0 auto
+  margin-top: $gutter * 3
+  margin-bottom: $gutter * 2
+
 
 .caption, .full_caption
   font-size: 16px !important
@@ -134,9 +170,11 @@ nav#global_header
   margin: 0 auto
   line-height: 19px
 .full_flyer
-  width: 100%
-  margin-top: $gutter
+  max-width: 1000px
+  width: 80%
+  margin: $gutter auto 0 auto
   box-shadow: 0px 0px 30px black
+  display: block
 
 .sc-player
   position: relative
@@ -232,9 +270,9 @@ nav#global_header
     width: 49%
 
 #intervention-images
-  display: block
-  clear: both
-  margin-top: 20px
+  max-width: 1000px
+  width: 80%
+  display: inline-block
 
 #intervention-posters
   border-top: 10px #111 solid
