@@ -315,8 +315,8 @@ $(function () {
       var current_padding_left = parseInt(quick_thumbnails.first().css("margin-left"), 10),
         current_padding_right = parseInt(quick_thumbnails.first().css("margin-right"), 10) * 2,
         quicknav_width = $("#thumbnails-quicknav").width();
-      quick_thumbnails.css("width", (quicknav_width - (quick_thumbnails.length * current_padding_right) - current_padding_left - 22) / 3);
-      quick_thumbnails.css("height", (quicknav_width - (quick_thumbnails.length * current_padding_right) - current_padding_left - 22) / 3);
+      quick_thumbnails.css("width", (quicknav_width - (quick_thumbnails.length * current_padding_right) - current_padding_left - 25) / 3);
+      quick_thumbnails.css("height", (quicknav_width - (quick_thumbnails.length * current_padding_right) - current_padding_left - 25) / 3);
 
     },
 
