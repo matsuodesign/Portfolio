@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'DinWeb';
+	src: url('http://m3det1.com/fonts/DINWeb.eot');
+	src: url('http://m3det1.com/fonts/DINWeb.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinWeb';
+	src: url('http://m3det1.com/fonts/DINWeb-Medium.eot');
+	src: url('http://m3det1.com/fonts/DINWeb-Medium.woff') format('woff');
+	font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinWeb';
+	src: url('http://m3det1.com/fonts/DINWeb-Bold.eot');
+	src: url('http://m3det1.com/fonts/DINWeb-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinWeb';
+	src: url('http://m3det1.com/fonts/DINWeb-Black.eot');
+	src: url('http://m3det1.com/fonts/DINWeb-Black.woff') format('woff');
+  font-weight: bolder;
+  font-style: italic;
+}
+
+body * {
+	font-family: 'DinWeb', Coda, Arial, sans-serif;
+}
