@@ -30,6 +30,6 @@
   font-style: italic;
 }
 
-body *, h1, h2, h3, h4, h5, p, a, #main h1, #main h2, #main h3, body, #nav ul li ul li a, .more, .DG-container h3, .meta .date, .review blockquote q, .review blockquote div strong, .image .image-extras .image-extras-content h4, .image .image-extras .image-extras-content h4 a, .project-content .project-info h4, .post-content blockquote, .button.large, .button.small, .ei-title h3, .cart-contents, .comment-form input[type="submit"], .wpcf7-form input[type="submit"], .gform_wrapper .gform_button, .woocommerce-success-message .button, .page-title h3 {
+body *, h1, h2, h3, h4, h5, p, a, #main h1, #main h2, #main h3, body, #nav ul li ul li a, html .more, html .DG-container h3, html .meta .date, html .review blockquote q, html .review blockquote div strong, html .image .image-extras .image-extras-content h4, html .image .image-extras .image-extras-content h4 a, html .project-content .project-info h4, html .post-content blockquote, html .button.large, html .button.small, html .ei-title h3, html .cart-contents, html .comment-form input[type="submit"], html .wpcf7-form input[type="submit"], html .gform_wrapper .gform_button, html .woocommerce-success-message .button, html .page-title h3 {
 	font-family: 'DinWeb', Coda, Arial, sans-serif !important;
 }
