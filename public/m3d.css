@@ -7,6 +7,8 @@
 @media screen and (max-width: 768px) {
   header.header {
     height: 52px; }
+    header.header nav.main li a[class^="icon-"] {
+      margin-left: 0; }
 
   .content {
     margin-top: 40px; }
