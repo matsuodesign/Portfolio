@@ -1,5 +1,6 @@
 $tablet-break: 1130px
 $mobile-break: 768px
+$small-break: 650px
 
 @media screen and (max-width: $tablet-break)
 	header.header
@@ -12,3 +13,8 @@ $mobile-break: 768px
 		height: 52px
 	.content
 		margin-top: 40px
+
+@media screen and (max-width: $small-break)
+	ul.feature_list
+		li
+			width: 100%
