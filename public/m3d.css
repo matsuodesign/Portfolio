@@ -4,3 +4,9 @@
 
   .content {
     margin-top: 110px; } }
+@media screen and (max-width: 768px) {
+  header.header {
+    height: 52px; }
+
+  .content {
+    margin-top: 40px; } }
