@@ -18,6 +18,7 @@
 *.sassc
 .sass-cache
 capybara-*.html
+.DS_Store
 .rspec
 /.bundle
 /vendor/bundle
